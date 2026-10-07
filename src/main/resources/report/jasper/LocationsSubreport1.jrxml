@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.13.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LocationsSubreport1" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="c0cac0ca-1001-4001-b001-000000000001">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+	<property name="net.sf.jasperreports.export.pdf.embed.fonts" value="true"/>
+	<property name="net.sf.jasperreports.default.font.name" value="Aptos"/>
+	<style name="Base" isDefault="true" forecolor="#000000" vTextAlign="Middle" fontName="Aptos" fontSize="8"/>
+	<style name="SectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#1A1A1A" fontSize="8" isBold="true"/>
+	<style name="ColHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333" fontSize="8" isBold="true"/>
+	<style name="LabelCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#EEEEEE" fontSize="8" isBold="true"/>
+	<style name="ValueCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" fontSize="8"/>
+	<style name="TotalRow" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#000000" fontSize="8" isBold="true"/>
+	<style name="SubSectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#555555" fontSize="8" isBold="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="CoverDetails" uuid="c0cac0ca-1001-4001-b001-000000000002">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<parameter name="pvColumnCount" class="java.lang.String"/>
+		<queryString language="json">
+			<![CDATA[Covers.CoverInformation]]>
+		</queryString>
+		<field name="Key1" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key1"/>
+			<fieldDescription><![CDATA[Key1]]></fieldDescription>
+		</field>
+		<field name="Value1" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value1"/>
+			<fieldDescription><![CDATA[Value1]]></fieldDescription>
+		</field>
+		<field name="Type1" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type1"/>
+			<fieldDescription><![CDATA[Type1]]></fieldDescription>
+		</field>
+		<field name="Key2" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key2"/>
+			<fieldDescription><![CDATA[Key2]]></fieldDescription>
+		</field>
+		<field name="Value2" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value2"/>
+			<fieldDescription><![CDATA[Value2]]></fieldDescription>
+		</field>
+		<field name="Type2" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type2"/>
+			<fieldDescription><![CDATA[Type2]]></fieldDescription>
+		</field>
+		<field name="Key3" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key3"/>
+			<fieldDescription><![CDATA[Key3]]></fieldDescription>
+		</field>
+		<field name="Value3" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value3"/>
+			<fieldDescription><![CDATA[Value3]]></fieldDescription>
+		</field>
+		<field name="Type3" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type3"/>
+			<fieldDescription><![CDATA[Type3]]></fieldDescription>
+		</field>
+		<field name="Key4" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key4"/>
+			<fieldDescription><![CDATA[Key4]]></fieldDescription>
+		</field>
+		<field name="Value4" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value4"/>
+			<fieldDescription><![CDATA[Value4]]></fieldDescription>
+		</field>
+		<field name="Type4" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type4"/>
+			<fieldDescription><![CDATA[Type4]]></fieldDescription>
+		</field>
+		<field name="Key6" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key6"/>
+			<fieldDescription><![CDATA[Key6]]></fieldDescription>
+		</field>
+		<field name="Value6" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value6"/>
+			<fieldDescription><![CDATA[Value6]]></fieldDescription>
+		</field>
+		<field name="Type6" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type6"/>
+			<fieldDescription><![CDATA[Type6]]></fieldDescription>
+		</field>
+		<field name="Key7" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key7"/>
+			<fieldDescription><![CDATA[Key7]]></fieldDescription>
+		</field>
+		<field name="Value7" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value7"/>
+			<fieldDescription><![CDATA[Value7]]></fieldDescription>
+		</field>
+		<field name="Type7" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type7"/>
+			<fieldDescription><![CDATA[Type7]]></fieldDescription>
+		</field>
+		<field name="Key8" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key8"/>
+			<fieldDescription><![CDATA[Key8]]></fieldDescription>
+		</field>
+		<field name="Value8" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value8"/>
+			<fieldDescription><![CDATA[Value8]]></fieldDescription>
+		</field>
+		<field name="Type8" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Type8"/>
+			<fieldDescription><![CDATA[Type8]]></fieldDescription>
+		</field>
+		<field name="ColumnCount" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="SectionClausesDS" uuid="c0cac0ca-1001-4001-b001-000000000005">
+		<queryString language="json">
+			<![CDATA[]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="SectionId" class="java.lang.String">
+			<fieldDescription><![CDATA[SectionId]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SectionWarrantyDS" uuid="c0cac0ca-1001-4001-b001-000000000006">
+		<queryString language="json">
+			<![CDATA[]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="SectionId" class="java.lang.String">
+			<fieldDescription><![CDATA[SectionId]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SectionExclusionDS" uuid="c0cac0ca-1001-4001-b001-000000000007">
+		<queryString language="json">
+			<![CDATA[]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="SectionId" class="java.lang.String">
+			<fieldDescription><![CDATA[SectionId]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SectionDetail" uuid="6dc556ac-5321-4d29-99ac-ce7962bbbe44">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.Sections.SectionInformation]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="AdditionalRiskInfo1" uuid="ee0851d9-de3e-4610-a3d7-68b403a0e48f">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.Sections.AdditionalRiskInfo1]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="AdditionalRiskInfo2" uuid="eca24431-356d-4524-b051-7514a3fb45a8">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.Sections.AdditionalRiskInfo2]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="ExcessDetails" uuid="4e4da325-a6d9-4f8e-8265-32eb0a70fe33">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.Sections.Covers.ExcessDetails]]>
+		</queryString>
+		<field name="excessName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="excessName"/>
+			<fieldDescription><![CDATA[excessName]]></fieldDescription>
+		</field>
+		<field name="ExcessDescription" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ExcessDescription"/>
+			<fieldDescription><![CDATA[ExcessDescription]]></fieldDescription>
+		</field>
+		<field name="ExcessAmount" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ExcessAmount"/>
+			<fieldDescription><![CDATA[ExcessAmount]]></fieldDescription>
+		</field>
+		<field name="ExcessPercentage" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="ExcessPercentage"/>
+			<fieldDescription><![CDATA[ExcessPercentage]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="BenefitDetails" uuid="d9d6e94d-455a-4d32-9cd4-d3c73abfc189">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.Sections.Covers.BenefitsDetails]]>
+		</queryString>
+		<field name="covername" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="covername"/>
+			<fieldDescription><![CDATA[covername]]></fieldDescription>
+		</field>
+		<field name="coverlimit" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="coverlimit"/>
+			<fieldDescription><![CDATA[coverlimit]]></fieldDescription>
+		</field>
+		<field name="excessAmount" class="java.lang.String"/>
+		<field name="ExcessDescription" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[Result.Locations.Sections]]>
+	</queryString>
+	<field name="SectionInformation" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="SectionInformation"/>
+		<fieldDescription><![CDATA[SectionInformation]]></fieldDescription>
+	</field>
+	<field name="Covers" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers"/>
+		<fieldDescription><![CDATA[Covers]]></fieldDescription>
+	</field>
+	<field name="ClausesconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers.ClausesDetails.conditionTerms"/>
+		<fieldDescription><![CDATA[Covers.ClausesDetails.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="WarrantyconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers.WarrantyDetails.conditionTerms"/>
+		<fieldDescription><![CDATA[Covers.WarrantyDetails.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="ExclusionconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers.ExclusionDetails.conditionTerms"/>
+		<fieldDescription><![CDATA[Covers.ExclusionDetails.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="AdditionalRiskInfo1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="AdditionalRiskInfo1"/>
+		<fieldDescription><![CDATA[AdditionalRiskInfo1]]></fieldDescription>
+	</field>
+	<field name="CoverCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="CoverCount"/>
+		<fieldDescription><![CDATA[CoverCount]]></fieldDescription>
+	</field>
+	<field name="ExcessDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers.ExcessDetails"/>
+		<fieldDescription><![CDATA[Covers.ExcessDetails]]></fieldDescription>
+	</field>
+	<field name="BenefitsDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Covers.BenefitsDetails"/>
+		<fieldDescription><![CDATA[Covers.BenefitsDetails]]></fieldDescription>
+	</field>
+	<variable name="LOC_INDEX" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{REPORT_COUNT} - 1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<detail>
+		<band height="25" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="5" width="535" height="18" uuid="c0cac0ca-1001-4001-b001-000000000105">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Section Details : "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="17" splitType="Prevent">
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="e1928661-3f6d-443f-94b8-2e4b94a065bf"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="SectionDetail" uuid="0edb24bd-9496-41c6-b94a-902c87772829">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("SectionInformation")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isBlankWhenNull="true">
+							<reportElement style="LabelCell" x="0" y="0" width="185" height="16" uuid="baa1ed55-102d-428f-a865-9215bf0f3ded"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="185" y="0" width="350" height="16" uuid="7d019ee7-9f12-43f3-99a8-663f63e2484d"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="16" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="535" height="15" uuid="139a2e2a-087b-4bee-9eb8-65969e9826e5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"LSCoverInformation.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="18" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{AdditionalRiskInfo1} !=null && $F{AdditionalRiskInfo1}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="5c69c021-9d36-4883-8558-cba7ea52fbd3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Additional Information"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{AdditionalRiskInfo1} !=null && $F{AdditionalRiskInfo1}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="259" height="16" uuid="9f57cf3a-f68a-4279-942d-c1f84dc16883"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="AdditionalRiskInfo1" uuid="cb63b4fe-4291-4c6f-a185-524897d20bc3">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("AdditionalRiskInfo1")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="259">
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="LabelCell" stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="16" uuid="c48b652c-b78c-4125-a52a-988734183644"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="90" y="0" width="169" height="16" uuid="7f1b5c5d-39dc-45fa-b98d-9b297b8e5290"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="270" y="0" width="265" height="16" uuid="4a1de635-d961-4dfb-adb4-c2d405e4adc0"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="AdditionalRiskInfo2" uuid="f66c28e1-d6f4-4bc7-83d0-913ffdcd66b0">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("AdditionalRiskInfo2")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="265">
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="LabelCell" stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="16" uuid="db09313b-f731-4429-86a9-2fe59bbf31f7"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="110" y="0" width="155" height="16" uuid="05f22940-7434-4210-975f-f3e2b1b04f46"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{ClausesconditionTerms} != null && $F{ClausesconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="c0cac0ca-1001-4001-b001-000000000114"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Clauses"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{ClausesconditionTerms} != null && $F{ClausesconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="c0cac0ca-1001-4001-b001-000000000115"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="SectionClausesDS" uuid="7c998b0e-0eae-4137-b1eb-c08e2517353f">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers.ClausesDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="0" y="0" width="25" height="16" uuid="c0cac0ca-1001-4001-b001-000000000117"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT} + "."]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="25" y="0" width="510" height="16" uuid="c0cac0ca-1001-4001-b001-000000000118"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{WarrantyconditionTerms} != null && $F{WarrantyconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="c0cac0ca-1001-4001-b001-000000000119"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Warranty"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{WarrantyconditionTerms} != null && $F{WarrantyconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="c0cac0ca-1001-4001-b001-000000000120"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="SectionWarrantyDS" uuid="a47f9321-a8f6-465c-b545-d0711de78e14">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers.WarrantyDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="0" y="0" width="25" height="16" uuid="c0cac0ca-1001-4001-b001-000000000122"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT} + "."]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="25" y="0" width="510" height="16" uuid="c0cac0ca-1001-4001-b001-000000000123"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{ExclusionconditionTerms} != null && $F{ExclusionconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="c0cac0ca-1001-4001-b001-000000000124"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Exclusions"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{ExclusionconditionTerms} != null && $F{ExclusionconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="c0cac0ca-1001-4001-b001-000000000125"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="SectionExclusionDS" uuid="0daedf0c-1f9f-4ddc-9f51-9d6395c5068e">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers.ExclusionDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="0" y="0" width="25" height="16" uuid="c0cac0ca-1001-4001-b001-000000000127"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT} + "."]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="25" y="0" width="510" height="16" uuid="c0cac0ca-1001-4001-b001-000000000128"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers.ExcessDetails").recordCount()>1]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="3" width="535" height="15" uuid="ebe0cd1c-8e5b-4473-a5c3-b2d54ccecfc5">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="ExcessDetails" uuid="09cd054f-9f8b-4d53-8c03-7ac1faee4690">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Covers.ExcessDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="535" uuid="a682b3f3-54be-40dd-9a7a-236742c6ae6e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [0]"/>
+						<jr:tableHeader height="18" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isBlankWhenNull="true">
+								<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="7eae841d-5938-4db0-b16b-990640cefcd2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Aptos" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["   Excess Details"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:column width="178" uuid="e867a76b-b67b-4c69-9f90-eda878b1c92d">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="178" height="15" uuid="51f34689-9c8b-4718-b55f-aa80b1b7a556"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Excess Description"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="178" height="15" uuid="216eef0a-b9b4-4142-bf10-13285de0c173"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ExcessDescription}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="178" uuid="fb2e01e1-f394-4f5f-9a03-d652c147ad1e">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column0"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="178" height="15" uuid="8201b7b6-a351-496a-aa0c-f51d45c5904e"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Excess Amount"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="178" height="15" uuid="9e8080a3-45cb-4f9f-8d07-bc0b14376690"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ExcessAmount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="179" uuid="4d95c74e-ca4e-4e46-bd68-2e1722367e40">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="179" height="15" uuid="e1fd3e1a-78e8-4217-bb15-b1af09576469"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Excess Percentage"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="179" height="15" uuid="f245c199-7806-4435-84a3-19aeb3716d70"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ExcessPercentage}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("BenefitsDetails").recordCount()>1]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="3" width="535" height="15" uuid="bd128f49-3f70-42f4-9b26-7a82338488e9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="BenefitDetails" uuid="000f68ea-0f7b-45d2-8bba-9edf174fcdba">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("BenefitsDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="535" uuid="9d40465d-ae01-4c47-bb71-d5da3433adf8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
+						<jr:tableHeader height="18" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isBlankWhenNull="true">
+								<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="6eabba09-b545-4b70-90d4-e133b0727819"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Aptos" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["   Benefit Details"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:column width="150" uuid="2efb2c74-8754-46db-8ed7-6145c7556905">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="15" uuid="361a842d-8e49-4a8d-8fa5-abbb2f1c285d"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Cover Name"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="15" uuid="ad144ee1-dc75-4a33-9cbc-05b93b494f2b"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{covername}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="136" uuid="da72a50b-858d-4978-a2d7-c895e2313c62">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="136" height="15" uuid="cb576e36-90b6-4fe3-a1d7-27b9b99a5423"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Cover Limit"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="136" height="15" uuid="781286c6-82ff-420c-9aae-0ad4ca5d1bae"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{coverlimit}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="5b4cf358-2f53-45d2-88ca-522af02d0bd1">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="120" height="15" uuid="a6d5b9a8-d2c3-4a55-823e-44b7aa10a294"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Excess Amount"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="120" height="15" uuid="bd8eb427-407b-4627-88dc-7aac8f44eedd"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{excessAmount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="129" uuid="c6e808b7-9650-456b-a97d-50f0a90e34f7">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:columnHeader style="Table_TD" height="15" rowSpan="1">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="129" height="15" uuid="7214417b-444f-4e5b-96eb-c4e723369831"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center">
+										<font isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Excess Description"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="15">
+								<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="129" height="15" uuid="4cab10a7-e512-402f-a5e5-9b7cc7e54294"/>
+									<box leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ExcessDescription}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

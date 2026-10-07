@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sub_Main_Report" pageWidth="554" pageHeight="842" columnWidth="554" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="cd441786-28a5-46f4-8681-07486d02721e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Phoenix_Schedule.xml"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Dataset2" uuid="a4681614-5f2e-4e29-a54a-2d6c6da2a4c1">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Phoenix_Schedule.xml"/>
+		<queryString language="json">
+			<![CDATA[sectionList.sectionList]]>
+		</queryString>
+		<field name="monthly" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="monthly"/>
+			<fieldDescription><![CDATA[monthly]]></fieldDescription>
+		</field>
+		<field name="sectionDesc" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="sectionDesc"/>
+			<fieldDescription><![CDATA[sectionDesc]]></fieldDescription>
+		</field>
+		<field name="annually" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="annually"/>
+			<fieldDescription><![CDATA[annually]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="json">
+		<![CDATA[sectionList]]>
+	</queryString>
+	<field name="locationName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="locationName"/>
+		<fieldDescription><![CDATA[locationName]]></fieldDescription>
+	</field>
+	<field name="sectionList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionList"/>
+		<fieldDescription><![CDATA[sectionList]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement mode="Opaque" x="1" y="0" width="553" height="20" backcolor="#E8E8DF" uuid="157d18a6-6580-489b-ade4-cbcf9a31c201"/>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LOCATION NAME : "+$F{locationName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement mode="Opaque" x="1" y="0" width="553" height="15" uuid="5b6fde2d-5dda-434f-a4ab-de5d9cdf6984">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset2" uuid="024121ad-c941-4f92-ba6a-fc3bcf0952f2">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sectionList")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="210" uuid="5233349a-6ab5-479e-a2e3-d0212469a692">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="210" height="20" backcolor="#E8E8DF" uuid="e716ba62-25af-469c-b7ce-49e0a6d20a83"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["SECTION OF COVER"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:detailCell height="15">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="210" height="15" uuid="e18076b3-5f6b-4722-a183-c8201c33ad78"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{sectionDesc}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="150" uuid="281909af-f2ce-4696-8bf2-05ba55dd6116">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column0"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="150" height="20" backcolor="#E8E8DF" uuid="91793e96-f3cf-47e0-9346-c1c235ba5a91"/>
+								<box leftPadding="0" rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["ANNUAL"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:detailCell height="15">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="150" height="15" uuid="38ae55dd-1d0f-4dd3-bc89-ad853d0339e0"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{annually})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="c55086ee-ccf9-4289-9ce6-87baaf47de28">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column0"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="100" height="20" backcolor="#E8E8DF" uuid="109ef73a-15da-4e52-b7a3-162e05260a11"/>
+								<box leftPadding="0" rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["MONTHLY"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:detailCell height="15">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="15" uuid="50308d2f-809c-4b6a-a115-9e2e73f8bcc7"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{monthly})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="32338166-3cb8-4e89-8b02-e62e8f902a35">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column0"/>
+						<jr:tableHeader height="20" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="93" height="20" backcolor="#E8E8DF" uuid="13ea28d8-79cc-4fa6-ab73-758b1818f7c7"/>
+								<box leftPadding="0" rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["ADD / REFUND"]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:detailCell height="15">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="93" height="15" uuid="fd8bcee9-e6b3-4262-9124-eb2777015943"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Figtree-Light" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA["$ 0.00"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

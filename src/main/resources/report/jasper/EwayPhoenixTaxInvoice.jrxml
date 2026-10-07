@@ -1,0 +1,3713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.1.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EwayPhoenixTaxInvoice" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a0c081c-c2eb-4886-8202-3a39472d4df5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Tax_invoice.jrdax"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="c4edfdce-65b9-49bb-b28a-a23483bb2037">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Tax_invoice.jrdax"/>
+		<queryString language="json">
+			<![CDATA[premiumDetails]]>
+		</queryString>
+		<field name="amount" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="amount"/>
+			<fieldDescription><![CDATA[amount]]></fieldDescription>
+		</field>
+		<field name="narration" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="narration"/>
+			<fieldDescription><![CDATA[narration]]></fieldDescription>
+		</field>
+		<field name="status" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="status"/>
+			<fieldDescription><![CDATA[status]]></fieldDescription>
+		</field>
+		<field name="currency" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+			<fieldDescription><![CDATA[currency]]></fieldDescription>
+		</field>
+		<variable name="tot_amounr" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[new java.math.BigDecimal($F{amount})]]></variableExpression>
+		</variable>
+		<group name="amount">
+			<groupExpression><![CDATA[$F{amount}]]></groupExpression>
+		</group>
+		<group name="narration">
+			<groupExpression><![CDATA[$F{narration}]]></groupExpression>
+		</group>
+		<group name="status">
+			<groupExpression><![CDATA[$F{status}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="installmentDetail" uuid="50c008e4-c4d7-421d-9a7b-9de4a023d45a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Tax_invoice.jrdax"/>
+		<queryString language="json">
+			<![CDATA[installmentDetail]]>
+		</queryString>
+		<field name="srNo" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="srNo"/>
+			<fieldDescription><![CDATA[srNo]]></fieldDescription>
+		</field>
+		<field name="dueDate" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="dueDate"/>
+			<fieldDescription><![CDATA[dueDate]]></fieldDescription>
+		</field>
+		<field name="percentage" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="percentage"/>
+			<fieldDescription><![CDATA[percentage]]></fieldDescription>
+		</field>
+		<field name="currency" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+			<fieldDescription><![CDATA[currency]]></fieldDescription>
+		</field>
+		<field name="dueAmount" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="dueAmount"/>
+			<fieldDescription><![CDATA[dueAmount]]></fieldDescription>
+		</field>
+		<field name="paymentStatus" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="paymentStatus"/>
+			<fieldDescription><![CDATA[paymentStatus]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="pvImagepath" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="userName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userName"/>
+		<fieldDescription><![CDATA[userName]]></fieldDescription>
+	</field>
+	<field name="approvedBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedBy"/>
+		<fieldDescription><![CDATA[approvedBy]]></fieldDescription>
+	</field>
+	<field name="agencyCode" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="agencyCode"/>
+		<fieldDescription><![CDATA[agencyCode]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="vrTinNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vrTinNo"/>
+		<fieldDescription><![CDATA[vrTinNo]]></fieldDescription>
+	</field>
+	<field name="identificationNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="identificationNo"/>
+		<fieldDescription><![CDATA[identificationNo]]></fieldDescription>
+	</field>
+	<field name="identificationName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="identificationName"/>
+		<fieldDescription><![CDATA[identificationName]]></fieldDescription>
+	</field>
+	<field name="policyNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyNo"/>
+		<fieldDescription><![CDATA[policyNo]]></fieldDescription>
+	</field>
+	<field name="inceptionDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="expiryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="expiryDate"/>
+		<fieldDescription><![CDATA[expiryDate]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="debitNoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="debitNoteNo"/>
+		<fieldDescription><![CDATA[debitNoteNo]]></fieldDescription>
+	</field>
+	<field name="vrnNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vrnNumber"/>
+		<fieldDescription><![CDATA[vrnNumber]]></fieldDescription>
+	</field>
+	<field name="tinNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="tinNumber"/>
+		<fieldDescription><![CDATA[tinNumber]]></fieldDescription>
+	</field>
+	<field name="brokerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerName"/>
+		<fieldDescription><![CDATA[brokerName]]></fieldDescription>
+	</field>
+	<field name="overAllPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="overAllPremium"/>
+		<fieldDescription><![CDATA[overAllPremium]]></fieldDescription>
+	</field>
+	<field name="totSumInsured" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="totSumInsured"/>
+		<fieldDescription><![CDATA[totSumInsured]]></fieldDescription>
+	</field>
+	<field name="intermediaryRefNo" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="intermediaryRefNo"/>
+		<fieldDescription><![CDATA[intermediaryRefNo]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="bankaccountName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaccountName"/>
+		<fieldDescription><![CDATA[bankaccountName]]></fieldDescription>
+	</field>
+	<field name="bankaccountNumber" class="java.lang.Long">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaccountNumber"/>
+		<fieldDescription><![CDATA[bankaccountNumber]]></fieldDescription>
+	</field>
+	<field name="bankaddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaddress"/>
+		<fieldDescription><![CDATA[bankaddress]]></fieldDescription>
+	</field>
+	<field name="bankswiftCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankswiftCode"/>
+		<fieldDescription><![CDATA[bankswiftCode]]></fieldDescription>
+	</field>
+	<field name="companyLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyLogo"/>
+		<fieldDescription><![CDATA[companyLogo]]></fieldDescription>
+	</field>
+	<field name="companyWebsite" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyWebsite"/>
+		<fieldDescription><![CDATA[companyWebsite]]></fieldDescription>
+	</field>
+	<field name="companyMail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyMail"/>
+		<fieldDescription><![CDATA[companyMail]]></fieldDescription>
+	</field>
+	<field name="companyPhone" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPhone"/>
+		<fieldDescription><![CDATA[companyPhone]]></fieldDescription>
+	</field>
+	<field name="companyAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyAddress"/>
+		<fieldDescription><![CDATA[companyAddress]]></fieldDescription>
+	</field>
+	<field name="companyPoBox" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPoBox"/>
+		<fieldDescription><![CDATA[companyPoBox]]></fieldDescription>
+	</field>
+	<field name="amountInWords" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="amountInWords"/>
+		<fieldDescription><![CDATA[amountInWords]]></fieldDescription>
+	</field>
+	<field name="branchCode" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchCode"/>
+		<fieldDescription><![CDATA[branchCode]]></fieldDescription>
+	</field>
+	<field name="bankName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankName"/>
+		<fieldDescription><![CDATA[bankName]]></fieldDescription>
+	</field>
+	<field name="bankBranchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankBranchName"/>
+		<fieldDescription><![CDATA[bankBranchName]]></fieldDescription>
+	</field>
+	<field name="bankBranchCode" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankBranchCode"/>
+		<fieldDescription><![CDATA[bankBranchCode]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchName"/>
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="companyId" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyId"/>
+		<fieldDescription><![CDATA[companyId]]></fieldDescription>
+	</field>
+	<field name="policyType" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyType"/>
+		<fieldDescription><![CDATA[policyType]]></fieldDescription>
+	</field>
+	<field name="installmentDetail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="installmentDetail"/>
+		<fieldDescription><![CDATA[installmentDetail]]></fieldDescription>
+	</field>
+	<field name="premiumDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premiumDetails"/>
+		<fieldDescription><![CDATA[premiumDetails]]></fieldDescription>
+	</field>
+	<field name="dataset1List" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataset1List"/>
+		<fieldDescription><![CDATA[dataset1List]]></fieldDescription>
+	</field>
+	<field name="vatPercent" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPercent"/>
+		<fieldDescription><![CDATA[vatPercent]]></fieldDescription>
+	</field>
+	<field name="vatAmount" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatAmount"/>
+		<fieldDescription><![CDATA[vatAmount]]></fieldDescription>
+	</field>
+	<field name="coreAppBrokerCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coreAppBrokerCode"/>
+		<fieldDescription><![CDATA[coreAppBrokerCode]]></fieldDescription>
+	</field>
+	<field name="effectiveDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="effectiveDate"/>
+		<fieldDescription><![CDATA[effectiveDate]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="productName"/>
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="emiYn" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="emiYn"/>
+		<fieldDescription><![CDATA[emiYn]]></fieldDescription>
+	</field>
+	<field name="signature" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signature"/>
+		<fieldDescription><![CDATA[signature]]></fieldDescription>
+	</field>
+	<field name="appBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signature"/>
+		<fieldDescription><![CDATA[appBy]]></fieldDescription>
+	</field>
+	<field name="createdBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signature"/>
+		<fieldDescription><![CDATA[createdBy]]></fieldDescription>
+	</field>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<pageHeader>
+		<band height="119" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image>
+				<reportElement x="0" y="7" width="140" height="75" uuid="fc20078f-d008-4921-be0b-0c55e495d990"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companyLogo}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="369" y="20" width="186" height="13" uuid="1feea86a-7c98-428a-b001-2bfd19618b2f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VAT : "+$F{vrnNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Table 1_TD" positionType="Float" stretchType="RelativeToBandHeight" x="369" y="7" width="186" height="13" uuid="ede6519d-2184-47ad-bd0d-0c643855aae1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyAddress}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="384" y="31" width="171" height="13" uuid="0f00842f-a33a-49d1-8b83-10b83a81001a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyMail}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="384" y="41" width="171" height="13" uuid="8eaf3b82-88e1-4e97-9962-2b71efba7f49">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyWebsite}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="384" y="52" width="171" height="13" uuid="88640930-1204-453e-b06f-06cc530ca6c4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyPhone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="210" y="90" width="345" height="13" uuid="3e0d0627-6fc3-4207-9eb5-be5c8dba781d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > 1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Attached to and forming part of policy No . "+$F{policyNo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="368" y="32" width="15" height="11" uuid="cdbfe446-5fd8-4f48-9a73-66a836da75e2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{pvImagepath}+"email.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="369" y="42" width="15" height="11" uuid="0c3bd612-b1c5-48d9-8e0f-d8fcbcee491a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{pvImagepath}+"website.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="369" y="53" width="15" height="11" uuid="c2042ecd-433a-4c54-a126-721f35e50f3a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{pvImagepath}+"phone.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="10" width="555" height="15" backcolor="#F0F0F0" uuid="33f448cf-6e8f-455e-a572-a92f5272c9cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TAX INVOICE"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="40" width="170" height="13" uuid="c574652a-6de8-42c6-b586-99f8e883986b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policy Number"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="40" width="385" height="13" uuid="6ec0a258-80bf-4827-9f9e-507bbdad6efc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="53" width="170" height="13" uuid="a9516997-3f31-4cbd-92e6-b7e595bc15c8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policy Period "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy  HH:mm:ss">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="53" width="109" height="13" uuid="e90e9bae-e8bf-4917-94a8-13853bac2303">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="66" width="170" height="13" uuid="01e90afc-8c08-428f-bee2-2fad8caed7ae">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Broker/Agent"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="66" width="385" height="13" uuid="62495707-7d20-4647-af66-57ea269c8592">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brokerName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="79" width="170" height="13" uuid="d92bf21b-8f86-49ab-9d00-2f36fc521491">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account Number"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="79" width="385" height="13" uuid="e2c9e435-ff61-4981-bd1c-c8b2e98d3d28">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coreAppBrokerCode}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="92" width="170" height="13" uuid="21673653-830f-46f2-adff-bf818f730586">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Document Number"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="92" width="385" height="13" uuid="148f2f79-fe90-43cd-82d6-835200f03bd7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{debitNoteNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="105" width="170" height="13" uuid="239d64e4-c1de-45de-a056-757d3da655a3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="118" width="170" height="13" uuid="d98f7902-58e1-4866-83d4-2d7b236c77f0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="131" width="170" height="13" uuid="558a8f68-c878-4be1-8d94-07bfd53420cc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Product"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="105" width="385" height="13" uuid="3d16cf4f-6adc-4e85-8dfc-67eff14eb976">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{effectiveDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="118" width="385" height="13" uuid="f991688f-3d0e-4eec-b9f6-eb59f18114db">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="131" width="385" height="13" uuid="f2322c80-4331-4519-94db-6933d3ad352f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy  HH:mm:ss">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="290" y="53" width="265" height="13" uuid="ed009119-9768-4dd2-bdbd-f55bb6840bc3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expiryDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy  HH:mm:ss">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="279" y="53" width="11" height="13" uuid="a36ff937-1051-4d43-9077-c17bbb1ae5b5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" to "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="555" height="15" backcolor="#F0F0F0" uuid="6aa0ff4d-3b2b-44ba-a1d0-e9f66a79e062">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Insured Details"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="15" width="170" height="13" uuid="2718b5c8-ce68-445a-a78a-52460f23aca7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Insured"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="15" width="385" height="13" uuid="16b3a54d-5be2-4b2f-ab38-d2a21775e044">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="28" width="385" height="13" uuid="883dd137-bd21-4048-9df3-c3445397e817">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="28" width="170" height="13" uuid="67a5f045-0399-45a2-9124-30dd4678c761">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="48">
+			<printWhenExpression><![CDATA[$F{companyId} != null && $F{companyId}.toString().equals("100049")]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="555" height="15" backcolor="#F0F0F0" uuid="3be57d35-2e71-441f-bd93-fa37450021b4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Additional Payment Details"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="15" width="555" height="13" uuid="15d44948-42e9-425e-9e3e-f37dea9a06fa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Annual policy, please pay immediately or within 60 days from date of inception if through a licensed Eswatini Broker."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="28" width="555" height="13" uuid="3cdc1ae2-1158-4632-bfdb-3431a33111cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For Monthly/ Quarterly instalments, non-payment on due date as reflected on our bank statement shall make policy lapse."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="14" uuid="20fd073c-789b-481f-9c59-f57ee399eff5"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["We have DEBITED your account with the following amount :"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="46">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="0" y="0" width="555" height="39" uuid="8edce22d-8dde-4617-a562-7a66883637fd">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="bb838416-bbcc-4104-9770-ee6d54338615">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("premiumDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="400" uuid="ec539f2f-1579-4228-8aa4-f8ca53a19fc5">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableFooter style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="400" height="13" backcolor="#F0F0F0" uuid="c6f7cf9c-1ff8-4585-b9ab-d73d2cdf8348"/>
+								<box leftPadding="3"/>
+								<textElement>
+									<font fontName="Cambria" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="Table_CH" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="400" height="13" backcolor="#F0F0F0" uuid="adfc795d-bd4b-428c-a0cb-a5b822fe1cdf"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Description]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField>
+								<reportElement x="0" y="0" width="400" height="13" uuid="da90bb6d-0d72-4831-88a6-c60457352388"/>
+								<box leftPadding="3"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{narration}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="155" uuid="8412ddaf-476a-4c6d-bdad-6d885ad913b8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableFooter style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField pattern="#,##0.00">
+								<reportElement mode="Opaque" x="0" y="0" width="155" height="13" backcolor="#F0F0F0" uuid="b53ee9eb-4ff6-453d-be66-2feda7810424"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right">
+									<font fontName="Cambria" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{tot_amounr}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="Table_CH" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="155" height="13" backcolor="#E3E3E3" uuid="e1076dfa-d7e2-43d3-8fd5-f1a5c1e0d199"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Amount  "]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField pattern="#,##0.00">
+								<reportElement x="0" y="0" width="155" height="13" printWhenGroupChanges="status" uuid="2b47d460-7df9-40bc-be2e-3d1c1eba3d3f"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new java.math.BigDecimal($F{amount})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="19">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="30" y="0" width="525" height="14" uuid="6bf6e234-b347-46ff-8c16-a37c0d162fde"/>
+				<box leftPadding="1"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountInWords}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="30" height="14" uuid="c0442177-194a-4266-ab06-0b696ff4a9ca"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="122">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{companyId} == null || !$F{companyId}.toString().equals("100047")]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="3" width="555" height="15" backcolor="#F0F0F0" uuid="6f624bab-4368-489e-b3ae-cff92f947b36">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Details"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="18" width="170" height="13" uuid="6fd7dbe9-f619-434c-9c11-343dfa428ee1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="18" width="385" height="13" uuid="2887b1ca-c310-4486-b1d9-e9753a3a02df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="31" width="170" height="13" uuid="27695409-817a-4d79-a609-07ae895dc623">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account Name"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="31" width="385" height="13" uuid="70c94d48-088f-442e-ac55-ff952240d557">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankaccountName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="44" width="170" height="13" uuid="43d90b18-ddbf-4f75-af60-42c6300e317f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account number"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="57" width="170" height="13" uuid="946d0048-58e2-4165-8d67-a02176bd254a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift code"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="44" width="385" height="13" uuid="c8ddb054-55b0-4afc-825b-03d4dc6c4cec">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankaccountNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="57" width="385" height="13" uuid="6607ceba-582a-4609-85c8-96d81a12c38a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankswiftCode}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="70" width="170" height="13" uuid="38940d21-7e8f-42b6-88d7-3c82b343ceb9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Currency"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="70" width="385" height="13" uuid="c7f19e39-887f-457d-be7c-a3b4c8f81d27">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Table_TH" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="83" width="170" height="13" backcolor="#FFFFFF" uuid="179a8577-3d88-40bc-9fe6-08f570d23003">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Name"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="96" width="170" height="13" uuid="fc07dc9b-95c4-458f-8d54-a657ee598aca">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="83" width="385" height="13" backcolor="#FFFFFF" uuid="66bf7454-cb58-4675-a575-6a24a48b4f17">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="96" width="385" height="13" uuid="f9febcbe-e9c9-440b-84b8-c5ea472b9a0d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchCode}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="95">
+			<printWhenExpression><![CDATA[$F{companyId} != null && $F{companyId}.toString().equals("100047")]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="3" width="555" height="15" backcolor="#F0F0F0" uuid="86e885ae-e524-4da4-8abe-b205ab2fa3a4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Details"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="18" width="555" height="62" uuid="62d7185e-7b40-46e2-ae18-7a68d6f13f48">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="42" width="305" height="13" uuid="6b31323e-deb3-4194-bdf6-ac66366bdd83">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="7">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For the Bank details, please refer to the attached sheet on the last page."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="70" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{companyId} != null && $F{companyId}.toString().equals("100049")]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="14" uuid="aca42368-8648-4002-ae5b-50812767109c"/>
+				<box leftPadding="5"/>
+				<textElement>
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Notes :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="12" y="14" width="543" height="13" uuid="94df0a9e-ab28-4921-964e-1f88c68a092f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["In case we do not receive renewal instructions on the date of expiry, policy will lapse and shall be renewed on fresh terms on receipt of instruction. Time on risk premium will be payable by broker in case a renewal is request"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="14" width="92" height="13" uuid="720ba788-b286-440d-a36b-eb9a7cfe5eb1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="27" width="92" height="13" uuid="9d8ffd79-4d1b-45a5-810b-06246ffa72d9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="12" y="27" width="543" height="13" uuid="bbf05c73-04cb-409c-9156-d79ca110bff3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For Debit Order Customers, debits shall continue and In case of change in terms leading to reduction in premium shall be adjusted."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="40" width="92" height="13" uuid="4a753ab4-31a8-4f87-9c6e-7edf71ebf605">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="12" y="40" width="543" height="13" uuid="15f150d3-ce3d-41e5-8ea2-2f8423b1c150">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["On placements, Invoice shall be issued and payable within statutory period from date of inception and in all cases the broker shall be responsible for Time on Risk."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="53" width="92" height="13" uuid="d39f0294-5033-4602-9311-5c0acb488445">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="5" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="12" y="53" width="543" height="13" uuid="98a93e8a-d1b9-4d66-a1ec-4c9e9da469ad">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For Bonds and CAR payment is immediate by broker/ insured, in case of non-payment the broker is responsible."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="11">
+			<break>
+				<reportElement x="0" y="10" width="100" height="1" uuid="0e63e3a8-49f7-46e7-acb3-b844474915cb"/>
+			</break>
+		</band>
+		<band height="27">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{emiYn}.equals("Y")]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="7" width="555" height="14" uuid="a3ebc3c4-816c-4652-8849-7ee0e7f1b50d"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cambria" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policy Installment Detail"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="43">
+			<printWhenExpression><![CDATA[$F{emiYn}.equals("Y")]]></printWhenExpression>
+			<rectangle radius="14">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="2" width="555" height="41" uuid="9fe04a90-5185-4f60-8c79-cd9e58d06225">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</rectangle>
+			<componentElement>
+				<reportElement positionType="Float" x="12" y="9" width="518" height="26" uuid="4a7fc5c9-e73f-443a-a64e-433b4744fb9c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="installmentDetail" uuid="f80b6849-373a-41a1-99d8-505cfe3d7b74">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("installmentDetail")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="87" uuid="6cc303b1-1142-4c9f-adbe-19e162f7aa79">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="87" height="13" backcolor="#F0F0F0" uuid="8ebe662a-00f9-420e-9f2b-4d7fca5a866b"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Sr.No"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="87" height="13" uuid="52e719ef-d44f-412b-bf7b-b3a9407f22d4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{srNo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="87" uuid="c7da4d35-babe-43cb-b107-db50190fe9b1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="87" height="13" backcolor="#F0F0F0" uuid="38bc1402-1827-4d8e-bbc9-f1792e6e7606"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Due Date"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField pattern="dd/MM/yyyy">
+								<reportElement x="0" y="0" width="87" height="13" uuid="db97cc40-0fc9-4136-9187-91df4395ae3b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format(
+    new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse($F{dueDate})
+)]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="87" uuid="deb8e09b-5755-4a58-a908-f2e753db24b2">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="87" height="13" backcolor="#F0F0F0" uuid="1e62ddb7-998f-4232-b8a7-d06d65fcf11b"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Installment %"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="87" height="13" uuid="e4033236-b004-4c52-8afd-0439d2b7276a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{percentage}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="87" uuid="5a33fca4-86f6-4bb2-8bf8-813da988e719">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="87" height="13" backcolor="#F0F0F0" uuid="acd532f7-3be8-449e-9e33-7626eac64ff3"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Currency"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="87" height="13" uuid="a7d76536-040b-4f50-95aa-46ba2e1cbc38"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="85" uuid="c60fb01a-06d8-4f81-b9ad-93ca769ef17d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="85" height="13" backcolor="#F0F0F0" uuid="47f35c37-d38c-4dca-b299-8eedf566f251"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Amount Due"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="85" height="13" uuid="6e822684-f824-4d29-be88-55f3948a1a26"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{dueAmount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="85" uuid="9a23157f-e122-465c-a962-9f0c62a017b6">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_TD" height="13" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="85" height="13" backcolor="#F0F0F0" uuid="ee6ff421-8cd8-4c9b-ae72-9d12e15975ff"/>
+								<textElement textAlignment="Center">
+									<font fontName="Cambria" size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Status"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="13">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="85" height="13" uuid="d5754016-7f5e-4eb3-ad7e-50b8b22de7db"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Cambria" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{paymentStatus}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="522">
+			<printWhenExpression><![CDATA[$F{companyId} != null && $F{companyId}.toString().equals("100047")]]></printWhenExpression>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="15" width="555" height="22" uuid="61e06318-4384-432f-a71f-d1cf7d146f2c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PHOENIX BOTSWANA BANKING DETAILS (BW00000208133)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="42" width="237" height="120" uuid="de2d089e-7be8-4a48-a5f9-723fd2e5eb86">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="42" width="319" height="120" uuid="6813e8e8-f228-4194-9ec9-22ce26966bf3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="65" width="118" height="15" uuid="392cd9e8-891c-4080-b897-011204292189">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="65" width="119" height="15" uuid="97cb451f-cfad-4f40-8dcd-b59f95d1bef7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="50" width="118" height="15" uuid="f8e9353b-4b85-4cb6-ab29-34203a66d3c6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ACCESS BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="118" height="15" uuid="2c2dcbf6-6d45-4063-acc6-94b62777b59c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="80" width="119" height="15" uuid="fecf1d5f-b8fa-4b85-978d-d42d70d0ed13">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Access Bank Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="95" width="119" height="15" uuid="e5139ce4-b5b8-4f90-9894-1315fd7cb4a1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Corporate"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="95" width="118" height="15" uuid="84cdb68f-fe60-46c6-ac2a-902d50634606">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="110" width="119" height="15" uuid="6026ccd9-fbc6-4ccc-acbc-cadc62cacab6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4049202640700"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="110" width="118" height="15" uuid="4a1ddd8a-ad31-4270-b913-e9b9ba466b8e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="125" width="118" height="15" uuid="c3c509bc-7dac-4bbe-86ad-6e188e0814a8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="125" width="119" height="15" uuid="611f0334-5600-4334-b6a2-939bdba16188">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["552067"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="140" width="118" height="15" uuid="32ff64ea-f79c-4014-9885-3fb432cb5dd9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="140" width="119" height="15" uuid="91e45298-9987-49a6-a35f-da8e86c92fb9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FMBZBWGA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="50" width="118" height="15" uuid="971287c2-4c49-4b84-bbd7-9dfffa139183">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ACCESS USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="65" width="118" height="15" uuid="c32ff1e6-aee4-4b83-a621-50052cfd0e4f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="80" width="118" height="15" uuid="25e0f5f7-03e7-442d-a1d9-1b11c1d26e7d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="95" width="118" height="15" uuid="6ae08890-8662-41be-83c4-b37ab531a998">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="110" width="118" height="15" uuid="1cdaa009-565d-45bc-8cca-8e29b406ae9f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="125" width="118" height="15" uuid="ea8d7529-f3d4-4fab-b6a5-d6bdf0c848a1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="140" width="118" height="15" uuid="2b849fb5-3b92-4e19-811a-bb09ad76160c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="140" width="200" height="15" uuid="b6a13937-5cde-4d4b-9ffb-ac5068308a2b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FMBZBWGA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="125" width="200" height="15" uuid="359f6327-7634-477c-9b3e-e0fc693b67b3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["552067"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="110" width="200" height="15" uuid="f57d0671-07d7-451c-99eb-67a4cf4d9ad5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4049202400200"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="95" width="200" height="15" uuid="13ddd933-f5fa-4fff-bef9-f8c604e717bd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Corporate"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="80" width="200" height="15" uuid="2673cd18-a56a-466a-8c2e-c274490d4bbe">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Access Bank Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="65" width="200" height="15" uuid="e831d7ac-45af-45f6-a5e8-a8940be8fa36">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="162" width="237" height="120" uuid="f8cf4cff-8d16-4624-aaf1-42ad38e3d14c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="162" width="319" height="120" uuid="591995b6-140b-408f-ad34-6b921bc32d1d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="185" width="118" height="15" uuid="cd2af1fe-4eca-48a9-af16-0bf62cccb656">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="185" width="119" height="15" uuid="ba4ef9eb-e846-43e0-bf47-99724106472b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="170" width="118" height="15" uuid="202e8741-5c9c-417c-8541-9d2ea6a95316">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ABSA BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="200" width="118" height="15" uuid="966073dc-85b0-40c0-8e6e-96aed9ef95f0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="200" width="119" height="15" uuid="5ce057fa-63eb-4c71-a78e-bb361c1866be">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ABSA Bank Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="215" width="119" height="15" uuid="fd40854c-202b-4801-a3d4-eb6e60eaf104">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Broadhurst"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="215" width="118" height="15" uuid="fa08b52c-8be6-4921-8ec0-89b10e55cadc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="230" width="119" height="15" uuid="70460eb0-30ce-43a5-87bf-3c3660ffcacb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1451181"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="230" width="118" height="15" uuid="a032beb5-da2e-4478-9c0a-4eeb43002a6d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="245" width="118" height="15" uuid="f1bb6ba5-d87e-470a-9ee1-9ed877b7bf15">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="245" width="119" height="15" uuid="4ff49add-1a35-49bd-8d25-f56132d1987f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["290467"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="260" width="118" height="15" uuid="47574c32-2c1d-4c7f-aa8d-5a8569730495">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="260" width="119" height="15" uuid="1a94b0dd-96e2-411c-88e1-70bf26587016">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BARCBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="170" width="118" height="15" uuid="340895dc-0283-4631-8411-5fc8e6532cac">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ABSA USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="185" width="118" height="15" uuid="037cbf43-01d6-4a53-8e10-70815bdb016e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="200" width="118" height="15" uuid="d65d4f41-2b0f-4c43-9334-0feb34c4120e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="215" width="118" height="15" uuid="5d43acc4-75ee-4aca-b78e-e362aae236ce">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="230" width="118" height="15" uuid="e654bd9b-05b3-45a4-8f2f-18de2b14c27c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="245" width="118" height="15" uuid="975ff0a4-6501-456f-ab75-0a7668a6712e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="260" width="118" height="15" uuid="60d36ef9-767d-443d-a0b2-039c7b3eefaa">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="260" width="200" height="15" uuid="fda71f77-c0de-4302-928f-8758e269080f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BARCBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="245" width="200" height="15" uuid="4e0dec26-195c-4daf-aaec-6b20c644e81f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["290467"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="230" width="200" height="15" uuid="52d14886-8489-4ad5-94f7-a1b91ff58388">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1030468"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="215" width="200" height="15" uuid="ae336e23-6864-4bcd-b983-8050daebbede">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Broadhurst"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="200" width="200" height="15" uuid="9883ccd1-95f0-4d35-816f-773af7689a72">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ABSA Bank Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="185" width="200" height="15" uuid="e6eeb91b-fb53-4d27-a01c-540efb0dbaa2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="282" width="237" height="120" uuid="053c706f-a99f-48d9-ae61-fdf1609374b4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="282" width="319" height="120" uuid="3c0cd173-7532-4c92-9d33-96d588fd50a2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="305" width="118" height="15" uuid="d3658034-6d64-41d8-a7fe-5301dc1fe45c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="305" width="119" height="15" uuid="2b6eacdc-869e-48a0-8818-97bbd15014d1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="290" width="118" height="15" uuid="06ed4005-7aa9-4a7b-93c3-cce4a1580c43">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STANBIC BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="320" width="118" height="15" uuid="ea0b8ec8-2a8a-4dbe-a6b6-1f570916c91a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="320" width="119" height="15" uuid="56eecad8-42b4-4e2d-bcbc-47613d1deaaf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stanbic Bank"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="335" width="119" height="15" uuid="ec855c1f-7f1f-43fb-95c2-b9c1f9e490c3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gaborone"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="335" width="118" height="15" uuid="41fcaeee-a00c-4a78-9df5-c3b425b4befc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="350" width="119" height="15" uuid="10975bac-da8c-4559-bd2d-37f5c6273dca">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9060006044870"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="350" width="118" height="15" uuid="86347415-5349-4b5c-bbc7-e9b1d281926c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="365" width="118" height="15" uuid="3d5fc9b5-a7f4-4ea9-9993-27a6613459c0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="365" width="119" height="15" uuid="bb70eb73-f1ae-4fad-b574-ecffddb9c666">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["061967"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="380" width="118" height="15" uuid="1162a5e3-3e5a-4eb5-b582-41108790d396">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="380" width="119" height="15" uuid="c7d79b56-f0e7-4da0-b472-cfe86d1119bf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SBICBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="290" width="118" height="15" uuid="341a3fae-32dd-4679-8201-fd5fa8e185c5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STANBIC USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="305" width="118" height="15" uuid="f9eb3972-5b3d-498e-8f55-5a5be3dde84d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="320" width="118" height="15" uuid="aa7965c3-4c62-4df5-831a-691f69d4dbe7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="335" width="118" height="15" uuid="23cba496-04ac-4cdf-bbb5-797d44932120">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="350" width="118" height="15" uuid="aa2dd909-0dc6-4609-b9a1-9e9b94d65be8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="365" width="118" height="15" uuid="3511a4e4-cd68-44de-87e1-d1fbc75db19d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="380" width="118" height="15" uuid="45bd96db-c51b-436e-8c39-704e24fb0820">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="380" width="200" height="15" uuid="cd2f9372-0d5c-4978-94b7-b9e104027e02">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SBICBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="365" width="200" height="15" uuid="2cc08a61-7e13-4193-b8cd-bcc454ea0993">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["061967"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="350" width="200" height="15" uuid="fb6f44e6-a8ca-4999-b6e9-3d13f05e7de2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9060006238438"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="335" width="200" height="15" uuid="97946e82-7490-457c-969b-25ff948c9dc6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gaborone"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="320" width="200" height="15" uuid="2c2b1ca3-d3ac-4988-8265-60631c6acdbd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stanbic Bank"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="305" width="200" height="15" uuid="fb6877a6-960b-4774-972d-c4393041452f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="402" width="237" height="120" uuid="a24f72a5-3237-404d-ba25-634a3ea9cf2c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="402" width="319" height="120" uuid="fac2cef9-a144-4fb8-bb43-2f7164d3576a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="425" width="118" height="15" uuid="01da6f77-b7e5-4db1-8a58-a01c405b8d4c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="425" width="119" height="15" uuid="ba491808-b191-483e-b2ae-2ced65f1784d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="410" width="118" height="15" uuid="f16c7c56-4bd5-4d3c-967e-66be2cc8d4ec">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FNB BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="440" width="118" height="15" uuid="81df1d75-4ec4-4ab8-8c0e-56a459b43668">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="440" width="119" height="15" uuid="473816a7-f882-4cc4-8133-d02e2c284d35">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First National Bank Bot"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="455" width="119" height="15" uuid="aacf9df7-d88c-4ae6-ac13-f9d8cf25e65c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First Place"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="455" width="118" height="15" uuid="fb6e6c9b-9bb8-4fa6-b514-524d47f05d89">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="470" width="119" height="15" uuid="a72b9f5d-ebf1-4a22-baa8-e9ed66b2ffd3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["62847755892"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="470" width="118" height="15" uuid="4db42694-06c8-42bd-b42f-55de0738f3b1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="485" width="118" height="15" uuid="fcdee3db-4e03-4434-9fff-0c132d49ecbe">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="485" width="119" height="15" uuid="62cb9296-85f4-4390-9a86-d53d516718be">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["282267"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="500" width="118" height="15" uuid="e0393046-3048-4a04-adeb-e9a973af3ddb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="500" width="119" height="15" uuid="5f14108e-da84-46f7-854a-36d1746e82be">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRNBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="410" width="118" height="15" uuid="944a8a26-c9f5-4594-af75-64fe0645ba39">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FNB USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="425" width="118" height="15" uuid="3e7b88fa-a3cc-4110-97bb-20e58905f2e9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="440" width="118" height="15" uuid="99df2193-d294-4bb8-a7b0-0ec857dba391">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="455" width="118" height="15" uuid="7afd034d-b85c-44df-8a84-b9f10ebb9e72">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="470" width="118" height="15" uuid="b4c7273d-13c4-4ea9-9388-34e847b8e56d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="485" width="118" height="15" uuid="b5a8bd14-858e-4d83-8283-d2c28b6feda6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="500" width="118" height="15" uuid="56676e57-dda1-4175-80c6-80a8f7487a3a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="500" width="200" height="15" uuid="062c9eb9-8685-4c45-bf42-d5610c63d701">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRNBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="485" width="200" height="15" uuid="5a5138da-ab4e-4e35-b898-ca46e7653fed">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["282267"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="470" width="200" height="15" uuid="9822b880-daf6-49bd-8cdb-dd484822f647">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["62684596988"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="455" width="200" height="15" uuid="b0fdd04a-5b4b-4a27-8bf5-985a996a97ef">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First Place"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="440" width="200" height="15" uuid="084a2dc7-9ddc-4b3f-9eed-257d9a24a3ba">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First National Bank Bot"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="425" width="200" height="15" uuid="3d0dba5d-21d4-4414-ab9d-135335350ac0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="21">
+			<break>
+				<reportElement x="0" y="5" width="100" height="1" uuid="72876886-d569-4f35-b993-db4c4fc61b0f"/>
+			</break>
+		</band>
+		<band height="262">
+			<printWhenExpression><![CDATA[$F{companyId} != null && $F{companyId}.toString().equals("100047")]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="0" width="237" height="120" uuid="8475f231-edf0-4e4f-be98-cf8ddbb5049f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="319" height="120" uuid="66da9ce4-9200-4acf-a9e6-b883954883bc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="23" width="118" height="15" uuid="6d324fe4-37f3-4541-a811-554054f60290">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="23" width="119" height="15" uuid="90a25bd0-2ec6-47be-8ab5-d968d59579b9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="8" width="169" height="15" uuid="ff5f50eb-9f55-4e6c-8bdd-d72ea7274fb9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRST CAPITAL BANK BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="38" width="118" height="15" uuid="16c83072-2e8f-4abf-854e-a2c74a59dad5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="38" width="119" height="15" uuid="ef395ffc-ee9a-4ab1-8793-1a621d670e0a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First Capital Bank"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="53" width="119" height="15" uuid="73b16869-c903-4e40-b25e-1b926e910a49">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Main "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="53" width="118" height="15" uuid="401d7615-3ace-49a6-9f7f-0fcea0f44f2d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="68" width="119" height="15" uuid="648d35e9-3891-43cc-8b18-09f6e6c40e68">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0020075510101"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="68" width="118" height="15" uuid="4e3768ac-c3c4-4ae9-ba41-1556a3ab4a5e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="83" width="118" height="15" uuid="d66c75fb-12e3-47dd-8977-f33014b03155">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="83" width="119" height="15" uuid="bdd57716-fee0-493e-bf70-3ac89ff1ca9b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["800267"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="98" width="118" height="15" uuid="a1850d1e-00a4-42f5-8714-a6878d6f0270">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="98" width="119" height="15" uuid="409a5f77-c020-4bde-981f-04d53da57182">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FRCGBWGA "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="8" width="213" height="15" uuid="05e8d960-ab36-4510-b1c7-d238aeab7733">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FIRST CAPITAL BANK USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="23" width="118" height="15" uuid="310e3c49-5998-4b42-935a-bfa087accfd6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="38" width="118" height="15" uuid="a0716121-e485-43f4-afca-6d856f1b5974">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="53" width="118" height="15" uuid="156bf263-1388-4014-b357-a741fcd25496">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="68" width="118" height="15" uuid="013ac38c-f3ad-4629-98a2-c5804e9ba86a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="83" width="118" height="15" uuid="223f1113-d39a-4b9a-9506-574bf4e9a5dc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="98" width="118" height="15" uuid="b53057d8-3f72-47f5-89c4-851e72d06b71">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="98" width="200" height="15" uuid="00afefe0-f3d5-4aeb-880a-3d2d92f0ece1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FRCGBWGA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="83" width="200" height="15" uuid="0096ca6e-e989-4170-bf11-bf6fac97ffff">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["800267"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="68" width="200" height="15" uuid="56b642e9-8d72-44e9-8b15-61137f4c402d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0020075510211"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="53" width="200" height="15" uuid="40ddb271-8c5c-4ed8-8c20-72514d26f2f7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gaborone"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="38" width="200" height="15" uuid="82bab17c-c5e0-4dcf-a362-8a616da9fb56">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First Capital Bank"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="23" width="200" height="15" uuid="ff50871c-8dec-4413-9a8c-2cddd8dfbbe7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="120" width="237" height="120" uuid="35c994eb-50fe-403f-8f70-3c7175ef4809">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="120" width="319" height="120" uuid="1618f2a0-42cd-43b1-93cd-7278cd005af3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="143" width="118" height="15" uuid="047e9064-3014-437e-87b5-c92325ec66a8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="143" width="119" height="15" uuid="199dab3b-a166-4c14-9828-5238d89065f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="128" width="209" height="15" uuid="c78a33f8-b221-49af-8543-ed4b5cf87144">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BANK OF BARODA BWP"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="158" width="118" height="15" uuid="49ef0459-ce92-48ca-92d6-b0e3451131f9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="158" width="119" height="15" uuid="2e3da918-cce7-414e-8499-82fbd23093c4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank of Baroda"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="173" width="119" height="15" uuid="0764292d-c7ce-41a8-ab56-9fa5ba5d3e61">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gaborone"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="173" width="118" height="15" uuid="d91e88ee-5d9a-4f3b-a03e-254102ac55d0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="188" width="119" height="15" uuid="c2bee28d-00ca-4ccb-a121-e21ca9862b1a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["95210200002285"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="188" width="118" height="15" uuid="49e88bdf-12ca-46d2-8891-165c6acf9d7b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="203" width="118" height="15" uuid="1247a592-e935-4a12-99c4-a76318c4a835">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="203" width="119" height="15" uuid="3d2310b4-e116-4699-b8d9-8ba02bc0ce49">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["110167"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="218" width="118" height="15" uuid="4fbb14b7-e1a7-4016-82a6-c0a4d293de48">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="218" width="119" height="15" uuid="d01ea3d1-3316-4587-8417-1a5ae1e516c8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BARBBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="128" width="290" height="15" uuid="fd853350-5df5-4496-a77a-5c3f63238d5a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BANK OF BARODA USD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="143" width="118" height="15" uuid="5839ad72-fadf-4ce9-99a2-53835be5b3a6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="158" width="118" height="15" uuid="513f32f2-d06e-4b16-8cf7-7cf30345f8db">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank Name : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="173" width="118" height="15" uuid="c41b25cd-5689-4fe1-b89d-2dba1500ca22">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="188" width="118" height="15" uuid="fad93834-f626-4cd9-95bd-9c494066cff3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Account No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="203" width="118" height="15" uuid="d801f6fc-d96a-419f-9f4a-763e8feac05a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="218" width="118" height="15" uuid="8df00599-ede0-4d40-b40c-06f2e376d86f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Swift Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="218" width="200" height="15" uuid="66b234c9-fbbd-4669-b364-83887a26da82">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BARBBWGX"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="203" width="200" height="15" uuid="67d5390e-208e-4d3f-92b6-f1f484db8a73">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["110167"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="188" width="200" height="15" uuid="c496b21c-f468-4a17-a29d-d5d4bd9570aa">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["95211100005543"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="173" width="200" height="15" uuid="c4cb0df7-e950-4e59-8ee3-672cd07ad006">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gaborone"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="158" width="200" height="15" uuid="87693016-b556-4b24-b27b-601fdb7e086b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bank of Baroda"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="143" width="200" height="15" uuid="40c3f051-ecc1-401c-9977-ab1cc123dda3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix of Botswana"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="126">
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="101" backcolor="#F0F0F0" uuid="b485dfb4-290f-4b37-9f84-9b67cb9d5a56">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="12" y="37" width="52" height="13" uuid="5ee5de69-5dfd-4ff2-94a8-664f2e974e91">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Prepared by "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="37" width="10" height="13" uuid="dfda7e31-97ae-4f34-b953-a544eb64a763">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="37" width="108" height="13" uuid="4596702a-ff62-4a2c-b613-f28f91222873">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{createdBy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="50" width="52" height="13" uuid="f416814c-f4e4-424e-ac24-7f4fc0934478">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Approved by "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="50" width="10" height="13" uuid="582daee7-f133-4ef4-90a3-e47a41c805c6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Table_TH" x="74" y="50" width="108" height="13" uuid="7ed335fe-05cc-48c4-91f1-b95cbcc9c9d3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appBy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="63" width="52" height="13" uuid="362d31a7-90ea-4089-acbc-dbe00b07eb97">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Place"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="63" width="10" height="13" uuid="7d0718f8-17c2-4a1a-a609-dbeb526a2654">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="63" width="108" height="13" uuid="5a6bc694-f416-468d-9b2c-b14fc97ab44d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="76" width="52" height="13" uuid="12b2a15c-1565-4d31-83e9-b5b94120ed46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="76" width="10" height="13" uuid="397306c2-50ca-4c25-9478-0cc33af08f96">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="74" y="76" width="108" height="13" uuid="a83d1af7-4e14-4bf2-972b-3dfcace53592">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{effectiveDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="35" width="220" height="13" uuid="2a5617e8-9770-4d2a-9f6e-1217f812cfb7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="78" width="220" height="13" uuid="a830b95c-c38e-41f1-8dd8-9724dd08033b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Authorized Signatory"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="327" y="75" width="200" height="1" uuid="bfd12ed4-44c1-4d13-9620-927e1a8e7b63">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="182" y="109" width="28" height="17" uuid="72790041-4d3e-46a3-91c6-f722ba76e2b3"/>
+				<textElement>
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="210" y="109" width="10" height="17" uuid="980efb15-234f-4ffd-a53a-d4fbcac9a3a0"/>
+				<textElement>
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="220" y="109" width="18" height="17" uuid="27722dc5-70be-4a7d-81d8-03c3698405f2"/>
+				<textElement>
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="238" y="109" width="24" height="17" uuid="294505c7-07f4-4be5-841a-579356418534"/>
+				<textElement>
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="390" y="48" width="70" height="26" uuid="d0c45e81-81e5-42e3-aa2d-6a221624c9e6"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+"Signature2.PNG"]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement x="385" y="0" width="70" height="35" uuid="a93c3e32-d434-4332-9e8b-27fc37f82457"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{signature}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

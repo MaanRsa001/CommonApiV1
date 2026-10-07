@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.1.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Professional_Indemnity" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="85b7eb85-2a9a-4af5-bf06-aa5867dbdf2a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value=" ProfessionalIndemnityQuotation.xml"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="ce5dd353-ff3b-4182-91d7-3da3f88e4440">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="profectionalint.jrdax"/>
+		<queryString language="JSON">
+			<![CDATA[sectionDetails.sectionDetails.sectionList.excessdetails]]>
+		</queryString>
+		<field name="excessper" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="excessper"/>
+			<fieldDescription><![CDATA[excessper]]></fieldDescription>
+		</field>
+		<field name="excessamount" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="excessamount"/>
+			<fieldDescription><![CDATA[excessamount]]></fieldDescription>
+		</field>
+		<field name="excessdesc" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="excessdesc"/>
+			<fieldDescription><![CDATA[excessdesc]]></fieldDescription>
+		</field>
+		<field name="excessName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="excessName"/>
+			<fieldDescription><![CDATA[excessName]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="pvImagepath" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[Commonconditions.conditionTerms]]>
+	</queryString>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="approvedBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedBy"/>
+		<fieldDescription><![CDATA[approvedBy]]></fieldDescription>
+	</field>
+	<field name="policyNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyNo"/>
+		<fieldDescription><![CDATA[policyNo]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="productName"/>
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="email1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="email1"/>
+		<fieldDescription><![CDATA[email1]]></fieldDescription>
+	</field>
+	<field name="companylogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companylogo"/>
+		<fieldDescription><![CDATA[companylogo]]></fieldDescription>
+	</field>
+	<field name="companyPhone" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPhone"/>
+		<fieldDescription><![CDATA[companyPhone]]></fieldDescription>
+	</field>
+	<field name="stateName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="stateName"/>
+		<fieldDescription><![CDATA[stateName]]></fieldDescription>
+	</field>
+	<field name="inceptionDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="userMobile" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userMobile"/>
+		<fieldDescription><![CDATA[userMobile]]></fieldDescription>
+	</field>
+	<field name="companyVrnNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyVrnNumber"/>
+		<fieldDescription><![CDATA[companyVrnNumber]]></fieldDescription>
+	</field>
+	<field name="sectionList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionList"/>
+		<fieldDescription><![CDATA[sectionList]]></fieldDescription>
+	</field>
+	<field name="attachMents" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="attachMents"/>
+		<fieldDescription><![CDATA[attachMents]]></fieldDescription>
+	</field>
+	<field name="productId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="productId"/>
+		<fieldDescription><![CDATA[productId]]></fieldDescription>
+	</field>
+	<field name="entryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="entryDate"/>
+		<fieldDescription><![CDATA[entryDate]]></fieldDescription>
+	</field>
+	<field name="coverageDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coverageDetails"/>
+		<fieldDescription><![CDATA[coverageDetails]]></fieldDescription>
+	</field>
+	<field name="clauseDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="clauseDetails"/>
+		<fieldDescription><![CDATA[clauseDetails]]></fieldDescription>
+	</field>
+	<field name="companyPoBox" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPoBox"/>
+		<fieldDescription><![CDATA[companyPoBox]]></fieldDescription>
+	</field>
+	<field name="companyremarks" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyremarks"/>
+		<fieldDescription><![CDATA[companyremarks]]></fieldDescription>
+	</field>
+	<field name="vatAmount" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatAmount"/>
+		<fieldDescription><![CDATA[vatAmount]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="policyCoverData" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyCoverData"/>
+		<fieldDescription><![CDATA[policyCoverData]]></fieldDescription>
+	</field>
+	<field name="branchCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchCode"/>
+		<fieldDescription><![CDATA[branchCode]]></fieldDescription>
+	</field>
+	<field name="companyId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyId"/>
+		<fieldDescription><![CDATA[companyId]]></fieldDescription>
+	</field>
+	<field name="phoenixVatAmount" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="phoenixVatAmount"/>
+		<fieldDescription><![CDATA[phoenixVatAmount]]></fieldDescription>
+	</field>
+	<field name="postalAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="postalAddress"/>
+		<fieldDescription><![CDATA[postalAddress]]></fieldDescription>
+	</field>
+	<field name="PerLimitOfIndemity" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="PerLimitOfIndemity"/>
+		<fieldDescription><![CDATA[PerLimitOfIndemity]]></fieldDescription>
+	</field>
+	<field name="mobileNo1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="mobileNo1"/>
+		<fieldDescription><![CDATA[mobileNo1]]></fieldDescription>
+	</field>
+	<field name="phoenixVatPercent" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="phoenixVatPercent"/>
+		<fieldDescription><![CDATA[phoenixVatPercent]]></fieldDescription>
+	</field>
+	<field name="brokerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerName"/>
+		<fieldDescription><![CDATA[brokerName]]></fieldDescription>
+	</field>
+	<field name="coreAppBrokerCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coreAppBrokerCode"/>
+		<fieldDescription><![CDATA[coreAppBrokerCode]]></fieldDescription>
+	</field>
+	<field name="debitNoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="debitNoteNo"/>
+		<fieldDescription><![CDATA[debitNoteNo]]></fieldDescription>
+	</field>
+	<field name="premiumDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premiumDetails"/>
+		<fieldDescription><![CDATA[premiumDetails]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="firstLossPayeesList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="firstLossPayeesList"/>
+		<fieldDescription><![CDATA[firstLossPayeesList]]></fieldDescription>
+	</field>
+	<field name="signature" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signature"/>
+		<fieldDescription><![CDATA[signature]]></fieldDescription>
+	</field>
+	<field name="agencyCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="agencyCode"/>
+		<fieldDescription><![CDATA[agencyCode]]></fieldDescription>
+	</field>
+	<field name="vatPercent" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPercent"/>
+		<fieldDescription><![CDATA[vatPercent]]></fieldDescription>
+	</field>
+	<field name="limitIndemity" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="limitIndemity"/>
+		<fieldDescription><![CDATA[limitIndemity]]></fieldDescription>
+	</field>
+	<field name="taxName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="taxName"/>
+		<fieldDescription><![CDATA[taxName]]></fieldDescription>
+	</field>
+	<field name="expiryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="expiryDate"/>
+		<fieldDescription><![CDATA[expiryDate]]></fieldDescription>
+	</field>
+	<field name="membersList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="membersList"/>
+		<fieldDescription><![CDATA[membersList]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premium"/>
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<field name="cityName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cityName"/>
+		<fieldDescription><![CDATA[cityName]]></fieldDescription>
+	</field>
+	<field name="overAllPremium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="overAllPremium"/>
+		<fieldDescription><![CDATA[overAllPremium]]></fieldDescription>
+	</field>
+	<field name="excessDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="excessDetails"/>
+		<fieldDescription><![CDATA[excessDetails]]></fieldDescription>
+	</field>
+	<field name="sectionDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionDetails"/>
+		<fieldDescription><![CDATA[sectionDetails]]></fieldDescription>
+	</field>
+	<field name="brokerBranchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerBranchName"/>
+		<fieldDescription><![CDATA[brokerBranchName]]></fieldDescription>
+	</field>
+	<field name="customerId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerId"/>
+		<fieldDescription><![CDATA[customerId]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="place" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="place"/>
+		<fieldDescription><![CDATA[place]]></fieldDescription>
+	</field>
+	<field name="GrossIncome" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="GrossIncome"/>
+		<fieldDescription><![CDATA[GrossIncome]]></fieldDescription>
+	</field>
+	<field name="occupationDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="occupationDetails"/>
+		<fieldDescription><![CDATA[occupationDetails]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="vatPremium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPremium"/>
+		<fieldDescription><![CDATA[vatPremium]]></fieldDescription>
+	</field>
+	<field name="exclusionDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="exclusionDetails"/>
+		<fieldDescription><![CDATA[exclusionDetails]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchName"/>
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="totalPremium" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="totalPremium"/>
+		<fieldDescription><![CDATA[totalPremium]]></fieldDescription>
+	</field>
+	<field name="mobileNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="mobileNo"/>
+		<fieldDescription><![CDATA[mobileNo]]></fieldDescription>
+	</field>
+	<field name="renewalDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="renewalDate"/>
+		<fieldDescription><![CDATA[renewalDate]]></fieldDescription>
+	</field>
+	<field name="userName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userName"/>
+		<fieldDescription><![CDATA[userName]]></fieldDescription>
+	</field>
+	<field name="PerLimitOfIndemityDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="PerLimitOfIndemityDesc"/>
+		<fieldDescription><![CDATA[PerLimitOfIndemityDesc]]></fieldDescription>
+	</field>
+	<field name="companyAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyAddress"/>
+		<fieldDescription><![CDATA[companyAddress]]></fieldDescription>
+	</field>
+	<field name="identificationNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="identificationNo"/>
+		<fieldDescription><![CDATA[identificationNo]]></fieldDescription>
+	</field>
+	<field name="companyMail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyMail"/>
+		<fieldDescription><![CDATA[companyMail]]></fieldDescription>
+	</field>
+	<field name="companyWebsite" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyWebsite"/>
+		<fieldDescription><![CDATA[companyWebsite]]></fieldDescription>
+	</field>
+	<field name="firstHalfconditions" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionDetails.sectionDetails.firstHalfconditions"/>
+		<fieldDescription><![CDATA[sectionDetails.sectionDetails.firstHalfconditions]]></fieldDescription>
+	</field>
+	<field name="occupation1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="occupationDetails.occupation1"/>
+		<fieldDescription><![CDATA[occupationDetails.occupation1]]></fieldDescription>
+	</field>
+	<field name="conditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Commonconditions.conditionTerms"/>
+		<fieldDescription><![CDATA[Commonconditions.conditionTerms]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="12" width="555" height="18" backcolor="#E0E0E0" uuid="aca5b604-39c6-4c43-a41c-4c364a355977">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Professional indemnity Insurance Certificate"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="42" width="555" height="1" uuid="32c4ca82-46e5-493c-bd25-f47119620c13">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<image>
+				<reportElement x="0" y="2" width="101" height="38" uuid="b2552953-0d47-4138-81f3-f6f0462839c4"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companylogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="158" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="9" width="555" height="136" uuid="d71e731a-c1ab-4a21-b5cb-3f20dc5f9987"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="1" width="181" height="15" uuid="49e73f77-c859-4637-bff8-7aaa4df998df">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Name"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="181" height="15" uuid="9d634172-afa5-4f98-8866-03daa4120aac">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Address"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="31" width="181" height="15" uuid="b95716f1-8a15-4c22-bd15-2a8fcfba0a1c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Business/Profession"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="46" width="181" height="15" uuid="91629515-ea84-4acc-b8a0-880ff0958791">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy Number"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="61" width="181" height="15" uuid="8c10af10-18fa-4775-8ec7-9b86d7cda384">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Period of Insurance"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="121" width="555" height="15" uuid="7af21a68-d6df-41bb-b9dd-2f016873be0d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Subject to the terms, conditions and exceptions of the Professional indemnity Policy issued."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="1" width="374" height="15" uuid="871758e6-899d-486a-b854-1513759947dc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="16" width="374" height="15" uuid="1f105084-3dd3-4a4b-a150-89ba224995c2">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="31" width="374" height="15" uuid="dc9305c1-2c8f-412d-a484-ef2080c27f2c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{occupation1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="46" width="374" height="15" uuid="a67ceaef-3748-4170-9374-d3fc1e77da8e">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{policyNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="61" width="99" height="15" uuid="73e198c1-e631-49b0-9372-2e62ab975c36">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["From"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="76" width="181" height="15" uuid="72313a1f-dac6-4e1e-a3b1-d3477e530ac2">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Renewal Date"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="181" y="76" width="374" height="15" uuid="6c3d2223-b7ec-4f79-9a94-82c3ab83dd79">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{renewalDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="91" width="181" height="15" uuid="f06c3d0e-f205-4b8c-b6e4-4ab7c9b3443b">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Annual Premium (Ksh)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="91" width="374" height="15" uuid="c73e3b72-4dc8-4731-b2da-533c84260836">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{totalPremium}+" Inclusive of levies"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="280" y="61" width="99" height="15" uuid="97856aca-c255-4151-935f-266c4937ccb4">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="379" y="61" width="81" height="15" uuid="e12eda4c-fbf3-4dcf-904e-821de2f2bf69">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["To"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="460" y="61" width="95" height="15" uuid="ee557308-433b-42ee-966e-e9965421ca0c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{expiryDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="106" width="181" height="15" uuid="60fd31ed-eea1-44e7-9b18-fe922257c6fc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Territorial Limits"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="106" width="374" height="15" uuid="165d0bfc-d6c7-40f5-aea0-47c271285038">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Kenya Only"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="77">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="6" width="555" height="16" backcolor="#E0E0E0" uuid="484610bc-89c6-4c95-92f5-bceecbfe253f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LIMITS OF INDEMNITY"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="21" width="555" height="46" uuid="0fdabc35-1dda-4560-a272-0f9c3060f05f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="1" width="181" height="15" uuid="36ac2a65-e83f-40f9-867d-779b622d3954">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="181" y="1" width="199" height="15" uuid="4a26156b-afdd-4173-9fc7-ea2999962c6a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" Risk"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="380" y="1" width="175" height="15" uuid="29076379-0c4d-4fcb-827f-9f5fdebaf10a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Limit of Indemnity (Ksh)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="0" y="16" width="181" height="15" backcolor="#E0E0E0" uuid="b9d6d71e-6f14-4b92-8550-5dc02b30ca40">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["1"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="181" y="16" width="199" height="15" backcolor="#E0E0E0" uuid="b3d4c8ed-9608-4980-a81c-26ef251fd331">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Any one claim/event"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="380" y="16" width="175" height="15" backcolor="#E0E0E0" uuid="17aeba14-0463-453c-a96a-e9c26dda7174">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{limitIndemity}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="0" y="31" width="181" height="15" backcolor="#E0E0E0" uuid="ed367107-86f2-48e6-8c7f-c3f6d2fdf2a9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["2"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="181" y="31" width="199" height="15" backcolor="#E0E0E0" uuid="3ec353aa-fdf4-4b0c-9276-663a71279d63">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Any one period of insurance"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="380" y="31" width="175" height="15" backcolor="#E0E0E0" uuid="4959857d-e99f-4322-84ee-0580b44b5dea">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2" rightPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{limitIndemity}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="23">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="9" width="555" height="14" backcolor="#E0E0E0" uuid="16e6468b-45fb-4da1-a0dd-6147aadd4254">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EXCESS / REMARKS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="26">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="0" y="5" width="555" height="20" uuid="c4d58334-b589-4ec7-81db-d1a4db09f5f1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField>
+					<reportElement mode="Transparent" x="0" y="0" width="181" height="20" backcolor="#E0E0E0" uuid="f623ff16-2bc7-4d56-a5af-1ef56dea530f">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["SUBJECT TO"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="181" y="0" width="374" height="20" backcolor="#E0E0E0" uuid="ac6f911d-db22-42bb-8ab3-b4facf313e57">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" Deductible-"+$F{PerLimitOfIndemity} +" "+"of Limit of Indemnity Company profile No retroactive cover Kenya's Law jurisdiction clause Current practicing licence"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="144">
+			<frame>
+				<reportElement x="183" y="31" width="178" height="94" uuid="b8218bd9-f549-48ba-b2f8-72401ca52a6b"/>
+				<staticText>
+					<reportElement x="11" y="74" width="160" height="20" uuid="3333ef24-ce71-4dda-9f45-7cae996ed00e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Cambria" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Duty Authorized Signatory]]></text>
+				</staticText>
+				<line>
+					<reportElement x="-2" y="71" width="180" height="1" uuid="33c2d536-78c4-4f10-aa54-9f418b73f3b3">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+				</line>
+				<image>
+					<reportElement x="35" y="10" width="102" height="60" uuid="86cf5972-1fd6-40ac-9962-e3ce73ff6a25"/>
+					<imageExpression><![CDATA[$P{pvImagepath}+$F{signature}]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="220" y="2" width="70" height="15" uuid="d0ae88c7-01a9-4d4a-a19f-bbe327b8c957"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dated at Nairobi ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="11" width="400" height="21" uuid="149eacfc-2eaf-428c-8762-a49c893dbc70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signed for and on behalf of FIRST ASSURANCE COMPANY LTD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="126" width="81" height="18" uuid="0d6dadb9-be21-4e38-b8c9-c150766d311f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Prepared By:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="84" y="126" width="119" height="18" uuid="6456bdec-4b43-434b-b150-0bc2bd764922">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brokerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="2" width="100" height="15" uuid="72789b58-c463-4bdb-acbc-906c9c1cebc2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MMM/yy").format($F{inceptionDate})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="74">
+			<textField>
+				<reportElement x="1" y="7" width="555" height="15" uuid="8e0f4781-4189-438b-8f64-c33904189144">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["First Assurance Company LTD,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="39" width="555" height="15" uuid="2c09154e-63b3-40a3-8a27-f1836b3dfeb8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Email :hoinfo@firstassurance.co.ke, Website :www.firstassurance.co.ke."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="19" width="555" height="15" uuid="c85e8bb3-7b3d-4e90-a451-de49e08f0df6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["P.O BOX 30064 - 00100,NAIROBI, KENYA."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="30" width="555" height="15" uuid="08187f5e-4911-4902-b55e-dc9ff503ddae">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phone :+254-20-2900000/2692250,Fax :+254-20-2900200,"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="f4dba623-a049-4742-8c3e-21416080c605">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

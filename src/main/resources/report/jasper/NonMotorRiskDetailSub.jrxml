@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.1.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NonMotorRiskDetailSub" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60ea7171-bb12-4900-baaf-ae55f4ec97db">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RiskDetail"/>
+	<subDataset name="Dataset1" uuid="da904970-2a5f-4ddb-a8e9-b2bc13ffeca5">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RiskDetail"/>
+		<queryString language="json">
+			<![CDATA[sectionDetails.coverDetails.value]]>
+		</queryString>
+		<field name="key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="key"/>
+			<fieldDescription><![CDATA[key]]></fieldDescription>
+		</field>
+		<field name="value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="value"/>
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="json">
+		<![CDATA[sectionDetails.coverDetails]]>
+	</queryString>
+	<field name="key" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="key"/>
+		<fieldDescription><![CDATA[key]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="value"/>
+		<fieldDescription><![CDATA[value]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="-16" y="5" width="555" height="20" uuid="8e85bde3-8955-427d-a1a9-e3a139657a18">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cover Name : "+$F{key}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<rectangle radius="10">
+				<reportElement stretchType="RelativeToBandHeight" x="-16" y="4" width="480" height="26" uuid="58b2251c-c6b0-4094-9f31-b9dd589d1bb2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</rectangle>
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" x="-13" y="10" width="555" height="15" uuid="73781776-3687-44e3-8bb4-5d279fd14341">
+					<property name="com.jaspersoft.studio.unit.CONTENTS.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal">
+					<datasetRun subDataset="Dataset1" uuid="656e1d05-54a2-4725-a27b-541862a6eb2a">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("value")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="15" width="240">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="120" height="15" isRemoveLineWhenBlank="true" uuid="dbbb10fd-e46a-487e-a822-b4b42044e434">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box leftPadding="2" rightPadding="0">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font fontName="Calibri" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{key}.substring(0,1).toUpperCase() + $F{key}.substring(1).toLowerCase()]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement stretchType="RelativeToBandHeight" x="120" y="0" width="120" height="15" isRemoveLineWhenBlank="true" uuid="261b20cc-420e-4e0f-a78c-b858d0fa96b6">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box leftPadding="2" rightPadding="0">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Calibri"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

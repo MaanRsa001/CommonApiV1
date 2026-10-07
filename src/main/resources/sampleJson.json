@@ -1,0 +1,98 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "fieldGroupClassName": "row",
+        "fieldGroup": [
+          {
+            "className": "col-4",
+            "type": "input",
+            "key": "CustomerName",
+            "props": {
+              "label": "Customer Name",
+              "required": true,
+              "options": []
+            },
+            "expressions": {}
+          },
+          {
+            "className": "col-4",
+            "key": "Dob",
+            "type": "input",
+            "props": {
+              "label": "Date Of Birth(Choose Back Date )",
+              "required": true,
+              "type": "date",
+              "datepickerOptions": {
+                "max": "2023-01-28T10:22:53.911Z"
+              }
+            }
+          },
+          {
+            "className": "col-4",
+            "type": "select",
+            "key": "OccupationType",
+            "props": {
+              "label": "Occupation",
+              "required": true,
+              "options": []
+            },
+            "expressions": {
+              "props.disabled": "!model.CustomerName"
+            }
+          },
+          {
+            "className": "col-4",
+            "type": "input",
+            "key": "SalaryPerAnnum",
+            "props": {
+              "label": "Salary/Year",
+              "required": true,
+              "options": []
+            },
+            "hooks": {},
+            "expressions": {}
+          },
+          {
+            "className": "col-4",
+            "type": "select",
+            "key": "BenefitCoverMonth",
+            "props": {
+              "label": "Benefit Period",
+              "required": true,
+              "options": [
+                {
+                  "label": "12 Months",
+                  "value": "12"
+                },
+                {
+                  "label": "24 Months",
+                  "value": "24"
+                },
+                {
+                  "label": "36 Months",
+                  "value": "36"
+                }
+              ]
+            },
+            "hooks": {},
+            "expressions": {
+              "props.disabled": "!model.CustomerName"
+            }
+          },
+          {
+            "className": "col-4",
+            "type": "input",
+            "key": "SumInsured",
+            "props": {
+              "label": "SumInsured",
+              "required": true,
+              "options": []
+            },
+            "expressions": {}
+          }
+        ]
+      }
+    ]
+  }
+]

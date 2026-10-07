@@ -1,0 +1,1891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EagleMotorBrokerQuotation" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0650a84-ac0c-4d70-85bc-8246a64c3d86">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EagleMotorQuotation.xml"/>
+	<subDataset name="PremiumDetails" uuid="7747a95e-c03a-4a68-a518-4dacd32bccbc">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EagleMotorQuotation.xml"/>
+		<parameter name="overAllPremium" class="java.math.BigDecimal"/>
+		<queryString language="JSON">
+			<![CDATA[premiumDetailsRes]]>
+		</queryString>
+		<field name="amount" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="amount"/>
+			<fieldDescription><![CDATA[amount]]></fieldDescription>
+		</field>
+		<field name="narration" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="narration"/>
+			<fieldDescription><![CDATA[narration]]></fieldDescription>
+		</field>
+		<field name="currency" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+			<fieldDescription><![CDATA[currency]]></fieldDescription>
+		</field>
+		<variable name="tot_amount" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="pvImagepath" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="vehicleId" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleId"/>
+		<fieldDescription><![CDATA[vehicleId]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="insurerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="insurerName"/>
+		<fieldDescription><![CDATA[insurerName]]></fieldDescription>
+	</field>
+	<field name="paymentDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="paymentDate"/>
+		<fieldDescription><![CDATA[paymentDate]]></fieldDescription>
+	</field>
+	<field name="dateofIssue" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dateofIssue"/>
+		<fieldDescription><![CDATA[dateofIssue]]></fieldDescription>
+	</field>
+	<field name="startDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="startDate"/>
+		<fieldDescription><![CDATA[startDate]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="endDate"/>
+		<fieldDescription><![CDATA[endDate]]></fieldDescription>
+	</field>
+	<field name="covernoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="covernoteNo"/>
+		<fieldDescription><![CDATA[covernoteNo]]></fieldDescription>
+	</field>
+	<field name="stickerNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="stickerNumber"/>
+		<fieldDescription><![CDATA[stickerNumber]]></fieldDescription>
+	</field>
+	<field name="registrationNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="registrationNumber"/>
+		<fieldDescription><![CDATA[registrationNumber]]></fieldDescription>
+	</field>
+	<field name="requestReferenceNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="requestReferenceNo"/>
+		<fieldDescription><![CDATA[requestReferenceNo]]></fieldDescription>
+	</field>
+	<field name="vehicleTypeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleTypeDesc"/>
+		<fieldDescription><![CDATA[vehicleTypeDesc]]></fieldDescription>
+	</field>
+	<field name="modelType" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="modelType"/>
+		<fieldDescription><![CDATA[modelType]]></fieldDescription>
+	</field>
+	<field name="colorDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="colorDesc"/>
+		<fieldDescription><![CDATA[colorDesc]]></fieldDescription>
+	</field>
+	<field name="cubicCapacity" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="cubicCapacity"/>
+		<fieldDescription><![CDATA[cubicCapacity]]></fieldDescription>
+	</field>
+	<field name="vehicleMakeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleMakeDesc"/>
+		<fieldDescription><![CDATA[vehicleMakeDesc]]></fieldDescription>
+	</field>
+	<field name="chassisNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="chassisNumber"/>
+		<fieldDescription><![CDATA[chassisNumber]]></fieldDescription>
+	</field>
+	<field name="seatingCapacity" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="seatingCapacity"/>
+		<fieldDescription><![CDATA[seatingCapacity]]></fieldDescription>
+	</field>
+	<field name="engineNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="engineNumber"/>
+		<fieldDescription><![CDATA[engineNumber]]></fieldDescription>
+	</field>
+	<field name="fuelType" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="fuelType"/>
+		<fieldDescription><![CDATA[fuelType]]></fieldDescription>
+	</field>
+	<field name="policyTypeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyTypeDesc"/>
+		<fieldDescription><![CDATA[policyTypeDesc]]></fieldDescription>
+	</field>
+	<field name="manufactureYear" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="manufactureYear"/>
+		<fieldDescription><![CDATA[manufactureYear]]></fieldDescription>
+	</field>
+	<field name="agentMobile" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="agentMobile"/>
+		<fieldDescription><![CDATA[agentMobile]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchName"/>
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="sectionName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionName"/>
+		<fieldDescription><![CDATA[sectionName]]></fieldDescription>
+	</field>
+	<field name="modelNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="modelNumber"/>
+		<fieldDescription><![CDATA[modelNumber]]></fieldDescription>
+	</field>
+	<field name="overallPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="overallPremium"/>
+		<fieldDescription><![CDATA[overallPremium]]></fieldDescription>
+	</field>
+	<field name="motorUsageDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="motorUsageDesc"/>
+		<fieldDescription><![CDATA[motorUsageDesc]]></fieldDescription>
+	</field>
+	<field name="sumInsured" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="sumInsured"/>
+		<fieldDescription><![CDATA[sumInsured]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="customerId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerId"/>
+		<fieldDescription><![CDATA[customerId]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="companyLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyLogo"/>
+		<fieldDescription><![CDATA[companyLogo]]></fieldDescription>
+	</field>
+	<field name="premiumDetailsRes" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premiumDetailsRes"/>
+		<fieldDescription><![CDATA[premiumDetailsRes]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Right" vAlign="Middle">
+				<reportElement x="0" y="0" width="555" height="64" uuid="ec05e454-9186-4b0b-9cdb-a396b9f30fb3"/>
+				<box topPadding="2" leftPadding="0" rightPadding="2"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="d375e809-22e8-4de4-82e2-e4d3e0e80023">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" QUOTE SCHEDULE"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="e6af4f68-e464-469d-b3ea-75246277433d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CUSTOMER DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="e333d2ed-1d61-43f5-b74a-6bf153c68d7c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Customer Name"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="0ee489d9-7417-4a6a-b4e1-fa27ab3579d6"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="7cb6f84e-9213-4c12-a0db-4875dcca7e9e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Customer Code"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="4069be7a-fa03-409d-ae47-23f98a1ea4e2"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerId}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="52878e57-2d60-41ff-9e1f-9526ac526fe3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Postal Address"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="91f6f348-ee1f-415d-9814-8c99f34b35e8"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="2269a5f5-90ce-42e5-8797-9aa2e0bbea60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Business Occupation"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="e3ed3d74-28d0-4c42-963b-35b6fa1271ab"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="4966e783-5edb-4f0b-8f65-76a8800c8697">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Business Registration Number"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="10c1f1ce-a587-4eb2-9c3f-94855b47751f"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="740ad0fc-0245-449f-aacb-d71aba4ed346">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["POLICY DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="c0282903-6e53-461b-ac83-8136f8605255">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Quotation Number"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="f5008769-449b-406b-9891-0f56b9eaaf89"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quoteNo}==null || $F{quoteNo}=="" ? $F{requestReferenceNo}:$F{quoteNo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="4432ee19-9747-4b85-80ca-04156a8c20ba">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Version Number"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="f4cfd8a7-af6a-4129-a00b-6ce8e2b73fb8"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="7b7113be-1414-4cc5-b6dd-137fddbcdfb3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Period of Insurance"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="6fe066df-47e3-4f56-a4ba-389f9ee54cff"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy").format($F{startDate})+" To "+new SimpleDateFormat("dd MMMM yyyy").format($F{endDate})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="396" height="15" uuid="a91db8c6-b534-4c2a-b2bd-cc82deffba68"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["And shall not be subject to “Tacite Reconduction”"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="7a896f5a-57f5-43f0-821f-a493a0e1ee52">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RISK DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="1b823dc4-e5bf-4229-815c-d4dcdfa2ef03">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Risk Classification"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="151" height="15" uuid="d2ece9c5-00bf-4309-bded-22da363f8b1b"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motorUsageDesc}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="109f97ad-b144-469f-a309-b7fb66c16d49">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Type of Cover"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="151" height="15" uuid="baeeae2b-bee8-4d5c-8dcc-bf82611521ac"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sectionName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="310" y="0" width="100" height="15" backcolor="#E6E3E3" uuid="04e594c1-53c2-4ba4-b370-9dfbae8e79e6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registration Number"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="145" height="15" uuid="ee3e59bf-4b1e-494f-9b0a-175da4c14aea"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationNumber}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="b0263402-f263-40be-a023-2f8e873048d2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vehicle Make Model"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="151" height="15" uuid="7e4b72a9-c184-4e19-848a-4fa59f27a811"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehicleMakeDesc}+" | "+$F{modelType}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="145" height="15" uuid="a5f98f94-7453-40b9-b437-724f2abc25e0"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{manufactureYear}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="310" y="0" width="100" height="15" backcolor="#E6E3E3" uuid="faf9c76a-c1cc-4a44-b040-a6a3999069cf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Year of Make"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="45bd1b38-aff4-41aa-8dd0-067f20ba72d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vehicle Capacity (cc)"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="151" height="15" uuid="dab17d97-d89e-4399-ae60-de5a1352cf35"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cubicCapacity}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="145" height="15" uuid="0db38d9b-7c6c-446c-8ebd-c59cf9ee21b1"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seatingCapacity}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="310" y="0" width="100" height="15" backcolor="#E6E3E3" uuid="6a8bdca4-6c75-43c4-9895-56d9113fb537">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seating Capacity"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="159" height="15" backcolor="#E6E3E3" uuid="00703448-0276-4146-93d1-2a9d0f445588">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sum Insured"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="190" y="0" width="120" height="15" uuid="fa5d2c04-f189-45be-b4e7-a0a40bb5bb32"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumInsured}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="145" height="15" uuid="db15b797-0a3a-4890-a64f-4244d1385c29"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="310" y="0" width="100" height="15" backcolor="#E6E3E3" uuid="2ae73f4b-6425-4528-9d9e-dfbc3d97a278">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Excess"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="159" y="0" width="31" height="15" uuid="6a83288e-6865-47c6-9af2-d9a57ee4677d"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="07b7bc22-2c9e-42a5-9fe1-d4b9a6ea6192">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PREMIUM DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="289" height="20" backcolor="#FFFFFF" uuid="765c75b6-4427-4c28-b38f-38f369b6e38a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 3_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 3_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 3_TD"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="PremiumDetails" uuid="4e9765d6-68fd-40ea-bb04-6515c594fb3b">
+						<datasetParameter name="overAllPremium">
+							<datasetParameterExpression><![CDATA[$F{overallPremium}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("premiumDetailsRes")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="139" uuid="72f8a9e2-88f8-4f35-ab7b-9bfe5503c032">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableFooter height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="139" height="20" uuid="78e97181-b54f-4f82-a852-e4761b35d5db"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total Amount"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="20" width="139" height="20" uuid="4b00ece3-c6d1-41f4-9faf-7a0272d04458"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Annual Premium"]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<box>
+								<pen lineWidth="0.0"/>
+							</box>
+							<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="139" height="20" backcolor="#FFFFFF" uuid="142ab106-6fcf-4f95-b33c-d8c5ed3fdf62"/>
+								<box leftPadding="2">
+									<topPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{narration}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="33cd3e53-03e6-4e7b-b98d-31bd652ef090">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableFooter height="40" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="50" height="20" backcolor="#FFFFFF" uuid="b2a6bc26-292c-476f-a8df-dc7ada706f41"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+							</textField>
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="20" width="50" height="20" backcolor="#FFFFFF" uuid="7df29a7c-fdc8-4205-a623-bbb7c12f5296"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box>
+								<pen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="50" height="20" backcolor="#FFFFFF" uuid="1d2753b0-984f-4c16-8279-4fddb4c7aa69"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="101" uuid="a4af3150-591d-4b42-98b9-93676f859f9a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableFooter height="40" rowSpan="1">
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="101" height="20" backcolor="#FFFFFF" uuid="ff9dbf7c-a550-40ce-9c46-d2b9a4ea3e77"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{overAllPremium}]]></textFieldExpression>
+							</textField>
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="20" width="101" height="20" backcolor="#FFFFFF" uuid="585caf12-7650-4997-98e3-b6c14eaf0ddf"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{tot_amount}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20">
+							<box rightPadding="0">
+								<pen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="101" height="20" backcolor="#FFFFFF" uuid="dacb9903-b81c-4cb9-9f64-e6195f8480f3"/>
+								<box leftPadding="0" rightPadding="2">
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Montserrat" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#2D2363" uuid="9bda8df5-81bd-4b0c-8c1f-3819594dd410">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SPECIAL CONDITIONS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="2acaccc4-9ec5-4659-8b76-6b63591d35a2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["REF"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="efdb35e0-8c30-41cc-b2cd-f8674e41407b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SPECIAL CONDITIONS"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="42c09ad7-b812-49df-9539-ee37e857a02e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PARTICULARS / DETAILS ()"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="c95842b0-000e-4289-8c4b-e086ff301873">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="49b5755a-2f36-4256-b307-152c894be73d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="09e7bcfd-1648-442b-a92d-b07c2f6fcf70">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Excess applicable on each and every claim"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="822f7770-bf2c-4f3c-a04e-a9316f390f47">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total Loss Excess"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="7e21d0fa-a9c9-46b0-b8b2-9ded25d517bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="2d133936-826c-407c-b312-c33ed438c551">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="c225394e-8b11-437b-b992-639c04e3617b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Young Driver Excess-Commercial vehicle"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="ead1d4f9-cb6c-4c2c-929f-c04023d82dfb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Y001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="e4d5964c-f0bb-4bf1-b37b-6d0924669373">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="fcb4c60a-34e7-45cf-8ec8-2ebc263ae0f8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Own Damage"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="84575be2-ad56-4241-a5c3-b74bb4464a46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="0b8de623-d8f1-4a7b-b245-dc6f828bd60d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="14052449-df27-4737-9296-80858c9dd264">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["500,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="a4bf9128-e1c9-47ee-988c-31c18e4bf4bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Third Party Bodily Injury"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="c668681e-82f7-4003-be7c-7e1f3ebcef49">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T004"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="5db33b04-0b4d-42de-84c3-efcd8ec1e95d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T003"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="ce3604ad-ed22-43d7-b6d2-834ee2c2dea1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Third Party Property Damage"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="2a9b477d-61cd-4f25-9839-58d07c048097">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["50,000,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="2b906cf2-5889-4bfd-8824-e7b84ef956d3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["24/7 Towing Services"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="0c29be05-140b-4356-9ba6-7ff26c0b051f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["S005"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="5f010b84-14ea-42e0-91de-b26b3d757a62">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["24-Hour in case of accident and breakdown"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="81e37433-a323-4f7c-af68-31c540cf2f2e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["S001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="6a72e338-0db5-4f29-8d52-cc1529b40126">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="3eca7fb2-3880-4526-b35a-ba45febbc704">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Accessories & Spare Parts"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="7a7ab048-6fa8-43fb-95af-22eda187252c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cyclone / Flood"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="108a188e-17b9-42fc-b24b-c5772352f627">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="8738cd14-1a17-4bce-aa67-e775621bd152">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="0aba54a2-869b-4a10-abb8-426e5deca52f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fire"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="709db607-06ae-45ab-8d8e-2131d17a3452">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="8bb1748c-e44e-48c1-a5d0-cb3a7171a355">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="70f87fac-a31e-4ea1-b287-658d1ac0c45f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Motor Passenger Injury- Death (Rs300,000)"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="dc2b2003-b0df-4000-b66f-2155e33a3d54">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M003"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="7c188022-3c56-408b-9050-39c2a5fc45a6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["300,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="fc4c89bb-9522-4c39-94cd-78379464eb60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Motor Passenger Injury- PTD (Rs300,000)"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="6d65b938-9df2-4e26-9269-9f300ac0a0b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M008"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="0e39a2b7-c7ab-41d4-9895-6314a661d398">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["300,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="d1dd2b4c-3928-485c-8c11-950dd888ce1f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Motor Passenger Injury- Medex (Rs30,000)"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="41fc826d-34c7-4192-bac8-4287bbdb99a0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["30,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="40e59179-b409-4f1f-893e-2325c8ec9246">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M008"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="ba826189-84a3-4f57-92e1-ed43107f2c72">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["50,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="4f3dbcc7-9010-4538-8f9d-35a232421948">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M005"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="d0991de1-2548-413e-ab95-4b6777f66b32">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Funeral Expenses"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="86a01f5b-6660-4876-bdab-44bc4f508c44">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Loss or damage to Personal Effects"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="80d828c6-8ed8-4085-86a6-69b82b58d310">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["P002"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="1f50659e-7624-48ae-ac8b-f04c5dea0ba3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="b8172bfa-1b5d-4245-9b12-295e2d6061d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Replacement of Lock Transmitters"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="391d3d8b-cc25-4487-8d60-0615e87287dd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R003"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="8617a9af-beba-4aab-8b9e-e57d434ee25e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["25,000"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="79499581-77ce-4b19-a0b8-fa4ec6e4f02c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Windscreen"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="e72578cd-b3b0-41c7-baee-fdebc81e40c8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Replacement Value, Excess: Nil"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="de730894-4391-48c3-9d83-63ba3c9f66f4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["W007"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="b0b2949c-2286-4586-a821-c28e5f38ba4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="5f0526c8-7eab-49d3-b7f0-4d00673ad981">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Theft/Burglary"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="d48090a0-44b2-4c66-961d-4b1886f33037">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="849931d7-2f93-4b3c-89d0-aab3d2163f23">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="b4388d9c-b325-44af-84d2-2174b942aa7d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T006"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="bc4a1b1f-4f8e-4f50-90a8-17f653c0e573">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Passive Terrorism Inclusion Clause"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="84b341a8-a22d-4cbe-bc02-4d717bcb348e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="90b46bdb-7fe4-41db-a1c9-f0b6c0f87f4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["S002"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="29f6617b-a488-4702-84ce-c87e2b504bce">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Strike / Riot / Civil Commotion"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="0c808bd0-5490-4e1c-a643-851a03c09534">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10,000,000"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="d4bea0b1-fee5-4978-acb8-2085d7f49ea3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="31ede65f-322c-45a4-8724-d49708d9b9ae">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["H&R Fee - Other Vehicles 2000cc and above"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="2919b096-7fbb-49af-a7da-64dfc38be20d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["24/7 Towing Services ADA"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="daf6031a-aab0-4a00-8269-31b25af3099d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="b18d0f55-91a7-45b3-aa78-1d3d4e5acc84">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="0ab92d9e-1b13-4917-8cc8-502ad37db20a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Loss of use Rs 3,500 / 15 Days / Nil"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="58b695fc-48a9-42dd-8d72-7b803ae379de">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["L005"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="ef73270a-b3b9-4cde-9ca7-70e82019094a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="3e201484-4240-4d0c-96cf-4f02d085634c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registration Dues &/or Fees"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="ce368263-edc3-4c3b-9e28-275b7d44b9b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R002"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="de7eccf3-56eb-4b43-a047-bd4aa913b9ab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="0" width="280" height="18" uuid="2db7d117-bb2c-45dc-bd86-d142f6e34607">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Underinsurance Clause"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="18" uuid="3eafcbd0-b8bc-4292-a0c1-6da5e9033699">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["U001"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="165" height="18" uuid="022095ee-c1b2-4a25-84a1-628b9e26cb1d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+		<band height="18">
+			<textField>
+				<reportElement x="0" y="0" width="554" height="18" uuid="ee1f7cff-ec1e-4714-90ae-040833612d60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This Policy is issued in accordance with the provisions hereafter contained and which are hereby declared to be incorporated in and form part of the Policy."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+		<band height="18">
+			<textField>
+				<reportElement x="390" y="0" width="165" height="18" uuid="7007d685-9038-427e-9a6b-b59dbeef9130">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2">
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["From and on behalf of"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="390" y="0" width="165" height="18" uuid="fe92537b-c18d-4027-bd4f-f3e0ec47b4ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2">
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+		<band height="72">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="18" uuid="e2e2cade-149c-41fd-ae2c-7d448826625a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Issue date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="18" width="100" height="18" uuid="9d8b4845-77d8-4b52-bd1d-69018c8a22d5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Issued by"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="36" width="100" height="18" uuid="b74e16c9-0b55-4388-8bd5-068906d8331a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Print date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="54" width="100" height="18" uuid="16de5801-c7f8-47ef-9a81-c61201a38c7c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Printed at"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="0" width="260" height="18" uuid="a72542cf-34b9-48ff-b446-42cdcf0cdba3"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paymentDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="18" width="260" height="18" uuid="0c7f51c0-2d75-498d-9f6a-7ee4f5ed96cf"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BASE USER"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="36" width="260" height="18" uuid="7f609989-35a8-416f-8694-7b35c370da23"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMM yyyy").format(new Date());]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="54" width="260" height="18" uuid="6b60b2f2-7b51-42c5-a609-ef473a397714"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="54" width="165" height="18" uuid="81b6f9ab-8cfa-488f-aec1-e12f92e697df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2">
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Authorised Signature"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

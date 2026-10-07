@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EwayMadisonTaxInvoice" pageWidth="595" pageHeight="700" columnWidth="523" leftMargin="36" rightMargin="36" topMargin="0" bottomMargin="20" uuid="32a3c862-ffeb-4187-b4fe-60e1d9da4a58">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EwayTaxInvoice"/>
+	<style name="common" hTextAlign="Left" hImageAlign="Left" vTextAlign="Middle" vImageAlign="Middle" fontName="Arial" fontSize="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="common1" vTextAlign="Middle" vImageAlign="Middle" isBlankWhenNull="false" fontName="Arial" fontSize="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="userName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userName"/>
+		<fieldDescription><![CDATA[userName]]></fieldDescription>
+	</field>
+	<field name="approvedBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedBy"/>
+		<fieldDescription><![CDATA[approvedBy]]></fieldDescription>
+	</field>
+	<field name="agencyCode" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="agencyCode"/>
+		<fieldDescription><![CDATA[agencyCode]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="vrTinNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vrTinNo"/>
+		<fieldDescription><![CDATA[vrTinNo]]></fieldDescription>
+	</field>
+	<field name="identificationNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="identificationNo"/>
+		<fieldDescription><![CDATA[identificationNo]]></fieldDescription>
+	</field>
+	<field name="identificationName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="identificationName"/>
+		<fieldDescription><![CDATA[identificationName]]></fieldDescription>
+	</field>
+	<field name="policyNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyNo"/>
+		<fieldDescription><![CDATA[policyNo]]></fieldDescription>
+	</field>
+	<field name="inceptionDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="expiryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="expiryDate"/>
+		<fieldDescription><![CDATA[expiryDate]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="debitNoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="debitNoteNo"/>
+		<fieldDescription><![CDATA[debitNoteNo]]></fieldDescription>
+	</field>
+	<field name="vrnNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="vrnNumber"/>
+		<fieldDescription><![CDATA[vrnNumber]]></fieldDescription>
+	</field>
+	<field name="tinNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="tinNumber"/>
+		<fieldDescription><![CDATA[tinNumber]]></fieldDescription>
+	</field>
+	<field name="brokerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerName"/>
+		<fieldDescription><![CDATA[brokerName]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="premium"/>
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<field name="vatPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPremium"/>
+		<fieldDescription><![CDATA[vatPremium]]></fieldDescription>
+	</field>
+	<field name="overAllPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="overAllPremium"/>
+		<fieldDescription><![CDATA[overAllPremium]]></fieldDescription>
+	</field>
+	<field name="totSumInsured" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="totSumInsured"/>
+		<fieldDescription><![CDATA[totSumInsured]]></fieldDescription>
+	</field>
+	<field name="vatPercent" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPercent"/>
+		<fieldDescription><![CDATA[vatPercent]]></fieldDescription>
+	</field>
+	<field name="intermediaryRefNo" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="intermediaryRefNo"/>
+		<fieldDescription><![CDATA[intermediaryRefNo]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="bankaccountName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaccountName"/>
+		<fieldDescription><![CDATA[bankaccountName]]></fieldDescription>
+	</field>
+	<field name="bankaccountNumber" class="java.lang.Long">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaccountNumber"/>
+		<fieldDescription><![CDATA[bankaccountNumber]]></fieldDescription>
+	</field>
+	<field name="bankaddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankaddress"/>
+		<fieldDescription><![CDATA[bankaddress]]></fieldDescription>
+	</field>
+	<field name="bankswiftCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bankswiftCode"/>
+		<fieldDescription><![CDATA[bankswiftCode]]></fieldDescription>
+	</field>
+	<field name="companyLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyLogo"/>
+		<fieldDescription><![CDATA[companyLogo]]></fieldDescription>
+	</field>
+	<field name="companyWebsite" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyWebsite"/>
+		<fieldDescription><![CDATA[companyWebsite]]></fieldDescription>
+	</field>
+	<field name="companyMail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyMail"/>
+		<fieldDescription><![CDATA[companyMail]]></fieldDescription>
+	</field>
+	<field name="companyPhone" class="java.lang.Long">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPhone"/>
+		<fieldDescription><![CDATA[companyPhone]]></fieldDescription>
+	</field>
+	<field name="companyAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyAddress"/>
+		<fieldDescription><![CDATA[companyAddress]]></fieldDescription>
+	</field>
+	<field name="amountInWords" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="amountInWords"/>
+		<fieldDescription><![CDATA[amountInWords]]></fieldDescription>
+	</field>
+	<field name="dataset1List" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="dataset1List"/>
+		<fieldDescription><![CDATA[dataset1List]]></fieldDescription>
+	</field>
+	<field name="companyPoBox" class="java.lang.String">
+		<fieldDescription><![CDATA[companyPoBox]]></fieldDescription>
+	</field>
+	<field name="branchCode" class="java.lang.String">
+		<fieldDescription><![CDATA[branchCode]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="policyType" class="java.lang.String">
+		<fieldDescription><![CDATA[policyType]]></fieldDescription>
+	</field>
+	<background>
+		<band height="636" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="84" width="523" height="552" uuid="ffa248d4-4c85-44d8-9a9e-dd670ef986fb"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="-19" y="3" width="168" height="80" uuid="353d0e70-dfe4-4e6f-8261-1a3c322b08a7"/>
+				<imageExpression><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="314" y="33" width="206" height="15" isRemoveLineWhenBlank="true" uuid="aaff4216-af9f-4632-aabd-c6c0a126c4dd"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["tel: "+$F{companyPhone}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="314" y="63" width="207" height="15" isRemoveLineWhenBlank="true" uuid="5aa4f6b1-a287-4cdd-a0e0-c89bfa24d214"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["website : "+$F{companyWebsite}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="314" y="18" width="207" height="15" isRemoveLineWhenBlank="true" uuid="c4b6e1d8-14db-43c6-91f2-f52f18be0321"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyPoBox}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="314" y="48" width="207" height="15" isRemoveLineWhenBlank="true" uuid="7c0de342-44b8-499c-9d75-71ea4777b8ae"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E-mail: "+$F{companyMail}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="314" y="3" width="207" height="15" isRemoveLineWhenBlank="true" uuid="f929eb5f-bf5c-4f3c-bfff-52a9386d457b"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="185" y="0" width="107" height="15" uuid="ceeced87-dcd7-46ed-a673-03ae451242ae"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TAX INVOICE"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="185" y="15" width="107" height="15" uuid="be72affa-750c-43cb-90cc-2cdd3f5a2284"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(DEBIT NOTE)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="80" y="0" width="10" height="15" uuid="3ef30117-df79-4742-ab4e-4b91bbdd3de4"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyType}==null || $F{policyType}.equalsIgnoreCase("")?"":":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="410" y="0" width="10" height="15" uuid="d8af9fc7-3292-4138-9712-7bd2c16176a0"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="231" height="15" isPrintWhenDetailOverflows="true" uuid="3458bf32-67a5-43d9-be10-d6e5ff4a4540"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{policyType}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="420" y="0" width="102" height="15" isPrintWhenDetailOverflows="true" uuid="d1b0b275-5989-44d9-84fa-c415b769b468"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="80" height="15" uuid="c79a5412-bd7e-4b3d-8a66-6cdbfbd74bb5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyType}==null || $F{policyType}.equalsIgnoreCase ("")?"":"Policy Type"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="89" height="15" uuid="f883c521-78e8-4afc-8eed-28deb4d8310c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="410" y="0" width="10" height="15" uuid="9fcd1bd1-30e9-4bf2-ae06-b641c075e8ee"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="420" y="0" width="102" height="15" isPrintWhenDetailOverflows="true" uuid="126c0959-be85-4c0f-b6f9-a73726ffd2fd"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{branchCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="15" uuid="1d820f8a-c65f-4d88-a220-49fa2403d821">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Agent Name"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="231" height="15" isPrintWhenDetailOverflows="true" uuid="4cec020d-a018-4927-b15a-64df1682875a"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{brokerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="89" height="15" uuid="ea097d9b-3a7b-475d-8ea5-18fa8bf14a5a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Branch"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="80" y="0" width="10" height="15" uuid="8dbb846b-1b36-469f-bfbf-661dad647373"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="231" height="15" isPrintWhenDetailOverflows="true" uuid="0ed94a4f-eb84-4cd6-a6cb-79a6b34db80c"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="80" y="0" width="10" height="15" uuid="eb1924f4-ca42-4006-a2ef-b19b9a9d07bb"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="15" uuid="269fa450-456a-49ad-a189-62e10d894601">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Insured Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="89" height="15" uuid="f58b9155-bf20-4531-92a3-83b6e81e7007">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TAX Debit Note No."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="410" y="0" width="10" height="15" uuid="70dbaaa5-c1a7-4bd9-902e-5a78781bb26a"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="420" y="0" width="102" height="15" isPrintWhenDetailOverflows="true" uuid="97c0c54e-82ba-4fe4-b60c-a92e61092013"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{debitNoteNo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="231" height="15" isPrintWhenDetailOverflows="true" uuid="230efa16-8073-4114-969a-c20e1e55090d"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="80" y="0" width="10" height="15" uuid="6013fa5e-7928-48e3-9a4b-ee87e91e4fdb"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="15" uuid="d061f6d6-e363-42e1-b2f6-7e3cbb888b07">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="321" y="0" width="89" height="15" uuid="d278f0c6-0d81-477e-838c-9f44d0e56a84">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Binder No"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="410" y="0" width="10" height="15" uuid="bb37445f-0a04-4ec2-aa8f-6c1be30e4883"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="420" y="0" width="102" height="15" isPrintWhenDetailOverflows="true" uuid="b7289525-7254-4ac1-9853-e58f3a85fb51"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="410" y="0" width="10" height="15" uuid="e8111245-ca29-4967-87d0-8eb1f79fc76e"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="89" height="15" uuid="8f220b32-4d38-4937-bdcf-b74cfc5d4c17">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TPIN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="15" uuid="abca497d-6547-4afc-9343-7f20313aec73">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policy No"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="420" y="0" width="102" height="15" isPrintWhenDetailOverflows="true" uuid="4f3c0538-86eb-461e-8a25-2357296453e3"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="231" height="15" isPrintWhenDetailOverflows="true" uuid="816f602c-b619-41e2-8654-487d0a9e8aef"/>
+				<box leftPadding="2">
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{policyNo}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="80" y="0" width="10" height="15" uuid="09ed5ace-17f8-4453-bd70-02065987f84e"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="29">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="80" y="0" width="10" height="15" uuid="99e57767-a375-4911-8ce1-ff5b04f93666"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="90" y="0" width="306" height="15" isPrintWhenDetailOverflows="true" uuid="b3b58abf-3cc1-4fc9-9703-a2b1e7c9cce8"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA["From "+new SimpleDateFormat("dd/MM/yyyy").format($F{inceptionDate})+" To "+new SimpleDateFormat("dd/MM/yyyy").format($F{expiryDate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="15" uuid="1e85ffaa-7a69-4145-8690-4bfadd5864f7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policy Period"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="20" uuid="9db3ce65-4d40-4627-870f-e354f05f04f9"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cover"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="380" y="0" width="143" height="20" uuid="1555ec7c-6165-43d3-9406-2846625d566a"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="15" uuid="74a2d593-ef44-4e59-9a04-1e99cb49a0ed"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Premium"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="380" y="0" width="143" height="15" uuid="eb835144-a568-4079-8545-98792392e824"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{premium}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="77">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="20" uuid="0fdad418-1159-49f2-88f1-7ba7f02d08d3"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Premium Tax @"+($F{vatPercent})+"%"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="380" y="0" width="143" height="20" uuid="86b8ee29-3dc0-401e-b016-33ac78ce1e8d"/>
+				<box leftPadding="2" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vatPremium}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="20" width="380" height="57" uuid="9c4b735a-0e49-4e0e-8505-27802d6dbe2e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="20" uuid="33c1fae8-9700-4fc9-99da-a45ef19c181a"/>
+				<box leftPadding="2" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="380" y="0" width="143" height="20" uuid="371237e4-5e8a-489e-bd1f-36532c4811aa"/>
+				<box leftPadding="2" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{overAllPremium}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="20" uuid="e88e9c8a-15f5-46cd-a776-d46637297464"/>
+				<box leftPadding="2" rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountInWords}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="380" y="0" width="143" height="20" uuid="bfd0fef6-cf61-4b01-8a87-8c0548e7e0bf"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="59">
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="36" width="81" height="14" uuid="4567d904-c29c-4b08-b717-3ff3f69edfb9"/>
+				<box leftPadding="5"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Prepared By"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="96" y="36" width="10" height="14" uuid="718ea403-9153-4374-a1b4-265ae7c3ec57"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="313" y="36" width="81" height="14" uuid="15f001e9-403a-4558-8341-bb03483ac8ff"/>
+				<box leftPadding="2"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Approved By"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="394" y="36" width="10" height="14" uuid="ef259da8-e573-4f45-a6f5-e56bbaecd1a3"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="2" y="53" width="519" height="1" uuid="51979039-eb2e-47ad-a9ca-a62f10e75c9b"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="22">
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="8" width="96" height="14" uuid="088ee038-709e-4bde-842a-988d1be38774"/>
+				<box leftPadding="5"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Place of Issue"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="96" y="8" width="10" height="14" uuid="68ba2b26-b468-4286-a71b-a23420b202d3"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="111" y="7" width="127" height="15" isPrintWhenDetailOverflows="true" uuid="1c779ed2-8268-4b88-b834-1849713b04b0"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="0" y="0" width="96" height="14" uuid="6c0bfd6e-8aba-42e9-b2eb-5acd9f2e4a86"/>
+				<box leftPadding="5"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date of Issue"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="common" stretchType="RelativeToBandHeight" x="96" y="0" width="10" height="14" uuid="13d262ce-f585-4f6a-a4ea-c5d2d33f88c7"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="303" y="0" width="123" height="14" uuid="84a981b0-592f-45ff-b5d7-b008137284d4"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Authorized Signature"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="111" y="0" width="127" height="15" isPrintWhenDetailOverflows="true" uuid="27d38c41-255c-409a-a552-f8723b362148"/>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="303" y="0" width="123" height="14" uuid="3fde1bc6-50f4-450b-8995-202f7f57a0f8"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MANAGER"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="17">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="common" stretchType="RelativeToTallestObject" x="190" y="0" width="331" height="14" uuid="5c00e05e-47b3-406b-ae33-7d619ef58405"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

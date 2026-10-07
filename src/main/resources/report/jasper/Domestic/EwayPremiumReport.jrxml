@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EwayPremiumReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ebbc096-5982-46d2-96dc-2d4d9556bbc8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="pvStartDate" class="java.lang.String"/>
+	<parameter name="pvImagePath" class="java.lang.String"/>
+	<parameter name="pvEndDate" class="java.lang.String"/>
+	<parameter name="pvBranch" class="java.lang.String"/>
+	<parameter name="pvLoginId" class="java.lang.String"/>
+	<parameter name="pvProductId" class="java.lang.String"/>
+	<parameter name="pvUserType" class="java.lang.String"/>
+	<parameter name="pvCode" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+  HPM.LOGIN_ID, 
+  HPM.QUOTE_NO, 
+  HPM.POLICY_NO, 
+  UPPER(
+    CONCAT(
+      CONCAT(PIF.TITLE_DESC, '.'), 
+      PIF.CLIENT_NAME
+    )
+  ) AS CUSTOMER_NAME, 
+  HPM.inception_date AS START_DATE, 
+  HPM.expiry_date AS END_DATE, 
+  HPM.effective_date AS ISSUE_DATE, 
+  UPPER(HPM.BRANCH_NAME) AS BRANCH_NAME, 
+  CASE WHEN HPM.SOURCE_TYPE IN(
+    'Premia Broker', 'Premia Direct', 
+    'Premia Agent'
+  ) THEN HPM.CUSTOMER_NAME ELSE(
+    SELECT 
+      UPPER(USER_NAME) 
+    FROM 
+      login_user_info 
+    WHERE 
+      LOGIN_ID = HPM.LOGIN_ID
+  ) END AS BROKER_NAME, 
+  HPM.USER_TYPE AS USER_TYPE, 
+  HPM.SUB_USER_TYPE AS SUB_USER_TYPE, 
+  HPM.CURRENCY, 
+  HPM.PAYMENT_TYPE, 
+  (
+    SELECT 
+      PAYMENT_ID 
+    FROM 
+      PAYMENT_INFO 
+    WHERE 
+      QUOTE_NO = HPM.QUOTE_NO 
+      AND payment_status = 'ACCEPTED'
+  ) AS PAYMENT_ID, 
+  HPM.PRODUCT_NAME, 
+  CASE WHEN HPM.PRODUCT_ID = '4' THEN (
+    SELECT 
+      DISTINCT SECTION_NAME 
+    FROM 
+      TRAVEL_PASSENGER_DETAILS 
+    WHERE 
+      QUOTE_NO = HPM.QUOTE_NO
+  ) WHEN HPM.PRODUCT_ID = '5' THEN (
+    SELECT 
+      POLICY_TYPE_DESC 
+    FROM 
+      MOTOR_DATA_DETAILS 
+    WHERE 
+      QUOTE_NO = HPM.QUOTE_NO 
+      AND VEHICLE_ID = '1'
+  ) ELSE (
+    SELECT 
+      POLICY_TYPE_NAME 
+    FROM 
+      POLICY_TYPE_MASTER 
+    WHERE 
+      STATUS = 'Y' 
+      AND PRODUCT_ID = HPM.PRODUCT_ID 
+      AND COMPANY_ID = HPM.COMPANY_ID 
+      AND AMEND_ID = (
+        SELECT 
+          MAX(AMEND_ID) 
+        FROM 
+          POLICY_TYPE_MASTER 
+        WHERE 
+          STATUS = 'Y' 
+          AND PRODUCT_ID = HPM.PRODUCT_ID 
+          AND COMPANY_ID = HPM.COMPANY_ID
+      )
+  ) END AS POLICY_TYPE_DESC, 
+  HPM.DEBIT_NOTE_NO, 
+  (
+    SELECT 
+      SUM(SUM_INSURED) 
+    FROM 
+      POLICY_COVER_DATA 
+    WHERE 
+      QUOTE_NO = HPM.QUOTE_NO 
+      AND TAX_ID = '0' 
+      AND DISC_LOAD_ID = '0' 
+      AND COVERAGE_TYPE = 'B'
+  ) AS SUM_INSURED, 
+  CASE WHEN HPM.CURRENCY IN (
+    SELECT 
+      CURRENCY_ID 
+    FROM 
+      EWAY_INSURANCE_COMPANY_MASTER 
+    WHERE 
+      HPM.COMPANY_ID = COMPANY_ID
+  ) THEN ROUND(HPM.OVERALL_PREMIUM_LC, 2) ELSE ROUND(HPM.OVERALL_PREMIUM_FC, 2) END AS PERMIUM, 
+  ROUND(HPM.COMMISSION_PERCENTAGE, 1) AS COMMISSION_PERCENTAGE, 
+  ROUND(COMMISSION, 2) AS COMMISSION_AMOUNT,
+ (CASE WHEN UPPER(HPM.PAYMENT_TYPE)=UPPER('Credit') THEN( (SELECT (COALESCE(DEPOSIT_AMOUNT,0) - COALESCE(DEPOSIT_UTILISED,0) + COALESCE(REFUND_AMOUNT,0)) FROM EWAY_DEPOSIT_CBC_MASTER
+WHERE BROKER_ID = HPM.BROKER_CODE)) ELSE '' END) AS CREDIT_LIMIT  
+FROM 
+  HOME_POSITION_MASTER HPM, 
+  PERSONAL_INFO PIF 
+WHERE 
+  HPM.CUSTOMER_ID = PIF.CUSTOMER_ID 
+  AND HPM.PRODUCT_ID = $P{pvProductId} 
+  AND (
+    CASE WHEN '99999' = $P{pvBranch} THEN '1' ELSE HPM.BRANCH_CODE END
+  ) = (
+    CASE WHEN '99999' = $P{pvBranch} THEN '1' ELSE $P{pvBranch} END
+  ) 
+  AND HPM.STATUS = 'P' 
+  AND HPM.POLICY_NO IS NOT NULL 
+  AND REGEXP_SUBSTR(HPM.EFFECTIVE_DATE,'[^ ]+') BETWEEN $P{pvStartDate} 
+  AND $P{pvEndDate}
+  AND (
+    (
+      CASE WHEN (
+        SELECT 
+          SUB_USER_TYPE 
+        FROM 
+          eway_login_master 
+        WHERE 
+          LOGIN_ID = $P{pvLoginId}
+      ) IN ('SuperAdmin') THEN '1' WHEN (
+        SELECT 
+          SUB_USER_TYPE 
+        FROM 
+          eway_login_master 
+        WHERE 
+          LOGIN_ID = $P{pvLoginId}
+      ) IN ('low', 'high','both') THEN HPM.Application_id END
+    ) = (
+      CASE WHEN (
+        SELECT 
+          SUB_USER_TYPE 
+        FROM 
+          eway_login_master 
+        WHERE 
+          LOGIN_ID = $P{pvLoginId}
+      ) IN ('SuperAdmin') THEN '1' ELSE $P{pvLoginId} END
+    ) 
+    OR (
+      CASE WHEN (
+        SELECT 
+          USER_TYPE 
+        FROM 
+          eway_login_master 
+        WHERE 
+          LOGIN_ID = $P{pvLoginId}
+      )= 'Broker' THEN HPM.AGENCY_CODE END
+    ) IN (
+      SELECT 
+        DISTINCT AGENCY_CODE 
+      FROM 
+        eway_login_master 
+      WHERE 
+        OA_CODE IN (
+          SELECT 
+            AGENCY_CODE 
+          FROM 
+            eway_login_master 
+          WHERE 
+            LOGIN_ID = $P{pvLoginId}
+        )
+    ) 
+    OR HPM.AGENCY_CODE IN (
+      SELECT 
+        AGENCY_CODE 
+      FROM 
+        eway_login_master 
+      WHERE 
+        LOGIN_ID = $P{pvLoginId}
+    )
+  )
+ AND ( CASE WHEN '99999' = $P{pvUserType} THEN '1' WHEN $P{pvUserType} IN( 'Premia Broker', 'Premia Direct', 'Premia Agent' ) THEN HPM.CUSTOMER_CODE ELSE LOGIN_ID END ) = ( CASE WHEN '99999' = $P{pvUserType} THEN '1' WHEN $P{pvUserType} IN( 'Premia Broker', 'Premia Direct', 'Premia Agent' ) THEN $P{pvCode} ELSE $P{pvCode} END ) ORDER BY HPM.EFFECTIVE_DATE DESC]]>
+	</queryString>
+	<field name="LOGIN_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LOGIN_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="LOGIN_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="QUOTE_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="QUOTE_NO"/>
+		<property name="com.jaspersoft.studio.field.label" value="QUOTE_NO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="POLICY_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="POLICY_NO"/>
+		<property name="com.jaspersoft.studio.field.label" value="POLICY_NO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="CUSTOMER_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CUSTOMER_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="CUSTOMER_NAME"/>
+	</field>
+	<field name="START_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="INCEPTION_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="START_DATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="END_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="EXPIRY_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="END_DATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="ISSUE_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="EFFECTIVE_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="ISSUE_DATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="BRANCH_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BRANCH_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="BRANCH_NAME"/>
+	</field>
+	<field name="BROKER_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BROKER_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="BROKER_NAME"/>
+	</field>
+	<field name="USER_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="USER_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="USER_TYPE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="SUB_USER_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SUB_USER_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="SUB_USER_TYPE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="CURRENCY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CURRENCY"/>
+		<property name="com.jaspersoft.studio.field.label" value="CURRENCY"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="PAYMENT_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAYMENT_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAYMENT_TYPE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="PAYMENT_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PAYMENT_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PAYMENT_ID"/>
+	</field>
+	<field name="PRODUCT_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PRODUCT_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="PRODUCT_NAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="POLICY_TYPE_DESC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="POLICY_TYPE_DESC"/>
+		<property name="com.jaspersoft.studio.field.label" value="POLICY_TYPE_DESC"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="motor_data_details"/>
+	</field>
+	<field name="DEBIT_NOTE_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEBIT_NOTE_NO"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEBIT_NOTE_NO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="home_position_master"/>
+	</field>
+	<field name="SUM_INSURED" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="SUM_INSURED"/>
+		<property name="com.jaspersoft.studio.field.label" value="SUM_INSURED"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="motor_data_details"/>
+	</field>
+	<field name="PERMIUM" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="PERMIUM"/>
+		<property name="com.jaspersoft.studio.field.label" value="PERMIUM"/>
+	</field>
+	<field name="COMMISSION_PERCENTAGE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="COMMISSION_PERCENTAGE"/>
+		<property name="com.jaspersoft.studio.field.label" value="COMMISSION_PERCENTAGE"/>
+	</field>
+	<field name="COMMISSION_AMOUNT" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="COMMISSION_AMOUNT"/>
+		<property name="com.jaspersoft.studio.field.label" value="COMMISSION_AMOUNT"/>
+	</field>
+	<field name="CREDIT_LIMIT" class="java.lang.String"/>
+	<variable name="tot_premium_amt" class="java.math.BigDecimal" resetType="Group" resetGroup="BranchName" calculation="Sum">
+		<variableExpression><![CDATA[$F{PERMIUM}]]></variableExpression>
+	</variable>
+	<variable name="tot_com_amt" class="java.math.BigDecimal" resetType="Group" resetGroup="BranchName" calculation="Sum">
+		<variableExpression><![CDATA[$F{COMMISSION_AMOUNT}]]></variableExpression>
+	</variable>
+	<group name="BranchName">
+		<groupExpression><![CDATA[$F{BRANCH_NAME}+$F{BROKER_NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField>
+					<reportElement mode="Opaque" x="-13" y="0" width="258" height="20" backcolor="#B1B5DE" uuid="af1b134a-0eb0-4303-89f8-3fb06f67b3e2">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BranchName : "+$F{BRANCH_NAME}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="-13" y="20" width="22" height="30" backcolor="#B1B5DE" uuid="e8a5b1b4-c88c-4f25-ac5a-df75ddbe77c2">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["S.No"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="80" y="20" width="70" height="30" backcolor="#B1B5DE" uuid="803ebbb1-6389-45fa-812b-be0360faaffa">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Customer Name"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="555" y="20" width="48" height="30" backcolor="#B1B5DE" uuid="cfc838af-8077-49af-b802-6f643bd03782">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DN Number"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="150" y="20" width="50" height="30" backcolor="#B1B5DE" uuid="db755708-120b-47fe-95d6-6c15f6c71c46">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy Start Date"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="200" y="20" width="50" height="30" backcolor="#B1B5DE" uuid="167b0cb0-dd83-4699-afb0-284677dd5284"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy End Date"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="250" y="20" width="40" height="30" backcolor="#B1B5DE" uuid="5e9abda1-7e73-42d6-9f1e-544f603d3750">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Issue Date"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="290" y="20" width="38" height="30" backcolor="#B1B5DE" uuid="2d7fd850-81d2-42a4-b2e0-946c3c848175">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Currency"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="510" y="20" width="45" height="30" backcolor="#B1B5DE" uuid="5b515430-6464-45f1-aefb-c6053a652f91">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy Type"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="603" y="20" width="51" height="30" backcolor="#B1B5DE" uuid="fbd12311-751d-4330-ad67-49baa7009047"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Sum Insured"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="654" y="20" width="66" height="30" backcolor="#B1B5DE" uuid="b4b41ba0-b65e-4395-a6f5-32aa5d334ac6">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Premium"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="720" y="20" width="40" height="30" backcolor="#B1B5DE" uuid="73da1133-8cf7-4f41-81a1-10dbfe97d323">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Comm (%)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="760" y="20" width="56" height="30" backcolor="#B1B5DE" uuid="47fead93-d009-4aba-982d-29e3354993b1">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Comm Amt"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="9" y="20" width="71" height="30" backcolor="#B1B5DE" uuid="ebc865aa-06b4-4b89-80ef-bebbac9cec1c"/>
+					<box leftPadding="2">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy No"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="328" y="20" width="46" height="30" backcolor="#B1B5DE" uuid="656005e1-8181-4a01-ab45-c79205b03d7d">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Payment Type"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Opaque" x="245" y="0" width="571" height="20" backcolor="#B1B5DE" uuid="9917631a-8063-4af1-b1e2-fd0cc83bf6cc">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					</reportElement>
+					<box rightPadding="2">
+						<topPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Broker Name : "+(($F{BROKER_NAME} )==null?"Not Available":$F{BROKER_NAME})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="465" y="20" width="45" height="30" backcolor="#B1B5DE" uuid="71574b32-ea22-47e8-8eb2-43c2cba803aa">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Payment Id"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="420" y="20" width="45" height="30" backcolor="#B1B5DE" uuid="d941dce3-5cf6-4949-bb49-2c3a6936d7e8">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Product Name"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="374" y="20" width="46" height="30" backcolor="#B1B5DE" uuid="729809a5-d148-490f-8299-ae1db0551947">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Credit Limit"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="35">
+				<textField>
+					<reportElement x="603" y="0" width="51" height="30" uuid="5c248eaf-ac5c-485c-9e42-a8506cf8b67b"/>
+					<box>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement x="654" y="0" width="66" height="30" uuid="00f16a07-f8d7-47a3-bed1-29b358a07830">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="0" rightPadding="2">
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tot_premium_amt}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="760" y="0" width="56" height="30" uuid="4034651e-8ac8-4bb8-b518-f3c35ba78ce0">
+						<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+						<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box rightPadding="2">
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tot_com_amt}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="261" y="23" width="280" height="30" uuid="a408ec15-f038-405a-bd9b-d1594fd34c58">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Premium Report"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="-13" y="0" width="130" height="53" uuid="49b0766a-733e-4613-91a4-e87839d883bc"/>
+				<imageExpression><![CDATA[$P{pvImagePath}+"Alliancelogo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="606" y="30" width="110" height="15" uuid="e0a8a79b-69ce-4eab-bfc9-9d14c20f387a">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Start date : "]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="716" y="30" width="100" height="15" uuid="66d14a88-e838-42e2-b957-6c75e9718f07">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pvStartDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="606" y="45" width="110" height="15" uuid="4c01ba10-8201-4d32-a64e-2127c79af32a">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["End date : "]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="716" y="45" width="100" height="15" uuid="00c1794c-467b-4e15-af88-f286ab862424">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pvEndDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="-13" y="0" width="22" height="30" uuid="e9b44e84-0c84-4fea-82c5-18020fb45d6a">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="0" width="71" height="30" uuid="f9391605-b786-4d71-99df-274efda29857">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{POLICY_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="80" y="0" width="70" height="30" uuid="c02aada1-6ca6-4128-9507-b7d751f3cd34">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUSTOMER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="555" y="0" width="48" height="30" uuid="22360070-ad6a-4694-8e59-bbc9cdcb6ef9">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEBIT_NOTE_NO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="150" y="0" width="50" height="30" uuid="e37ea879-2346-4a3f-bb69-eb5695da0be7">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{START_DATE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="200" y="0" width="50" height="30" uuid="f961894e-b8aa-4229-8916-82869630cfdd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{END_DATE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="250" y="0" width="40" height="30" uuid="290d3b52-6e93-4cb9-b2b8-c2f852defa09">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ISSUE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="38" height="30" uuid="a09a2836-e628-44d8-96c9-7a9dd2f25344">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURRENCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="0" width="45" height="30" uuid="6fd3d726-673d-412c-a0dd-de599b52a8a9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{POLICY_TYPE_DESC}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement x="603" y="0" width="51" height="30" uuid="e0cfcf61-5904-4843-8aad-cc62867e8217"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM_INSURED}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement x="654" y="0" width="66" height="30" uuid="3391e642-f818-4c58-aa4f-e8882946a65e">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERMIUM}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="720" y="0" width="40" height="30" uuid="76d1a035-dfeb-40b1-95ce-3b9e85acca86">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COMMISSION_PERCENTAGE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="760" y="0" width="56" height="30" uuid="47b42963-d44a-44b1-bd35-9e6428e32959">
+					<property name="net.sf.jasperreports.export.xls.auto.fit.column" value="true"/>
+					<property name="net.sf.jasperreports.export.xls.auto.fit.row" value="true"/>
+				</reportElement>
+				<box rightPadding="2">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COMMISSION_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="0" width="46" height="30" uuid="a4fbd1ef-971c-44c1-8292-3d6ed8c76bbe"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAYMENT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="465" y="0" width="45" height="30" uuid="aeffad81-1237-4a56-bc7e-7125dc438512"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAYMENT_ID}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="0" width="45" height="30" uuid="26661b25-8edb-404a-b5fd-4d90cbb785f7"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRODUCT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="0" width="46" height="30" uuid="fec51300-37d3-4f52-a407-7ebf0c6a7d47"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREDIT_LIMIT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15">
+			<textField>
+				<reportElement x="716" y="0" width="50" height="15" printWhenGroupChanges="BranchName" uuid="03cb86c3-2a09-4c2b-a7f6-07f65d6d64c5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="766" y="0" width="50" height="15" uuid="8a67f09e-5b8f-4089-9637-88b8c4f454a1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

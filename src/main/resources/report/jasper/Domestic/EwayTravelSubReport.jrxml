@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EwayTravelSubReport" pageWidth="575" pageHeight="600" columnWidth="555" leftMargin="2" rightMargin="18" topMargin="20" bottomMargin="20" uuid="327e6e5c-eeaf-42c4-b773-9717dc9b6d37">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EwayTravelReport"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="pvPolicyNo" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[travelCoverDetails]]>
+	</queryString>
+	<field name="bandDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="bandDesc"/>
+		<fieldDescription><![CDATA[bandDesc]]></fieldDescription>
+	</field>
+	<field name="coverName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coverName"/>
+		<fieldDescription><![CDATA[coverName]]></fieldDescription>
+	</field>
+	<field name="planTypeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="planTypeDesc"/>
+		<fieldDescription><![CDATA[planTypeDesc]]></fieldDescription>
+	</field>
+	<field name="sumInsured" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sumInsured"/>
+		<fieldDescription><![CDATA[sumInsured]]></fieldDescription>
+	</field>
+	<field name="rate" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="rate"/>
+		<fieldDescription><![CDATA[rate]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="taxRate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="taxRate"/>
+		<fieldDescription><![CDATA[taxRate]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="premium"/>
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<group name="Group_desc Group 1">
+		<groupExpression><![CDATA[$F{bandDesc}+$F{coverName}]]></groupExpression>
+		<groupHeader>
+			<band height="36">
+				<textField>
+					<reportElement x="0" y="0" width="224" height="18" uuid="20ccfe03-a5d2-43e7-9e6f-1c7e63a0944f">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="2">
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Coverage Details"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="224" y="0" width="330" height="18" uuid="5a1a2c7c-ee39-44bf-9a68-4c5669f0d0f7"/>
+					<box rightPadding="2">
+						<topPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bandDesc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="18" width="244" height="18" uuid="67cb0fd3-9618-40cc-86e2-c19a48162659">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Cover Details"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="244" y="18" width="89" height="18" uuid="c7d6530b-55fc-4b68-b406-46ccb8470c3e"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Sum Insured"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="334" y="18" width="50" height="18" uuid="4e4a9339-51a2-4d60-8d3d-fc5b65aba2d0"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Rate"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="384" y="18" width="50" height="18" uuid="0544cb48-d445-41cf-becd-e1c8e8b134b0"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Currency"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="434" y="18" width="50" height="18" uuid="0eddedd6-58ca-4f70-8053-2ba050d13be5"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Tax Rate"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="484" y="18" width="70" height="18" uuid="341d1bc9-2541-4b19-8ad2-e5ea93cd89d1"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Premium"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="12"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="244" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="18639d9b-1e39-40ed-97b7-6fa3f05b6c7c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="244" y="0" width="89" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="bf14c350-fd06-4cd2-b208-326415255062"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumInsured}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="334" y="0" width="50" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="c88a897c-390e-4346-aba9-0e6205633c8d"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="384" y="0" width="50" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="ea3a81d0-3016-41f6-ac2f-e1b2dcadb9f3"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="434" y="0" width="50" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="71c1d445-4c2a-48ea-a6cc-233926655fb4"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taxRate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="484" y="0" width="70" height="18" printWhenGroupChanges="Group_desc Group 1" uuid="f3e112f1-97ef-43b7-895e-812042d7bc65"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{premium}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

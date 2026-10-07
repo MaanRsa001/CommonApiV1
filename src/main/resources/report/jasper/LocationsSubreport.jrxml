@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.13.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LocationsSubreport" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="c0cac0ca-1001-4001-b001-000000000001">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+	<property name="net.sf.jasperreports.export.pdf.embed.fonts" value="true"/>
+	<property name="net.sf.jasperreports.default.font.name" value="Aptos"/>
+	<style name="Base" isDefault="true" forecolor="#000000" vTextAlign="Middle" fontName="Aptos" fontSize="8"/>
+	<style name="SectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#1A1A1A" fontSize="8" isBold="true"/>
+	<style name="ColHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333" fontSize="8" isBold="true"/>
+	<style name="LabelCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#EEEEEE" fontSize="8" isBold="true"/>
+	<style name="ValueCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" fontSize="8"/>
+	<style name="TotalRow" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#000000" fontSize="8" isBold="true"/>
+	<style name="SubSectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#555555" fontSize="8" isBold="true"/>
+	<subDataset name="locationDetail" uuid="5be79088-18f0-4e57-ab8e-dbf2030790a0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="claude_Res.xml"/>
+		<queryString language="json">
+			<![CDATA[Result.Locations.LocationDetails]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[Result.Locations]]>
+	</queryString>
+	<field name="LocationDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="LocationDetails"/>
+		<fieldDescription><![CDATA[LocationDetails]]></fieldDescription>
+	</field>
+	<field name="Sections" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Sections"/>
+		<fieldDescription><![CDATA[Sections]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="535" height="18" uuid="002a3d99-a724-4e7f-b16d-a66cfe7c2e34"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   LOCATION DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16">
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="245d198e-c22b-465d-85fd-8543d42fa792"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="locationDetail" uuid="6086e619-540f-4e82-b20a-fae23ddffd29">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("LocationDetails")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isBlankWhenNull="true">
+							<reportElement style="LabelCell" x="0" y="0" width="185" height="16" uuid="9cd50b7d-9dc4-468c-8a1f-f22ea7b33e22"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="185" y="0" width="350" height="16" uuid="d24964a0-9d46-4b96-bcc0-01ff621d86aa"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20">
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="535" height="20" uuid="3ed24d3f-798b-4289-822f-bb2100bec791"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Sections")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "LocationsSubreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sub_phoenix_Main_Report_2" pageWidth="554" pageHeight="842" columnWidth="554" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="cd441786-28a5-46f4-8681-07486d02721e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<subDataset name="Dataset1" uuid="a4681614-5f2e-4e29-a54a-2d6c6da2a4c1">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Phoenix_Schedule.xml"/>
+		<queryString language="json">
+			<![CDATA[sectionDetails.sectionDetails]]>
+		</queryString>
+		<field name="SectionName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="SectionName"/>
+			<fieldDescription><![CDATA[SectionName]]></fieldDescription>
+		</field>
+		<field name="sectionList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="sectionList"/>
+			<fieldDescription><![CDATA[sectionList]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="8ecfb721-f666-402a-989e-ce719ec34729">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Phoenix_Schedule.xml"/>
+		<queryString language="json">
+			<![CDATA[sectionDetails.sectionDetails.sectionList]]>
+		</queryString>
+		<field name="covername" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="covername"/>
+			<fieldDescription><![CDATA[covername]]></fieldDescription>
+		</field>
+		<field name="annually" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="annually"/>
+			<fieldDescription><![CDATA[annually]]></fieldDescription>
+		</field>
+		<field name="monthly" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="monthly"/>
+			<fieldDescription><![CDATA[monthly]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="pvSubReportPath" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[sectionDetails]]>
+	</queryString>
+	<field name="locationName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="locationName"/>
+		<fieldDescription><![CDATA[locationName]]></fieldDescription>
+	</field>
+	<field name="sectionDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionDetails"/>
+		<fieldDescription><![CDATA[sectionDetails]]></fieldDescription>
+	</field>
+	<field name="locationAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[locationAddress]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement mode="Opaque" x="1" y="-1" width="552" height="12" backcolor="#E8E8DF" uuid="e3dfccef-2007-40fa-b5ef-a621bdf2c4cc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="verdana" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LOCATION NAME : " +$F{locationName}
+
+
+
+
+   ]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="1" y="12" width="552" height="12" backcolor="#E8E8DF" uuid="5ba52863-7ef5-47e5-a82a-b0dc7e5f8326">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="verdana" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ "LOCATION ADDRESS : " +$F{locationAddress}
+
+
+
+   ]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<subreport>
+				<reportElement mode="Transparent" x="1" y="0" width="553" height="15" uuid="216e2911-4bd0-446a-9cc9-84044a6c5525">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="pvSubReportPath">
+					<subreportParameterExpression><![CDATA[$P{pvSubReportPath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sectionDetails")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{pvSubReportPath}+"Sub_phoenix_Main_Report_3.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

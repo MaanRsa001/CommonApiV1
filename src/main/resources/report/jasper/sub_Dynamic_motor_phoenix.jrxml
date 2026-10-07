@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.13.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub_Dynamic_motor_phoenix" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="c0cac0ca-1001-4001-b001-000000000001">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 3"/>
+	<property name="net.sf.jasperreports.export.pdf.embed.fonts" value="true"/>
+	<property name="net.sf.jasperreports.default.font.name" value="Aptos"/>
+	<style name="Base" isDefault="true" forecolor="#000000" vTextAlign="Middle" vImageAlign="Middle" fontName="Aptos" fontSize="8"/>
+	<style name="SectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#1A1A1A" fontSize="8" isBold="true"/>
+	<style name="ColHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333" fontSize="8" isBold="true"/>
+	<style name="LabelCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#EEEEEE" fontSize="8" isBold="true"/>
+	<style name="ValueCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" fontSize="8"/>
+	<style name="TotalRow" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#000000" fontSize="8" isBold="true"/>
+	<subDataset name="vehicle" uuid="5be79088-18f0-4e57-ab8e-dbf2030790a0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 3"/>
+		<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="755"/>
+		<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="231"/>
+		<queryString language="json">
+			<![CDATA[]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="pvSubReportPath" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Key" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Key"/>
+		<fieldDescription><![CDATA[Key]]></fieldDescription>
+	</field>
+	<field name="Value" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Value"/>
+		<fieldDescription><![CDATA[Value]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<componentElement>
+				<reportElement stretchType="RelativeToTallestObject" x="2" y="3" width="533" height="54" uuid="4f440d81-4535-4cf9-8ab7-9134cada2eed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.CONTENTS.width" value="px"/>
+					<property name="com.jaspersoft.studio.layout"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Horizontal" ignoreWidth="false">
+					<datasetRun subDataset="vehicle" uuid="eb00c271-96b2-48b7-a80e-720c6fee66e7">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.VehicleIds")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="54" width="533">
+						<rectangle radius="10">
+							<reportElement stretchType="RelativeToBandHeight" x="6" y="3" width="519" height="47" uuid="25a18200-fe2d-4b1f-97a7-dce0529dc2ae">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<graphicElement>
+								<pen lineWidth="1.0" lineStyle="Dotted"/>
+							</graphicElement>
+						</rectangle>
+						<textField isBlankWhenNull="true">
+							<reportElement style="SectionHeader" x="13" y="8" width="502" height="18" backcolor="#9A7953" uuid="74b8f2fc-47b9-4943-b3e5-7132e1aba262">
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["VEHICLE DETAILS"]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement stretchType="RelativeToBandHeight" x="13" y="26" width="502" height="15" uuid="09390a43-b7fd-45f8-b386-f55e9f8cfc65">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.CONTENTS.width" value="px"/>
+							</reportElement>
+							<jr:list printOrder="Horizontal">
+								<datasetRun subDataset="vehicle" uuid="c1872bfd-aa03-49a3-a8b1-1f03533d7503">
+									<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE})
+.subDataSource()]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="15" width="251">
+									<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+										<reportElement style="LabelCell" x="0" y="0" width="111" height="15" uuid="44e96277-43b9-4e52-b126-e4a880721bba"/>
+										<box leftPadding="6" rightPadding="4">
+											<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Aptos" size="8" isBold="true"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{Key}]]></textFieldExpression>
+									</textField>
+									<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+										<reportElement style="ValueCell" x="111" y="0" width="139" height="15" uuid="c4efebe7-b686-4037-a172-0aa6363faa81">
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box leftPadding="6" rightPadding="4">
+											<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Aptos" size="8"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{Value}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="28">
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="4" width="535" height="20" uuid="3ed24d3f-798b-4289-822f-bb2100bec791"/>
+				<subreportParameter name="pvSubReportPath">
+					<subreportParameterExpression><![CDATA[$P{pvSubReportPath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.Locations.Sections")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{pvSubReportPath} + "sub_Dynamic_motor_phoenix1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.1.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CommonNMPolicySchedule.jrxml" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="b79e8bdd-7088-4c63-97cf-77428b78ec2e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="net.sf.jasperreports.export.pdf.embed.fonts" value="true"/>
+	<property name="net.sf.jasperreports.default.font.name" value="Aptos"/>
+	<style name="Base" isDefault="true" forecolor="#000000" vTextAlign="Middle" fontName="Aptos" fontSize="8"/>
+	<style name="SectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#1A1A1A" fontSize="8" isBold="true"/>
+	<style name="ColHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#333333" fontSize="8" isBold="true"/>
+	<style name="LabelCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#EEEEEE" fontSize="8" isBold="true"/>
+	<style name="ValueCell" style="Base" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF" fontSize="8"/>
+	<style name="TotalRow" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#000000" fontSize="8" isBold="true"/>
+	<style name="FooterSmall" style="Base" forecolor="#444444" fontSize="7"/>
+	<style name="SubSectionHeader" style="Base" mode="Opaque" forecolor="#FFFFFF" backcolor="#555555" fontSize="8" isBold="true"/>
+	<subDataset name="PersonalInfoDS" uuid="fbacae3d-0f47-4aa7-9306-181d4ac2d112">
+		<queryString language="json">
+			<![CDATA[Result.PersonalInformation]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="BrokerInfoDS" uuid="5431a8d4-70ac-416e-b606-cd3bd74d9700">
+		<queryString language="json">
+			<![CDATA[Result.BrokerInformation]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="PolicyInfoDS" uuid="33b14424-43e5-437d-9356-aafa14a12492">
+		<queryString language="json">
+			<![CDATA[Result.PolicyInformation]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="TotalPremiumDS" uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567830">
+		<queryString language="json">
+			<![CDATA[Result.TotalPremiumList]]>
+		</queryString>
+		<field name="Key" class="java.lang.String">
+			<fieldDescription><![CDATA[Key]]></fieldDescription>
+		</field>
+		<field name="Value" class="java.lang.String">
+			<fieldDescription><![CDATA[Value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="CommonClausesDS" uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567840">
+		<queryString language="json">
+			<![CDATA[Result.CommonConditions.Common Clauses Details]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="Sno" class="java.lang.String">
+			<fieldDescription><![CDATA[Sno]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="CommonWarrantyDS" uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567841">
+		<queryString language="json">
+			<![CDATA[Result.CommonConditions.Common Warranty Details]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="Sno" class="java.lang.String">
+			<fieldDescription><![CDATA[Sno]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="CommonExclusionDS" uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567842">
+		<queryString language="json">
+			<![CDATA[Result.CommonConditions.Common Exclusion Details]]>
+		</queryString>
+		<field name="conditionTerms" class="java.lang.String">
+			<fieldDescription><![CDATA[conditionTerms]]></fieldDescription>
+		</field>
+		<field name="Sno" class="java.lang.String">
+			<fieldDescription><![CDATA[Sno]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[Result.ProductName]]>
+	</queryString>
+	<field name="PersonalInformation" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="PersonalInformation"/>
+		<fieldDescription><![CDATA[PersonalInformation]]></fieldDescription>
+	</field>
+	<field name="BrokerInformation" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="BrokerInformation"/>
+		<fieldDescription><![CDATA[BrokerInformation]]></fieldDescription>
+	</field>
+	<field name="PolicyInformation" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="PolicyInformation"/>
+		<fieldDescription><![CDATA[PolicyInformation]]></fieldDescription>
+	</field>
+	<field name="CompanyInformation" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="CompanyInformation"/>
+		<fieldDescription><![CDATA[CompanyInformation]]></fieldDescription>
+	</field>
+	<field name="Locations" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Locations"/>
+		<fieldDescription><![CDATA[Locations]]></fieldDescription>
+	</field>
+	<field name="AttachmentList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="AttachmentList"/>
+		<fieldDescription><![CDATA[AttachmentList]]></fieldDescription>
+	</field>
+	<field name="CommonConditions" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="CommonConditions"/>
+		<fieldDescription><![CDATA[CommonConditions]]></fieldDescription>
+	</field>
+	<field name="TotalPremiumList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="TotalPremiumList"/>
+		<fieldDescription><![CDATA[TotalPremiumList]]></fieldDescription>
+	</field>
+	<field name="ClausesconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CommonConditions.Common Clauses Details.conditionTerms"/>
+		<fieldDescription><![CDATA[Result.CommonConditions.Common Clauses Details.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="WarrantyconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CommonConditions.Common Warranty Details.conditionTerms"/>
+		<fieldDescription><![CDATA[Result.CommonConditions.Common Warranty Details.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="ExclusionconditionTerms" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CommonConditions.Common Exclusion Details.conditionTerms"/>
+		<fieldDescription><![CDATA[Result.CommonConditions.Common Exclusion Details.conditionTerms]]></fieldDescription>
+	</field>
+	<field name="CompanyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyName"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyName]]></fieldDescription>
+	</field>
+	<field name="CompanyEmail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyEmail"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyEmail]]></fieldDescription>
+	</field>
+	<field name="CompanyPhone" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyPhone"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyPhone]]></fieldDescription>
+	</field>
+	<field name="CompanyAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyAddress"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyAddress]]></fieldDescription>
+	</field>
+	<field name="Signature" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.Signature"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.Signature]]></fieldDescription>
+	</field>
+	<field name="TinNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.TinNumber"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.TinNumber]]></fieldDescription>
+	</field>
+	<field name="footerImage" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.footerImage"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.footerImage]]></fieldDescription>
+	</field>
+	<field name="CompanyLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyLogo"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyLogo]]></fieldDescription>
+	</field>
+	<field name="FooterDescription" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.FooterDescription"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.FooterDescription]]></fieldDescription>
+	</field>
+	<field name="EffectiveDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.EffectiveDate"/>
+		<fieldDescription><![CDATA[Result.EffectiveDate]]></fieldDescription>
+	</field>
+	<field name="CurrencyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CurrencyName"/>
+		<fieldDescription><![CDATA[Result.CurrencyName]]></fieldDescription>
+	</field>
+	<field name="CountryName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CountryName"/>
+		<fieldDescription><![CDATA[Result.CountryName]]></fieldDescription>
+	</field>
+	<field name="CompanyId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.CompanyInformation.CompanyId"/>
+		<fieldDescription><![CDATA[Result.CompanyInformation.CompanyId]]></fieldDescription>
+	</field>
+	<field name="ProductName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="Result.ProductName"/>
+		<fieldDescription><![CDATA[Result.ProductName]]></fieldDescription>
+	</field>
+	<title>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="535" height="65" forecolor="#000000" backcolor="#FFFFFF" uuid="16d3394d-997d-4fe1-b641-0ac0b38c91b2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="-1" width="403" height="36" forecolor="#000000" uuid="05009380-7685-41dd-be21-2e33e093d756"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Aptos" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="72" width="535" height="13" forecolor="#444444" uuid="7c58f1e2-1597-4304-a987-6af631c78fc7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["100002".equalsIgnoreCase($F{CompanyId})?"Registered in Tanzania | TIRA Licensed Insurer":"Registered in "+$F{CountryName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="69" width="535" height="1" forecolor="#AAAAAA" uuid="8c0ac56f-7623-4ddb-b7fe-65e363290e08"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="81" width="535" height="17" forecolor="#000000" uuid="1e3178df-0a26-4c65-a458-5e3b798720ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ProductName}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+				<reportElement style="Base" x="-1" y="0" width="125" height="65" uuid="f937c463-fd1a-4df2-a98a-96f1b2182f57">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{IMAGE_DIR}+$F{CompanyLogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="130" y="27" width="371" height="18" uuid="eb676f94-8482-4738-97a8-81918e853bff">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="43" width="333" height="18" uuid="902f7a8d-a0c6-4ed4-80c3-50a42d57d0d0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phone : " + $F{CompanyPhone} + " - Email : " + $F{CompanyEmail}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="535" height="18" uuid="438b0df3-d4b9-4537-8b38-df4e526caeda"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   POLICY REFERENCE"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="44c94265-2e52-4474-9a24-e26e1bbe6b41"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="PolicyInfoDS" uuid="93468d5e-89bf-4cd0-954d-180eb127ab48">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.PolicyInformation")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="LabelCell" x="0" y="0" width="185" height="16" uuid="0ea77a65-3263-4d99-9e16-1b9abc17713f"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key} != null ? $F{Key} : ""]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="185" y="0" width="350" height="16" uuid="42b1ae6f-0fd2-4c28-b0be-09b56ea712d9"/>
+							<box leftPadding="6" rightPadding="4">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value} != null ? $F{Value} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="260" height="18" uuid="0d779f1e-601a-4508-ac60-2be79d2a78e0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   INSURED DETAILS"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="265" y="0" width="270" height="18" uuid="f2f276cd-5374-4e74-94b9-bea341a8a603"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   INTERMEDIARY DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="260" height="16" uuid="077dd683-77f9-4ec2-b080-1be4c8dcb613"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="PersonalInfoDS" uuid="3c7fe3ea-2ba7-42ea-ade3-0be20e6c522d">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.PersonalInformation")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="260">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="LabelCell" x="0" y="0" width="100" height="16" uuid="9d4210de-7dfc-433c-9236-be2a8ee78b77"/>
+							<box leftPadding="5" rightPadding="3">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key} != null ? $F{Key} : ""]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="100" y="0" width="160" height="16" uuid="8f62df9d-2ef9-42fd-a43c-b61c68241ce6"/>
+							<box leftPadding="5" rightPadding="3">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value} != null ? $F{Value} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="265" y="0" width="270" height="16" uuid="7d473d80-1d5e-4d68-a6ea-2028dbfb436d"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="BrokerInfoDS" uuid="0e59f4f9-2d86-4362-bd54-421cf3b0aa0d">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.BrokerInformation")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="270">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="LabelCell" stretchType="RelativeToBandHeight" x="0" y="0" width="110" height="16" uuid="4a7d27ff-832e-4e9d-9645-0f8919fd784b"/>
+							<box leftPadding="5" rightPadding="3">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key} != null ? $F{Key} : ""]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="110" y="0" width="160" height="16" uuid="7b1df07d-8e29-4b12-827e-f5a6e6b2b3df"/>
+							<box leftPadding="5" rightPadding="3">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value} != null ? $F{Value} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="535" height="18" uuid="bc98bd1e-eb39-4db9-9ddc-e9a0b1c91345"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   COVERAGE DETAILS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Stretch">
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="535" height="20" uuid="c0cac0ca-9001-4001-b001-000000000001"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.Locations")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "LocationsSubreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[($F{ClausesconditionTerms} !=null && $F{ClausesconditionTerms}.length()>2) || ($F{WarrantyconditionTerms} !=null && $F{WarrantyconditionTerms}.length()>2) || ($F{ExclusionconditionTerms} !=null && $F{ExclusionconditionTerms}.length()>2)]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="535" height="18" uuid="b46d8eed-a4c0-4cdb-8d05-4342001114a6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   COMMON CONDITIONS"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{ClausesconditionTerms} != null && $F{ClausesconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="daac7f6b-a196-40d8-bbc7-33e849002e02"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Clauses"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{ClausesconditionTerms} != null && $F{ClausesconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="bac0f349-fed5-4ee6-93d8-5ce56f5f61f2"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="CommonClausesDS" uuid="81155fbe-66fa-48e1-a2aa-cd86add2a15f">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.CommonConditions.Common Clauses Details")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="16" uuid="6185cfb5-c998-4446-a3f4-7c20a66bfb8a"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Sno} != null ? $F{Sno} + "." : ($V{REPORT_COUNT} + ".")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="25" y="0" width="510" height="16" uuid="5316f9bf-52c6-455d-b599-3c80c57c7c01"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{WarrantyconditionTerms} !=null && $F{WarrantyconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="de8b90b1-f9ac-4b46-a627-4fdc2cfd6bee"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Warranty"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{WarrantyconditionTerms} !=null && $F{WarrantyconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="b1dcce82-f189-4a4d-80ec-31209e7f1e56"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="CommonWarrantyDS" uuid="11c8bef4-d54c-4de1-bf22-ad406a3a836d">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.CommonConditions.Common Warranty Details")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="16" uuid="799fde0f-439e-46ca-ba10-b72d4fa75fff"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Sno} != null ? $F{Sno} + "." : ($V{REPORT_COUNT} + ".")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="25" y="0" width="510" height="16" uuid="bceb1fb8-17f2-47ed-8eda-ae50fe53c87f"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{ExclusionconditionTerms} != null && $F{ExclusionconditionTerms}.length()>2]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SubSectionHeader" x="0" y="0" width="535" height="18" uuid="1c271a24-bc6f-4349-89ae-0d523959019c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Exclusions"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="16" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{ExclusionconditionTerms} != null && $F{ExclusionconditionTerms}.length()>2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="535" height="16" uuid="0a002cc6-1931-44cf-b0ec-eb3461e76f52"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="CommonExclusionDS" uuid="9b9aa8fe-88a0-4193-babe-78ae0d5e0e06">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.CommonConditions.Common Exclusion Details")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="16" uuid="ed8c9cba-99ff-4469-a4a0-c604c09b7b01"/>
+							<box leftPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Sno} != null ? $F{Sno} + "." : ($V{REPORT_COUNT} + ".")]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" stretchType="RelativeToBandHeight" x="25" y="0" width="510" height="16" uuid="e6d2e002-9f37-410b-9763-f60c9a7044d7"/>
+							<box leftPadding="5" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{conditionTerms} != null ? $F{conditionTerms} : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="10">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+		<band height="242" splitType="Prevent">
+			<textField isBlankWhenNull="true">
+				<reportElement x="30" y="122" width="200" height="12" forecolor="#333333" uuid="4ce07995-791a-451a-87cb-965addb9890a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Authorised Signatory"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="305" y="122" width="200" height="12" forecolor="#333333" uuid="abd86086-19f7-45f8-8b41-d4dcc38cfb94"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Policyholder Acknowledgement"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="30" y="190" width="200" height="1" forecolor="#000000" uuid="aa1ec091-768e-46dd-aae3-954ceb76a9b5"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="305" y="190" width="200" height="1" forecolor="#000000" uuid="6b642c9b-12dc-4ae8-b19e-1f9be6af574e"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="30" y="193" width="200" height="12" forecolor="#000000" uuid="4a8bf820-a7f2-4cb2-985e-61f9ce6f49f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For "+$F{CompanyName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="305" y="193" width="200" height="12" forecolor="#000000" uuid="547fce15-3e2a-44e5-8539-aec3087cb200"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This policy is effective from ["+$F{EffectiveDate}+"]."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="217" width="535" height="12" forecolor="#444444" uuid="475d75b5-55b7-4c1f-9624-dd8ad563c47b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyName}+"  •  "+$F{CompanyAddress}+"  •  Tel: "+$F{CompanyPhone}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="230" width="535" height="12" forecolor="#444444" uuid="4964a24b-d748-40ee-90bc-d55ab69acadb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Computer-generated document. Subject to policy terms and conditions."]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Top">
+				<reportElement x="70" y="140" width="140" height="45" uuid="fec397fb-f52c-4ef5-bf0b-5c0bacaa6773">
+					<printWhenExpression><![CDATA[$F{Signature} != null && $F{Signature}.length()>2]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{IMAGE_DIR}+$F{Signature}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement style="SectionHeader" x="0" y="0" width="535" height="18" uuid="455ec10c-385a-4e9f-8355-cb2756f9b51a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   PREMIUM SUMMARY"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="ColHeader" x="0" y="18" width="350" height="16" uuid="89c3d06e-1f77-4a3a-857d-d3c009ae09d9"/>
+				<box leftPadding="5">
+					<pen lineWidth="0.5" lineColor="#555555"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="ColHeader" x="350" y="18" width="185" height="16" uuid="7aba7122-e8f2-4c7f-9499-a0162b3c5e51"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5" lineColor="#555555"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Aptos" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Amount ( "+$F{CurrencyName}+" )"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="34" width="535" height="16" uuid="8b246b86-113d-43c1-9d98-96a870c67bcc"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="TotalPremiumDS" uuid="93b50d45-d60c-4f76-a6d1-776bf4322fee">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("Result.TotalPremiumList")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="0" y="0" width="350" height="16" uuid="921df0df-7dc2-4c2d-9ee4-8cacded3e7b4"/>
+							<box leftPadding="5" rightPadding="3">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Key} != null ? $F{Key} : ""]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement style="ValueCell" x="350" y="0" width="185" height="16" uuid="b4305d02-371f-45ce-81d5-09f2329b5375"/>
+							<box leftPadding="3" rightPadding="5">
+								<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font fontName="Aptos" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{Value} != null ? $F{Value}.toString() : ""]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="535" height="1" forecolor="#AAAAAA" uuid="2ab4f281-6c67-4c4f-b216-6735ef3fe13b"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="FooterSmall" x="0" y="2" width="300" height="10" uuid="a35b4032-e602-462c-a4f2-d25c315a43d8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CompanyName}+"  |  Confidential"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="FooterSmall" x="350" y="2" width="170" height="10" uuid="6ff6b18a-cd3f-4682-9e3b-068cb929ba95"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="FooterSmall" x="520" y="2" width="15" height="10" uuid="18a2bc8a-de7e-4b13-bc19-1ce45bdaada7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Aptos" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

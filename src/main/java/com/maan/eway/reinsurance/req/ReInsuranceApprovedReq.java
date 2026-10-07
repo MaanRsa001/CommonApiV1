@@ -1,0 +1,22 @@
+package com.maan.eway.reinsurance.req;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+public class ReInsuranceApprovedReq {
+	
+    @JsonProperty("QuoteNo")
+    private String quoteNo;
+    
+    @JsonProperty("Polidx")
+    private String polidx;
+    
+    @JsonProperty("UwsysId")
+    private String uwsysId;
+    
+    @JsonProperty("FreezeYN")
+    private String freezeYN;
+
+}

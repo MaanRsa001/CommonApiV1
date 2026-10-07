@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main_Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1dc5efea-f3d4-48e9-9623-151913afeb82">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Phoenix_Schedule.xml"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<subDataset name="Dataset1" uuid="ab7aa36b-3f50-425c-b76e-d6f0a2bf9f2a">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EwaySchedule"/>
+		<queryString language="json">
+			<![CDATA[sectionDetails]]>
+		</queryString>
+		<field name="locationName" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="locationName"/>
+			<fieldDescription><![CDATA[locationName]]></fieldDescription>
+		</field>
+		<field name="sectionList" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="sectionList"/>
+			<fieldDescription><![CDATA[sectionList]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="a1d908fa-db5c-4405-9749-948a199bfa9b">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EwaySchedule"/>
+		<queryString language="json">
+			<![CDATA[sectionDetails.sectionList]]>
+		</queryString>
+		<field name="covername" class="java.lang.String">
+			<property name="net.sf.jasperreports.json.field.expression" value="covername"/>
+			<fieldDescription><![CDATA[covername]]></fieldDescription>
+		</field>
+		<field name="annually" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="annually"/>
+			<fieldDescription><![CDATA[annually]]></fieldDescription>
+		</field>
+		<field name="monthly" class="java.math.BigDecimal">
+			<property name="net.sf.jasperreports.json.field.expression" value="monthly"/>
+			<fieldDescription><![CDATA[monthly]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="pvSubReportPath" class="java.lang.String"/>
+	<parameter name="pvImagepath" class="java.lang.String"/>
+	<parameter name="pvStatus" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="debitNoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="debitNoteNo"/>
+		<fieldDescription><![CDATA[debitNoteNo]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="premiumDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premiumDetails"/>
+		<fieldDescription><![CDATA[premiumDetails]]></fieldDescription>
+	</field>
+	<field name="firstLossPayeesList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="firstLossPayeesList"/>
+		<fieldDescription><![CDATA[firstLossPayeesList]]></fieldDescription>
+	</field>
+	<field name="signature" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signature"/>
+		<fieldDescription><![CDATA[signature]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="policyNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyNo"/>
+		<fieldDescription><![CDATA[policyNo]]></fieldDescription>
+	</field>
+	<field name="agencyCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="agencyCode"/>
+		<fieldDescription><![CDATA[agencyCode]]></fieldDescription>
+	</field>
+	<field name="vatPercent" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPercent"/>
+		<fieldDescription><![CDATA[vatPercent]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="productName"/>
+		<fieldDescription><![CDATA[productName]]></fieldDescription>
+	</field>
+	<field name="taxName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="taxName"/>
+		<fieldDescription><![CDATA[taxName]]></fieldDescription>
+	</field>
+	<field name="expiryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="expiryDate"/>
+		<fieldDescription><![CDATA[expiryDate]]></fieldDescription>
+	</field>
+	<field name="email1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="email1"/>
+		<fieldDescription><![CDATA[email1]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="premium"/>
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<field name="cityName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cityName"/>
+		<fieldDescription><![CDATA[cityName]]></fieldDescription>
+	</field>
+	<field name="overAllPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="overAllPremium"/>
+		<fieldDescription><![CDATA[overAllPremium]]></fieldDescription>
+	</field>
+	<field name="companylogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companylogo"/>
+		<fieldDescription><![CDATA[companylogo]]></fieldDescription>
+	</field>
+	<field name="companyPhone" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPhone"/>
+		<fieldDescription><![CDATA[companyPhone]]></fieldDescription>
+	</field>
+	<field name="stateName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="stateName"/>
+		<fieldDescription><![CDATA[stateName]]></fieldDescription>
+	</field>
+	<field name="inceptionDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="userMobile" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userMobile"/>
+		<fieldDescription><![CDATA[userMobile]]></fieldDescription>
+	</field>
+	<field name="sectionDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionDetails"/>
+		<fieldDescription><![CDATA[sectionDetails]]></fieldDescription>
+	</field>
+	<field name="brokerBranchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerBranchName"/>
+		<fieldDescription><![CDATA[brokerBranchName]]></fieldDescription>
+	</field>
+	<field name="customerId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerId"/>
+		<fieldDescription><![CDATA[customerId]]></fieldDescription>
+	</field>
+	<field name="companyVrnNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyVrnNumber"/>
+		<fieldDescription><![CDATA[companyVrnNumber]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="place" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="place"/>
+		<fieldDescription><![CDATA[place]]></fieldDescription>
+	</field>
+	<field name="sectionList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="sectionList"/>
+		<fieldDescription><![CDATA[sectionList]]></fieldDescription>
+	</field>
+	<field name="attachMents" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="attachMents"/>
+		<fieldDescription><![CDATA[attachMents]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="vatPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPremium"/>
+		<fieldDescription><![CDATA[vatPremium]]></fieldDescription>
+	</field>
+	<field name="productId" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="productId"/>
+		<fieldDescription><![CDATA[productId]]></fieldDescription>
+	</field>
+	<field name="coverageDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coverageDetails"/>
+		<fieldDescription><![CDATA[coverageDetails]]></fieldDescription>
+	</field>
+	<field name="companyPoBox" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyPoBox"/>
+		<fieldDescription><![CDATA[companyPoBox]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchName"/>
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="totalPremium" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="totalPremium"/>
+		<fieldDescription><![CDATA[totalPremium]]></fieldDescription>
+	</field>
+	<field name="mobileNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="mobileNo"/>
+		<fieldDescription><![CDATA[mobileNo]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="branchCode" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchCode"/>
+		<fieldDescription><![CDATA[branchCode]]></fieldDescription>
+	</field>
+	<field name="companyId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyId"/>
+		<fieldDescription><![CDATA[companyId]]></fieldDescription>
+	</field>
+	<field name="phoenixVatAmount" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="phoenixVatAmount"/>
+		<fieldDescription><![CDATA[phoenixVatAmount]]></fieldDescription>
+	</field>
+	<field name="companyAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyAddress"/>
+		<fieldDescription><![CDATA[companyAddress]]></fieldDescription>
+	</field>
+	<field name="companyMail" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyMail"/>
+		<fieldDescription><![CDATA[companyMail]]></fieldDescription>
+	</field>
+	<field name="phoenixVatPercent" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="phoenixVatPercent"/>
+		<fieldDescription><![CDATA[phoenixVatPercent]]></fieldDescription>
+	</field>
+	<field name="companyWebsite" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyWebsite"/>
+		<fieldDescription><![CDATA[companyWebsite]]></fieldDescription>
+	</field>
+	<field name="brokerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerName"/>
+		<fieldDescription><![CDATA[brokerName]]></fieldDescription>
+	</field>
+	<field name="coreAppBrokerCode" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coreAppBrokerCode"/>
+		<fieldDescription><![CDATA[coreAppBrokerCode]]></fieldDescription>
+	</field>
+	<field name="entryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="companyremarks" class="java.lang.String"/>
+	<field name="identificationNo" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="802" forecolor="#FA8CA0" uuid="179ba1e0-94cf-4d5d-a579-58bb38cc4e90"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="50" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pvStatus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Right" vAlign="Middle">
+				<reportElement x="461" y="0" width="92" height="46" uuid="0ffc4e0a-f6ad-4cb1-9d83-dd36ce157c01"/>
+				<box topPadding="2" bottomPadding="2" rightPadding="2"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companylogo}]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="554" height="20" uuid="24166216-fb0a-43f4-807b-2d3966b224f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="14" isBold="true"/>
+					<paragraph lineSpacingSize="1.4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="1" y="26" width="552" height="20" uuid="9d507d94-d6d8-472a-9b30-bf608fe1894b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="12" isBold="true"/>
+					<paragraph lineSpacingSize="1.4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16">
+			<textField>
+				<reportElement x="160" y="0" width="394" height="16" uuid="70620d2e-8c4c-4ac5-a4e2-3fc2affd8169">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} >1]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="0" rightPadding="2">
+					<pen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNo}==null || $F{policyNo}==""?"Schedule Forming Part and attached to QuoteNo : "+$F{quoteNo}:"Schedule Forming Part and attached to PolicyNo  : "+$F{policyNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="10" uuid="0a220875-512b-44d2-8c03-7cc6dae0fe97">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="55980b0b-4b93-4647-953b-cbea689800ef">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DETAILS OF THE INSURED"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="941ae438-b36f-4713-b5b2-93012020a7f3"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="502555d9-0770-4d35-bff3-6d2e54af1a77"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Insured Name"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="59038b5f-95ab-4294-9f41-7e138cdae18e"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="260" y="0" width="160" height="13" uuid="205a8fdf-814c-4295-9a4a-e7697bc4fce4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Identity Type / Company Registration"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="420" y="0" width="135" height="13" uuid="e342bd57-62c8-4e32-a76e-65610378bfb2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{identificationNo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="fb744fe7-c2b1-4786-87a3-75f430ad7633"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="ded066df-a127-464f-b843-b4a5e139bded"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Postal Address"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="1d948ddc-b563-4795-b96c-9e691addb3d0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="260" y="0" width="160" height="13" uuid="03a7db34-84c7-4e01-ac00-c8af5cd1a49d"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Contact Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="420" y="0" width="135" height="13" uuid="9b93447c-3be1-4938-b3eb-09571e38d095"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mobileNo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="298ccf13-f40a-4bd1-893a-16b044aaef61"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="1f897e53-7ad3-4dde-8f90-b34d789ac9e3"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Email Address"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="781780f6-d99f-4233-a911-fc2a36e05373"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{email1}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="34ba7e60-a55e-47f8-8608-0d8f5c9b40eb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="c694f2f0-ae3c-4eba-aa5b-3a1ef3b3a6c2">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DEBIT ORDER DETAILS"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="701d720b-bd53-4b58-b04e-9afcb69f1bbf"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="24f65f64-bdba-484e-939d-11b7f2dd1362"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Account Holder"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="a81b7abc-687b-4590-864c-dfcc7c20cccf"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="ae3e3303-f3a1-4a13-806d-47c3676fea32"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Account Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="31e73a1c-6c78-40e4-a359-5b9da27d1b1b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8276afa0-cca6-4029-b477-b128cc4acfe1"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="5524153a-4863-4793-8ffd-6cc5df4a0275"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Financial Institution"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="c2243ef6-5768-4903-b6d4-eba930387d16"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="335a09ec-47c3-4612-a94e-b9d24c98ce44"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Branch Code"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="73c69a3e-1d2e-4b50-b2e3-12bb713091d8"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{branchName}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="91c4e405-d258-4528-b56e-580cfc020b2b"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="cce601dd-b324-4a80-9c50-e04855326a87"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Signed Debit Order No"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="215ebed8-ae06-4f48-981b-3641b3df029f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="17972701-0835-4067-b363-68f780309238"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Premium Payment"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="3f9e4643-b15d-475e-b0ad-7ff933f92d24"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium})]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e80b762c-83a7-4387-aa96-b705eddd8fad">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="e97124da-5ef8-4a7f-952f-9f2bfee5a586">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BROKER DETAILS"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="a0ef6fcd-9542-4a20-89f6-328e6eac594f"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="bd8ee01e-e49c-4f13-98fa-08aaec1d412f"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Broker House"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="0c7d1345-2f38-463f-b589-f9a89ae048fa"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="58f42c16-f578-47b9-b9c6-1f39bb5b767a"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Contact Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="8e072f33-8bf0-4a06-895b-8e6cbc3b9123"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{userMobile}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="f5917673-1a2e-42df-bb70-8c6b51362a21"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="a2d99e66-b9e2-4aa7-901f-fad5df226acc"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Broker Name"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="f5386c39-ac39-45b6-8072-61794634cf77"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{brokerName}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="e0dbf5d8-6f26-4d56-8956-6cd5565a1f1c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Agency Code"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="aef96ff6-b797-45f0-982f-859777e0a645"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{coreAppBrokerCode}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e605248f-8d36-468d-bebd-2065f4e53bde">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="eab4b97c-fa49-4d68-9986-d13e29c78f31">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["POLICY DETAILS"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="70b0eb7a-31ca-4848-816b-2df5a15918d6"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="dc771965-a6f9-43ee-ad67-84931391f0ac"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{policyNo}==null || $F{policyNo} == ""?"Quote No :":"Policy Number :"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="18d2712d-1939-4f49-8f2f-37f06ff44f69"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{policyNo}==null || $F{policyNo} ==""?$F{quoteNo}:$F{policyNo}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="06680f9f-d972-4e70-bbff-1482810e9eb0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Premium Collection"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="ca170931-9d61-43d3-aea4-3e9ebddb9bae"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium})]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="b3509388-3e1a-4022-a8d7-3e6656ca01b8"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="cbb1ab50-65fb-494f-ba60-4ad395794676"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Inception Date"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="b9fb87b1-ed24-46fb-913e-4862971e4e8c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="fdfe1827-e660-4af6-83a0-c9f333210f8f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Anniversary Date"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="7d60e215-b1ac-4e58-8a4a-93ddc55b7c53"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{expiryDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="100" y="0" width="455" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="bc1a02a4-dc51-4e56-a5ae-c92202100ee6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["All premises as stated in each section of this policy owned or occupied or used by the Insured for the purpose of The Business all situated in the area which on 1st January 1976 constituted the Republic of Namibia, South Africa, Botswana, Lesotho, Swaziland, Zimbabwe, Malawi, Zambia, Mozambique and any other country incidental to the business as stated in the schedule."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="4de80733-75f0-4515-9d9a-4ff4f79b8b43"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Territorial Limits"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="7f04f9c1-bba5-4a2a-a8ac-1f6276e5192a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="b5f5c784-1706-42f8-937d-e20cf79a6195">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["TRANSACTION DETAILS"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="f390ef5d-638b-4e32-9916-5323af48126b"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="58d1680c-f06d-4fa4-a1c2-e088f81dd50c"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Type"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="1f862426-4c08-4958-8d50-2dd14f9be630"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Quote - Valid for 30 days only"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="b8e92ec5-5f7e-45c1-803d-323e278d45b1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="b782054f-3287-4b91-a929-d9931114acb8"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{entryDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e6d5760d-cb6d-4652-b35d-96804c3d1b08"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="d17de27d-9f80-45bf-b648-d701b5a73acc"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Comment"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="f98f395c-7cfb-4411-b75f-53c675eb5271"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["New quote request received "]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="26">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="26" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="a5fb3e1c-b44f-4341-a764-54ad727f7794"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="26" uuid="8b14bf6f-3ddd-43c1-a9c1-bcfee02bed21"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Comment"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="100" y="0" width="160" height="13" uuid="65db2baa-c18f-4565-add7-7ad87af243d2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="100" y="13" width="160" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="3af8f88b-a164-4150-9647-1b2cc13c9349"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Name of Authorized Person"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement x="290" y="13" width="110" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d404cb1e-7e60-448a-b36d-52f38562672f"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Name of Authorized Person"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="440" y="13" width="110" height="13" uuid="6311c627-32e4-4272-8cd7-13ca17c51108"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Signature Date"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="290" y="0" width="110" height="13" uuid="fbe65e6f-d46a-4698-b84a-b89e0a8b28a1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="440" y="0" width="110" height="13" uuid="ab91a294-ae7a-4bbd-9ff6-b3522a788051"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e4fe9923-4700-4ee5-95f7-415c451c590d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField>
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" backcolor="#E8E8DF" uuid="8b113ee6-83a1-4913-b54b-00803f2b5ab4">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["INSURER DETAILS"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d78745f9-d5ce-464a-b163-2da81aae5a19"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="d29a2908-135a-449a-a62e-42722c77699d"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["The Company"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" isPrintWhenDetailOverflows="true" uuid="6fe575ee-0e7e-47c8-9b26-08da12e3c979"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="0954d664-5f09-487b-bbb1-0b764cf7b371"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["VAT Registration Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="7bf77122-d9f1-407e-90eb-946913c2f478"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyVrnNumber}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="cdc1400b-da04-4c28-b163-95536740b332"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="7a5f0da7-abc0-4e6b-8d85-980c663571fc"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Registration Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="b98c2dd2-b550-4f0a-b4fa-c3f880841a15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyremarks}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="5aecd24c-9eb6-42b3-a2ee-8b33116fd1ab"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Postal Address"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="4fc4c052-a844-4e2f-985f-3138ec1e0027"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyPoBox}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="98f0ab7a-4eeb-4d44-a6b8-ef45fb45cb62"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="26c5603f-c346-4bb5-8e9f-48222a876c12"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Physical Address"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="e68b4b67-fca8-4fe9-a6b4-6f56f7a2ff25"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyAddress}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="280" y="0" width="120" height="13" uuid="78faf2b4-731a-4533-be43-6b13c7033000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Telephone Number"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="155" height="13" uuid="023fb144-1db3-44ae-a5ee-01998c3d488f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyPhone}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d1817b6c-a880-4b3f-b390-a75cb84d993c"/>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="100" height="13" uuid="0328c6b0-50f0-4afc-ab54-a6cd6a019860"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Email Address"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="100" y="0" width="160" height="13" uuid="4c04cb9a-d59b-4ef0-99e7-02b4b9da5ad4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{companyMail}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="1" splitType="Prevent">
+			<break>
+				<reportElement x="0" y="0" width="111" height="1" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="cdf5ee77-46f7-4c95-9e2a-27900fc968a7"/>
+			</break>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="148f97dc-3e34-4a9e-bbcd-7cf28ac88ba2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement mode="Opaque" x="1" y="0" width="553" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="6a652908-2ef5-4495-ad93-ff7da36c1319">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["TAX INVOICE"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<subreport>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="15" uuid="7c390665-3478-4045-b685-42304503e5a5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sectionList")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{pvSubReportPath}+"Sub_Main_Report.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="6d77cf64-ccad-4490-8d97-ade2ebc1bd96"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="210" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="c107afaa-ae47-4504-ac96-6ac5a6f83c3e"/>
+					<box topPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["  SUB-TOTAL PREMIUM VAT INCLUSIVE"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8349e745-1027-42ff-bc48-0d9bf8e0e4d7"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="360" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="89060bc4-249b-434c-8689-58bc33120ccf"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium}.compareTo(BigDecimal.ZERO) != 0 ? $F{totalPremium}.divide(new BigDecimal(12), 2, BigDecimal.ROUND_HALF_UP) : $F{totalPremium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="460" y="0" width="95" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="b560c856-d33b-4033-8d15-7f6829f9542a"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["$  0.00"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="6dce1069-0dd9-41c3-bda6-cd36ce9eca56"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="210" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="fd6d4b0b-8e1b-4c05-a27c-1e60218cc889"/>
+					<box topPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["  SUB-TOTAL PREMIUM VAT EXCLUSIVE"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="c29d377c-2bae-485e-861e-2f2b936479da"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{premium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="360" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e539174b-c2b1-41eb-b10c-889a91e146e1"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{premium}.compareTo(BigDecimal.ZERO) != 0 ? $F{premium}.divide(new BigDecimal(12), 2, BigDecimal.ROUND_HALF_UP) : $F{premium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="460" y="0" width="95" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="2dc712be-f9cd-4e68-a62f-b26b28b13a00"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["$  0.00"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="13">
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e192c85d-1b99-485e-b9d5-25aabac8d526"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="210" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="456f6a4d-9dfb-4434-8de6-ff7a1ac8c44b"/>
+					<box topPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["  VAT @ "+$F{phoenixVatPercent}+"%"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="04483dc8-5442-4cc4-8b59-14e500bc882b"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{phoenixVatAmount})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="360" y="0" width="100" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="7c9ade63-58aa-4c5a-8d7d-1ceee9eb49d0"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{phoenixVatAmount}.compareTo(BigDecimal.ZERO) != 0 ? $F{phoenixVatAmount}.divide(new BigDecimal(12), 2, BigDecimal.ROUND_HALF_UP) : $F{phoenixVatAmount})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="460" y="0" width="95" height="13" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="5c4d7954-922e-43c7-a25c-233fd64e043a"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["$  0.00"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15">
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="1" y="0" width="553" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="a9f2bb45-7bf0-4df5-89ed-131fe2689b29">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="210" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="71fd59f5-116c-4eab-b7fc-fe35f438afdd">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box topPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["  TOTAL PREMIUM PAYABLE + ADD/REFUND"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="260" y="0" width="100" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="ad9e5e70-447e-4f34-8953-b1e8095fd7d5">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="360" y="0" width="100" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="b20138c9-7724-4f57-b72d-f5e9fda6d4cb">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{totalPremium}.compareTo(BigDecimal.ZERO) != 0 ? $F{totalPremium}.divide(new BigDecimal(12), 2, BigDecimal.ROUND_HALF_UP) : $F{totalPremium})]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Opaque" x="460" y="0" width="93" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="1c9f62c7-7605-4aae-bf80-0c4b76c6bf99">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["$  0.00"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="17">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="555" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#FFFFFF" uuid="0dffdcdb-4ea9-41fe-9a25-06d182ab4574"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VAT is included at "+$F{phoenixVatPercent}+"%. "+$F{companyName}+" is a VAT vendor under registration number 6188181-01-5."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="29">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="555" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#FFFFFF" uuid="6fd403ee-6af8-4d84-ad6c-066bd65e511a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This Policy Schedule becomes a TAX INVOICE after the inception date when payment has been done."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="67">
+			<textField>
+				<reportElement x="30" y="4" width="150" height="15" uuid="b3c899de-e2dc-4f5f-8b91-17d7eff095af">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Place : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="19" width="150" height="15" uuid="42f44dbf-3d73-4c7a-88c3-240975bb1822">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="4" width="150" height="15" uuid="9b7cacf2-455a-4a8f-9d3c-1f8c9953ea47">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Windhoek"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="180" y="19" width="150" height="15" uuid="a5c22fff-af85-416c-8bdb-f2003642265b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="4" width="170" height="15" uuid="7e397e4b-64fe-44b7-82e3-8561926f85e4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Signed on behalf of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="330" y="19" width="170" height="15" uuid="91eba315-42da-4808-b15a-a92a34f39f7e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="329" y="52" width="170" height="15" uuid="6b8f4bb5-f40d-4d24-a18c-7953408e4518">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Authorised Signatory"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="179">
+			<frame>
+				<reportElement positionType="Float" x="0" y="4" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="5b082216-0d0d-4d6a-9b60-f78bedbda756">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="72dcc2ee-2f70-4f92-8d2e-00ed4bf62ba0">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["GENERAL ENDORSEMENTS"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<break>
+				<reportElement x="0" y="2" width="71" height="1" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="ba1972a9-5b2e-4bb3-bb21-866a2311222d"/>
+			</break>
+			<frame>
+				<reportElement positionType="Float" x="0" y="22" width="555" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="ed9f7c02-bf74-45fc-929d-7db2e971c716"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="ef0457a7-b32e-4cf4-96f9-ffc38d3a06d4"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Mariental Fish River and Tributaries Flood Exclusion"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="055e1bde-3efe-49dc-b2bb-d28def920499"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Notwithstanding any provision of this policy, including any exclusion, exception or extension or other provision, which would otherwise override a general exception, this policy does not cover any loss, destruction, damage, cost or expense whatsoever or any consequential loss directly or indirectly caused by, arising out of, resulting from or in consequence of flooding to any property or insured person or legal entity situated downstream of the Hardap Dam and the lower Fish River and it's tributaries within the area downstream of the Hardap Dam, irrespective of whether or not the property, insured person or legal entity was situated permanently, temporarily or incidentally at the location in question.							"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="55" width="555" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="d7d13610-e166-42b2-bceb-7df15b8c1822"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="fdf223da-4e1c-4a61-8aec-b8ba52829b30"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Sanction Limitation and Exclusion Clause"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="13af1adc-796e-4323-828a-763de24d93f4"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["The Insurer is deemed not to provide cover and to pay any claim or provide any benefit hereunder to the extent that the provision of such cover, payment of such claim or provision of such benefit would expose the Insurer to any sanction, prohibition or restriction under United Nations resolutions or the trade or economic sanctions, laws or regulations of the European Union, United Kingdom or United States of America."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="89" width="555" height="90" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="1bcbe597-4c5b-4d0f-8cda-c06ba3cb4f4f"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="a3163569-8ae5-4bab-8ea4-b9ef2847e677"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Communicable Disease Exclusion"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="f7342604-7d2e-4278-aa7f-09ee37f2e362"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["1. Notwithstanding any provision to the contrary within this insurance policy, this insurance policy excludes any loss, damage, liability, claim, cost or expense of whatsoever nature, directly or indirectly caused by, contributed to by, resulting from, arising out of, or in connection with a Communicable Disease or the fear or threat (whether actual or perceived) of a Communicable Disease regardless of any other cause or event contributing concurrently or in any other sequence thereto."]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="30" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="45ff945c-0cee-4bcb-abe4-3db1ae4c94df"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["2. Subject to the other terms, conditions and exclusions contained in this insurance policy, this insurance policy will cover physical damage to property insured under this policy and any Time Element Loss directly resulting therefrom where such physical damage is directly caused by or arising from any of the following perils:"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="60" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="9526df22-ea54-40f9-b7fe-370be0c993a5"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Mechanical or electrical breakdown, fire, lightning, explosion, aircraft or vehicle impact, power failure or surge, falling objects, windstorm, rainstorm, hail, tornado, cyclone, typhoon, hurricane, earthquake, seaquake, seismic and/or volcanic disturbance/eruption, tsunami, flood, storm surge, water damage, liquefaction, freeze, ice storm, sleet, weight of snow or ice, avalanche, smoke, sprinkler leakage, meteor/asteroid impact, landslip, landslide, mudslide, sinkhole, collapse, bush fire, forest fire, vandalism, and malicious mischief."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="91">
+			<frame>
+				<reportElement positionType="Float" x="0" y="1" width="555" height="90" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="484975d2-31e4-427e-b8cd-7f46fbf35317"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="0b48399a-c0f4-42d6-8c52-820c608ec7ce"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Cyber Loss Definitions"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8fe83510-39cb-460f-aa6c-54f0d5751229"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["1. Computer System means any computer, hardware, software, communication systems, electronic device (including, but not limited to, smart phone, laptop, tablet, wearable device) server, cloud or microcontroller including any similar system or any configuration of the aforementioned and including any associated input, output, data storage device, networking equipment or backup facility."]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="30" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="a6d53cdb-1b61-4f35-9bca-bdecf24a65f2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["2. Data means information, facts, concepts, code or any other information of any kind that is recorded or transmitted in a form to be used, accessed, processed, transmitted or stored by a Computer System."]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="60" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="14601eb6-c714-4d33-ab65-a16cfa80c2ac"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["3. Time Element Loss means business interruption,contingent business interruption or any other consequential losses."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="105">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="c536bc98-3e96-4110-b6ad-46bb96ef1a9b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement mode="Opaque" x="1" y="0" width="554" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" backcolor="#E8E8DF" uuid="629b49ad-b568-4bbe-ad78-dc677cc9e265">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["IMPORTANT INFORMATION"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="15" width="555" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="c916605c-7a80-47fc-a9af-ca0c0e6ce37b"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="172128bc-635a-4fbb-b6ef-ed6e155f5384"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Unoccupancy"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="4b9c2e35-89de-475d-9595-505e326c154e"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["You must inform us if you intend on leaving your private home unoccupied for more than 60 consecutive days in any 12-month period. If you  do not inform us, it may result in claims being declined."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="45" width="555" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="002a0386-90d7-4973-b6dc-4b0fb3fb4b6d"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="fbe7ffce-6e33-47da-ac53-6590c5f1bf66"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Disclosure"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="f03021c4-7fee-463e-bbba-39d46b002735"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Herewith an example of questions, as may be posed to you and the answers you provided in the proposal are material, and shold there be discrepancies, it could have an effect on the cover of your policy and in the event of a claim.."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="75" width="555" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="243add6d-5f2d-468d-8c76-e96c4e29ab1a"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="100" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="bdfcb965-dcfb-4e03-8975-3ff7e2d8252f"/>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Policy wording"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="100" y="0" width="455" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="f1cb2cb1-5503-4bb2-89fd-01dff0902ae5"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Figtree-Light" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["This schedule forms part of the commercial lines wording signed and approved on 01/02/2024, and must be read in conjuntion thereof. "]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="21">
+			<subreport>
+				<reportElement mode="Transparent" x="1" y="6" width="554" height="15" uuid="88854a87-0f47-4ac0-a9e5-04e3d300da0f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="pvSubReportPath">
+					<subreportParameterExpression><![CDATA[$P{pvSubReportPath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sectionDetails")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{pvSubReportPath}+"Sub_Main_Report_2.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="2" width="100" height="1" uuid="d263052e-2bf2-4d21-bb2b-adcf5c0260d8"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="47">
+			<image scaleImage="RetainShape" hAlign="Center" vAlign="Middle">
+				<reportElement x="215" y="1" width="119" height="46" uuid="e31b573a-58ea-4eea-b160-0148815d7329"/>
+				<box topPadding="2" bottomPadding="2" rightPadding="2"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companylogo}]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="32" width="150" height="15" uuid="862415a0-23b9-4c10-8607-ff59ed9267fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Figtree-Light" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inceptionDate}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="32" width="40" height="15" uuid="43938ca5-3114-4aad-8e09-6443244b0a31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="32" width="80" height="15" uuid="1bcd462d-2f54-4f21-864a-2e2b83acf9e6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

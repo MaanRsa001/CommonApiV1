@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="motor_certif_mocambique" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="279559ff-d27a-4c42-a93a-689903859df6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="motorprivate.xml"/>
+	<parameter name="pvImagepath" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="companyId" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyId"/>
+		<fieldDescription><![CDATA[companyId]]></fieldDescription>
+	</field>
+	<field name="effectiveDateStart" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="effectiveDateStart"/>
+		<fieldDescription><![CDATA[effectiveDateStart]]></fieldDescription>
+	</field>
+	<field name="effectiveDateEnd" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="effectiveDateEnd"/>
+		<fieldDescription><![CDATA[effectiveDateEnd]]></fieldDescription>
+	</field>
+	<field name="quoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="quoteNo"/>
+		<fieldDescription><![CDATA[quoteNo]]></fieldDescription>
+	</field>
+	<field name="customerName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerName"/>
+		<fieldDescription><![CDATA[customerName]]></fieldDescription>
+	</field>
+	<field name="debitNoteNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="debitNoteNo"/>
+		<fieldDescription><![CDATA[debitNoteNo]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="address"/>
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="inceptionDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="inceptionDate"/>
+		<fieldDescription><![CDATA[inceptionDate]]></fieldDescription>
+	</field>
+	<field name="expiryDate" class="java.sql.Timestamp">
+		<property name="net.sf.jasperreports.json.field.expression" value="expiryDate"/>
+		<fieldDescription><![CDATA[expiryDate]]></fieldDescription>
+	</field>
+	<field name="renewalDate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="renewalDate"/>
+		<fieldDescription><![CDATA[renewalDate]]></fieldDescription>
+	</field>
+	<field name="currency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="currency"/>
+		<fieldDescription><![CDATA[currency]]></fieldDescription>
+	</field>
+	<field name="insuranceTypeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="insuranceTypeDesc"/>
+		<fieldDescription><![CDATA[insuranceTypeDesc]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="premium"/>
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<field name="vatPremium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPremium"/>
+		<fieldDescription><![CDATA[vatPremium]]></fieldDescription>
+	</field>
+	<field name="totalPremium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="totalPremium"/>
+		<fieldDescription><![CDATA[totalPremium]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="branchName"/>
+		<fieldDescription><![CDATA[branchName]]></fieldDescription>
+	</field>
+	<field name="approvedBy" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedBy"/>
+		<fieldDescription><![CDATA[approvedBy]]></fieldDescription>
+	</field>
+	<field name="userName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="userName"/>
+		<fieldDescription><![CDATA[userName]]></fieldDescription>
+	</field>
+	<field name="noOfVehicle" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="noOfVehicle"/>
+		<fieldDescription><![CDATA[noOfVehicle]]></fieldDescription>
+	</field>
+	<field name="postalAddress" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="postalAddress"/>
+		<fieldDescription><![CDATA[postalAddress]]></fieldDescription>
+	</field>
+	<field name="vehicleDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails"/>
+		<fieldDescription><![CDATA[vehicleDetails]]></fieldDescription>
+	</field>
+	<field name="driverDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="driverDetails"/>
+		<fieldDescription><![CDATA[driverDetails]]></fieldDescription>
+	</field>
+	<field name="accessoriesDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="accessoriesDetails"/>
+		<fieldDescription><![CDATA[accessoriesDetails]]></fieldDescription>
+	</field>
+	<field name="borrowerType" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="borrowerType"/>
+		<fieldDescription><![CDATA[borrowerType]]></fieldDescription>
+	</field>
+	<field name="collateralName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="collateralName"/>
+		<fieldDescription><![CDATA[collateralName]]></fieldDescription>
+	</field>
+	<field name="firstLossPayee" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="firstLossPayee"/>
+		<fieldDescription><![CDATA[firstLossPayee]]></fieldDescription>
+	</field>
+	<field name="companylogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companylogo"/>
+		<fieldDescription><![CDATA[companylogo]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="companyName"/>
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="tearmsAndConditions" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="tearmsAndConditions"/>
+		<fieldDescription><![CDATA[tearmsAndConditions]]></fieldDescription>
+	</field>
+	<field name="coverNoteReferenceNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coverNoteReferenceNo"/>
+		<fieldDescription><![CDATA[coverNoteReferenceNo]]></fieldDescription>
+	</field>
+	<field name="customerId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="customerId"/>
+		<fieldDescription><![CDATA[customerId]]></fieldDescription>
+	</field>
+	<field name="premiumDetails" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="premiumDetails"/>
+		<fieldDescription><![CDATA[premiumDetails]]></fieldDescription>
+	</field>
+	<field name="business" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="business"/>
+		<fieldDescription><![CDATA[business]]></fieldDescription>
+	</field>
+	<field name="signImg" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="signImg"/>
+		<fieldDescription><![CDATA[signImg]]></fieldDescription>
+	</field>
+	<field name="brokerLogo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="brokerLogo"/>
+		<fieldDescription><![CDATA[brokerLogo]]></fieldDescription>
+	</field>
+	<field name="vatPercent" class="java.math.BigDecimal">
+		<property name="net.sf.jasperreports.json.field.expression" value="vatPercent"/>
+		<fieldDescription><![CDATA[vatPercent]]></fieldDescription>
+	</field>
+	<field name="overAllPremium" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="overAllPremium"/>
+		<fieldDescription><![CDATA[overAllPremium]]></fieldDescription>
+	</field>
+	<field name="subUserType" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="subUserType"/>
+		<fieldDescription><![CDATA[subUserType]]></fieldDescription>
+	</field>
+	<field name="attachmentList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="attachmentList"/>
+		<fieldDescription><![CDATA[attachmentList]]></fieldDescription>
+	</field>
+	<field name="coverDetailsList" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="coverDetailsList"/>
+		<fieldDescription><![CDATA[coverDetailsList]]></fieldDescription>
+	</field>
+	<field name="vehicleId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.vehicleId"/>
+		<fieldDescription><![CDATA[vehicleDetails.vehicleId]]></fieldDescription>
+	</field>
+	<field name="registrationNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.registrationNumber"/>
+		<fieldDescription><![CDATA[vehicleDetails.registrationNumber]]></fieldDescription>
+	</field>
+	<field name="vehicleMake" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.vehicleMake"/>
+		<fieldDescription><![CDATA[vehicleDetails.vehicleMake]]></fieldDescription>
+	</field>
+	<field name="vehcileModel" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.vehcileModel"/>
+		<fieldDescription><![CDATA[vehicleDetails.vehcileModel]]></fieldDescription>
+	</field>
+	<field name="vehicleTypeDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.vehicleTypeDesc"/>
+		<fieldDescription><![CDATA[vehicleDetails.vehicleTypeDesc]]></fieldDescription>
+	</field>
+	<field name="manufactureYear" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.manufactureYear"/>
+		<fieldDescription><![CDATA[vehicleDetails.manufactureYear]]></fieldDescription>
+	</field>
+	<field name="seatingCapacity" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.seatingCapacity"/>
+		<fieldDescription><![CDATA[vehicleDetails.seatingCapacity]]></fieldDescription>
+	</field>
+	<field name="engineNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.engineNumber"/>
+		<fieldDescription><![CDATA[vehicleDetails.engineNumber]]></fieldDescription>
+	</field>
+	<field name="chassisNumber" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.chassisNumber"/>
+		<fieldDescription><![CDATA[vehicleDetails.chassisNumber]]></fieldDescription>
+	</field>
+	<field name="premium_1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.premium"/>
+		<fieldDescription><![CDATA[vehicleDetails.premium]]></fieldDescription>
+	</field>
+	<field name="customerName_1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.customerName"/>
+		<fieldDescription><![CDATA[vehicleDetails.customerName]]></fieldDescription>
+	</field>
+	<field name="expiryDate_1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.expiryDate"/>
+		<fieldDescription><![CDATA[vehicleDetails.expiryDate]]></fieldDescription>
+	</field>
+	<field name="inceptionDate_1" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="vehicleDetails.inceptionDate"/>
+		<fieldDescription><![CDATA[vehicleDetails.inceptionDate]]></fieldDescription>
+	</field>
+	<field name="policyNo" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="policyNo"/>
+		<fieldDescription><![CDATA[policyNo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="84" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="59" width="390" height="17" uuid="8489f52c-531e-46e3-8db3-93045a4d819f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" CERTIFICADO DE SEGURO DE AUTOMOVEL"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="26" y="20" width="66" height="60" uuid="1f35b985-2c37-4d62-8a09-b5931e4fe1fc"/>
+				<imageExpression><![CDATA[$P{pvImagepath}+$F{companylogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="24" y="0" width="245" height="20" backcolor="#F6C1C6" uuid="fb813aa7-d4a7-41ff-8364-b040286f44cd"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Numero da Apolice"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="269" y="0" width="21" height="20" backcolor="#F6C1C6" uuid="cd8048b9-777e-49f5-9309-55aaa4d52ca5"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="290" y="0" width="244" height="20" backcolor="#F6C1C6" uuid="69009700-14cb-450b-875a-9defa250c393"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="334beb4b-b269-4a1f-a21d-288849767f8a"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Numero da Apolice"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="211bbe45-addb-4215-8056-d1e88365dc82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="77e52685-d1d0-4652-8c98-656bacaf23b8"/>
+				<box>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="0" width="148" height="20" uuid="fb20e236-61b0-45ff-8a95-2933c0de49ec"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="86" height="20" uuid="2ba5f26c-88c5-4993-ad1a-f3a78a46f014"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Endereco"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="21" height="20" uuid="c0665471-51ab-4e98-83bb-2f2f8040704f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="24" y="0" width="255" height="20" backcolor="#F6C1C6" uuid="d7cce4e1-6f9b-4238-b89c-7e3ba941d213"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Periodo de Seguro"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="279" y="0" width="255" height="20" backcolor="#F6C1C6" uuid="92e39a54-53ec-425e-913b-e3aaebafb658"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Coberturas"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="656f9db1-f40c-4074-b438-2a1fcfd275d8"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Inicio"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="66a939f2-2025-468b-8b68-fdb3658956c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="3d21ea68-4633-40e1-9d52-40f3c10bcc9f"/>
+				<box>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{inceptionDate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="86" height="20" uuid="5e79edb0-3129-46c5-af55-c1b2cc0cb6e3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Responsabilidade Civil"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="21" height="20" uuid="6cff12ff-d365-450a-a077-8ac1a04402d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="0" width="148" height="20" uuid="0d1020fa-c03e-4166-aeae-48731eb0bade"/>
+				<box>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="20" width="86" height="20" uuid="20f2055c-80c0-45e4-9c11-1bb3157c85cc"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fim"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="20" width="21" height="20" uuid="9364aaca-253d-45b4-959d-be542239389a"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="20" width="148" height="20" uuid="7d56b69e-bbc0-4471-818e-8c6a35247acb"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format( $F{expiryDate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="20" width="86" height="20" uuid="87633885-c753-41d4-9460-377d9122e382"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Franquia"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="20" width="148" height="20" uuid="17d0d695-e509-487a-a225-7e3ba897e54e"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="20" width="21" height="20" uuid="e1260269-f19f-4c2c-bee0-465a26d0db81"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="24" y="0" width="255" height="20" backcolor="#F6C1C6" uuid="18ee8bfa-b6e7-45dc-84c7-f93e11a5248d"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LIMITE DE RESPONSABILIDADE CIVIL"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="279" y="0" width="255" height="20" backcolor="#F6C1C6" uuid="7a348711-d983-4c38-883e-2f2a80b539e7"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TERRITORIO ABRANGIDO"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="34">
+			<textField>
+				<reportElement x="24" y="0" width="255" height="34" uuid="f233fe86-13a6-4451-bd3e-06c1890211f7"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="255" height="34" uuid="51c929e6-5ac0-4e52-9e76-69b063b86486"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Mocambique,Republica de Africa de"+
+"Sul,Namibia,Botswana,Lesotho,Eswatini,Zimbabwe"+
+"e Malawi"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="24" y="0" width="510" height="20" backcolor="#F6C1C6" uuid="593077bb-2736-42ab-ae04-1eeb059cccba"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VEICULO SEGURO"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="00c077de-3980-4998-b06d-8e75792533d9"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Marca e Modelo"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="8aea5403-22f3-4558-9566-0f2f80c6b997"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="cf70328c-8713-47fd-8af5-e252926c5f03"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehicleMake}.replaceAll("[\\[\\]\"]","")+"/"+$F{vehcileModel}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="86" height="20" uuid="bd4e11f8-cc74-4708-8beb-9e2adf4f8cb1"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Modelo"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="21" height="20" uuid="f725686f-6347-4c97-a899-7e3ed4c9e2af"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="0" width="148" height="20" uuid="6f4fac65-3d98-4db7-851b-8bce928ffd4b"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehcileModel}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="ea8a95e6-29ec-4ddc-b6c2-7b0de751e619"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Numero da Matricula"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="5ce022cc-3dce-49cb-a408-b9f729deb41d"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="f05448f3-ca12-4cfd-a925-39646261e415"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="86" height="20" uuid="dab8599b-939e-4f55-bfc4-8c59fb533055"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. Motor"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="21" height="20" uuid="83a67949-4f2f-43f4-811a-5e705cf17523"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="0" width="148" height="20" uuid="e36616d9-27ce-493c-b04e-938e84c597b3"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{engineNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="5c008771-12a8-43f8-b78d-26b8763c4d57"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. Chassis"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="82ad27c0-25d8-4ac2-acf5-a7a608304bc4"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="ecd67d65-8d94-4b7b-966f-37d5077a1a9d"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chassisNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="86" height="20" uuid="f4d2a1cf-dd8f-4707-aef2-d43df7bbd1f3"/>
+				<box>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ano de Fabrico"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="21" height="20" uuid="0d720cca-580d-403b-8f66-dc1eaafade42"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="0" width="148" height="20" uuid="d98e88e3-4b9d-420d-9f9f-3fbd4ebfcce1"/>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{manufactureYear}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<textField>
+				<reportElement x="24" y="0" width="510" height="30" uuid="d7bdb909-662a-4695-9fa7-3a5fb862f947"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Este documento certifica a existencia de um Seguro de Responsabilidade Civil que este esta conforme as"+
+"Condicoes Gerais e Particulares"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="30" width="510" height="20" uuid="1875a7c6-5f08-401f-ab1c-42150fb5b751"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Contidas na Apolice emitida pela Phoenix Companhia de Seguros de Mocambique SA."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="180">
+			<textField>
+				<reportElement x="24" y="0" width="86" height="20" uuid="669e6128-44d6-4f54-a26f-89cc3170641a"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Local"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="21" height="20" uuid="4fa1ca56-55f2-441d-81ac-1bcc91791cb9"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="148" height="20" uuid="27bb5eda-5472-4685-b0dc-ccef5bb2438b"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{branchName})== null? "Not Available" :$F{branchName})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="20" width="86" height="20" uuid="289f4f43-1171-4dc2-851b-bf75d80dd4a7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="20" width="21" height="20" uuid="6c9a9593-e9a2-4cb6-ac1b-0db6cb741225"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="20" width="148" height="20" uuid="174bcc49-af33-4ef8-888d-ef29e7650557"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="40" width="86" height="20" uuid="d2d201db-69f5-4c50-a37c-9729d16183f5"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hora"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="40" width="21" height="20" uuid="da706fe2-28af-4054-8d44-89b08966470c"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="40" width="148" height="20" uuid="ce391a93-420a-4771-a9df-e21c29bae5fd"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.sql.Time(System.currentTimeMillis())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="20" width="214" height="10" uuid="f11d86a7-2c44-481f-b391-17975bcda40a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seguro de Resp. Civil Automovel"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="30" width="214" height="10" uuid="8f6eda4f-2024-4d9f-8417-9b131371a41e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Limite de Indemnizacao"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="50" width="124" height="10" uuid="018cf05f-60bd-4743-b13a-fac9a752b5fa"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="50" width="80" height="10" uuid="94bb2d1f-12e6-4d12-92d8-6ff860f120d7"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MZN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="50" width="10" height="10" uuid="50975695-1fb8-4687-b67a-104b76a322ab"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="60" width="35" height="10" uuid="2d0f10c2-196d-42e3-8ca3-cfbf5cc20e37"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Inicio"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="60" width="10" height="10" uuid="799e3299-4f82-424d-8ccc-4099f4c4d7bd"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="60" width="55" height="10" uuid="4441e054-0ce7-4f4b-991e-58aa95bd529e"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{inceptionDate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="60" width="50" height="10" uuid="854eeba3-51a9-4924-af12-1c9376e66652"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format( $F{expiryDate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="60" width="44" height="10" uuid="e656a397-9ae6-4e2b-a590-002ed8de2937"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fim"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="60" width="10" height="10" uuid="9f3b34ce-c8fe-4d8d-ab03-65c1648340a4"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="70" width="80" height="10" uuid="de2b3fa3-3e66-49f0-9dc0-91906b98913e"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Marca e Modelo"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="70" width="10" height="10" uuid="46693db0-7d02-44c5-a99d-4cf0e69e16bf"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="70" width="124" height="10" uuid="99a08623-de6e-4905-8439-fac44c95e997"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehicleMake}.replaceAll("[\\[\\]\"]","")+"/"+$F{vehcileModel}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="80" width="80" height="10" uuid="9af8c279-66b3-4129-9bb3-02bb0e01af85"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. Chassis"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="80" width="10" height="10" uuid="9c0ef7a1-53ee-4365-8a79-7b4848d52c2d"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="80" width="124" height="10" uuid="4bf78b45-19c6-4042-8616-1acf145da7d5"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chassisNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="90" width="80" height="10" uuid="3176ddc5-b4a5-431b-b295-6b10308e6276"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. Motor"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="90" width="10" height="10" uuid="579b123a-82b3-4021-83f4-2c990edf2377"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="90" width="124" height="10" uuid="ad6de34d-cdc8-4848-b172-76e3d1461dd5"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{engineNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="100" width="80" height="10" uuid="ad0227ee-f716-4975-8337-76f75164548c"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Numero da Matricula"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="100" width="10" height="10" uuid="5f2f0431-750a-4360-bcc6-7f4ba65747a2"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="100" width="124" height="10" uuid="f2031811-d59c-41bd-838f-71a2c4da1627"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationNumber}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="110" width="80" height="10" uuid="faf28a84-848b-49fa-a655-6dd9bfb12ad3"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ano de Fabrico"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="110" width="10" height="10" uuid="643d8ba2-3d3a-4edb-b762-685742056755"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="110" width="124" height="10" uuid="12280389-1827-4416-ac4f-afeec9a38368"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{manufactureYear}.replaceAll("[\\[\\]\"]","")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="121" width="214" height="10" uuid="2525e0c4-53da-47d0-84bd-c7cb5679d93e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Limite Territorial"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="310" y="179" width="229" height="1" uuid="933d9bff-2e13-4711-a9e2-7fdd2610fd0c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="310" y="11" width="229" height="1" uuid="f74e2d00-76c3-4d16-959b-1c0a3f3b2919">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="538" y="11" width="1" height="168" uuid="860c6058-17d3-47f8-93ca-d00d99346f91">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="310" y="11" width="1" height="168" uuid="7df58154-a0aa-4acc-942a-c618f4a12dce">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="24" y="69" width="239" height="20" uuid="26c53587-970a-49d7-9620-082f49135fb2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix Companhia De Seguros De Mocambique S.A"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="112" width="139" height="20" uuid="8e1b0c49-f664-4bea-bcfb-048c7f329c7a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Assinatura Autorizada"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="132" width="214" height="10" uuid="5d171677-1be4-4131-8d13-408edd4b8a4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Mocambique,Republica de Africa de"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="142" width="214" height="10" uuid="61bdfac1-a69c-4a85-b70b-cbcf8b06211c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sul,Namibia,Botswana,Lesotho,Eswatini,Zimbabwe e"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="152" width="214" height="10" uuid="31c59c40-9640-4344-bbc2-458c4d1ffaec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Malawi"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="165" width="214" height="10" uuid="d51a9db0-77ce-40a0-b226-6e6b06c5fc26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phoenix Companhia De Seguros De Mocambique S.A"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

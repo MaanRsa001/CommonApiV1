@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Aptos-font">
+        <normal><![CDATA[fonts/Aptos.ttf]]></normal>
+        <bold><![CDATA[fonts/Aptos-Bold.ttf]]></bold>
+        <italic><![CDATA[fonts/Aptos-Italic.ttf]]></italic>
+        <boldItalic><![CDATA[fonts/Aptos-Bold-Italic.ttf]]></boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+</fontFamilies>
